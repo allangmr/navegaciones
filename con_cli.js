@@ -85,8 +85,6 @@ $(document).ready(function() {
         fn_hide_buscar();
     });
 
-    $("#div_suministro").load("div_sum.htm");
-
     $("#btn_Dat_Tec").click(function(e){
         e.preventDefault();
 
@@ -104,9 +102,22 @@ $(document).ready(function() {
             
         });
 
+    $("#btn_sum").click(function(e){
+        e.preventDefault();
 
-    $("#btn_sum").on("click", fn_sum_ver);
-
+        if(!flag_dat_tec)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_suministro").load("div_sum.htm",fn_sum_ver);
+            flag_dat_tec = true;
+            console.log("Aqui");
+        }
+        else{
+            fn_sum_ver();
+        }
+        
+            
+        });
 
 
     var colM =
