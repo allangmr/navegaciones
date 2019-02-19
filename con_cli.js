@@ -95,7 +95,7 @@ $(document).ready(function() {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_abastece").load("div_dat_tec.htm",fn_modal_ver);
             flag_dat_tec = true;
-            console.log("Alli");
+            console.log("Aqui");
         }
         else{
             fn_modal_ver();
