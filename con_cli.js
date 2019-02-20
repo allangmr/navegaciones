@@ -276,6 +276,7 @@ function fn_hide_buscar()
     $("#div_abastece").hide();
     $("#div_suministro").hide();
     $("#div_propietario").hide();
+    $("#div_fact_cont").hide();
     $("#div_medidor").hide();
     $("#frm_leer").show();
     $("#nav_ul_opc").show();
