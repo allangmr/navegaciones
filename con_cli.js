@@ -3,12 +3,16 @@ var g_tit = "Consulta de Clientes";
 var $grid;
 var $grid_eve;
 var $grid_fac;
+var $grid_madre;
+var $contrato_madre =1;
+var $opcion;
 var $grid_con;
 var $grid_pag;
 var $grid_cor;
 var $grid_aju;
 var $grid_busq;
 var flag_dat_tec;
+var flag_dat_sum;
 
 $(document).ready(function() {
 
@@ -79,11 +83,15 @@ $(document).ready(function() {
         fn_show_buscar();
     });
 
+
+
     // OCULTA LA BUSQUEDA Y VUELVE A LA VENTANA PRINCIPAL
      $("#co_volver_bus").click(function(e){
         e.preventDefault();
         fn_hide_buscar();
     });
+
+
 
     $("#btn_Dat_Tec").click(function(e){
         e.preventDefault();
@@ -93,10 +101,10 @@ $(document).ready(function() {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_abastece").load("div_dat_tec.htm",fn_modal_ver);
             flag_dat_tec = true;
-            console.log("Aqui");
+            console.log("Aca");
         }
         else{
-            fn_modal_ver();
+            $("#div_abastece").load("div_dat_tec.htm",fn_modal_ver);
         }
         
             
@@ -105,15 +113,15 @@ $(document).ready(function() {
     $("#btn_sum").click(function(e){
         e.preventDefault();
 
-        if(!flag_dat_tec)
+        if(!flag_dat_sum)
         {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_suministro").load("div_sum.htm",fn_sum_ver);
-            flag_dat_tec = true;
+            flag_dat_sum = true;
             console.log("Aqui");
         }
         else{
-            fn_sum_ver();
+            $("#div_suministro").load("div_sum.htm",fn_sum_ver);
         }
         
             
@@ -239,6 +247,44 @@ function fn_valida_doc()
    }
 
 }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
+function fn_setea_grid_madre()
+{
+
+           // HISTORIAL DE FACTURACIONES
+           var obj = {  
+            height: "200",
+            showTop: true,
+            showBottom:true,
+            showTitle : false,
+            roundCorners: true,
+            rowBorders: true,
+            columnBorders: true,
+            collapsible:false,
+            editable:false,
+            selectionModel: { type: 'row',mode:'single'},
+            numberCell: { show: true },
+            pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
+            scrollModel:{theme:true},   
+        };
+            
+        obj.colModel = [            
+            { title: "Tipo de Agrupacion", width: 110, dataType: "string", dataIndx: "C1", halign:"center", align:"left"},
+            { title: "Padre", width: 110, dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
+            { title: "Ruta", width: 110, dataType: "string", dataIndx: "C3", halign:"center", align:"left"},
+            { title: "Nombre", width: 110, dataType: "string", dataIndx: "C4", halign:"center", align:"left"},
+            { title: "Tarifa", width: 120, dataType: "string", dataIndx: "C5", halign:"center", align:"right"}
+        ];
+        $grid_madre = $("#div_madre").pqGrid(obj);
+
+
+
+
+}
+
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 function fn_setea_grid_fac()
@@ -620,6 +666,12 @@ function fn_sum_ver()
    $("#frm_busq").show();	
    $("#div_abastece").hide();	
    $("#div_suministro").show();	
+
+   if($contrato_madre>=1)
+   {
+     fn_setea_grid_madre();
+   }
+
        	
 }
 

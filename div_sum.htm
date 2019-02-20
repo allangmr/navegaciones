@@ -253,7 +253,7 @@
             <div class="col-md-12" id="margen-bajo">
                 <div class="input-group">
                     <span class="input-group-addon"  id="estandar">
-                        <label for="tx_unidades_habitacionales" class="lbl_check">Unidades Habitacionales  
+                        <label for="tx_unidades_habitacionales" class="lbl_check">Unid. Habitacionales 
                         </label>
                     </span>
                     <input type="text" id="tx_unidades_habitacionales" class="form-control" value="0">
@@ -262,7 +262,7 @@
             <div class="col-md-12" id="margen-bajo">
                     <div class="input-group">
                         <span class="input-group-addon"  id="estandar">
-                            <label for="tx_unidades_por_legalizar" class="lbl_check">Unidades por Legalizar 
+                            <label for="tx_unidades_por_legalizar" class="lbl_check">Unid. por Legalizar 
                             </label>
                         </span>
                         <input type="text" id="tx_unidades_por_legalizar" class="form-control" value="0">
@@ -281,9 +281,6 @@
             
     </div>
 
-
-
-
 </div>
 
 <br>
@@ -298,42 +295,46 @@
         <div class="form-group">
              <input type=text class="form-control" id="tx_nom_busq" disabled value="">
         </div>
+        <div class="form-group">      
+            <div id="div_madre" style="margin-top:8px;"></div>
+        </div>
          
     </div>
 </div>
-<br>
+
+
 
 <div class="well well-sm">Ubicación Geográfica</div>
 
-<!-- TIPO Y NÚMERO DE IDENTIDAD -->
+<!-- Datos de ubicacion geografica -->
 <div class="row">
     
     <div class="col-lg-6">
 
         <div class="form-group">
-            <label for="cb_prov_busq">Provincia</label>
-            <select class="form-control" id="cb_prov_busq">
+            <label for="cb_provincia">Provincia</label>
+            <select class="form-control" id="cb_provincia">
             </select>
         </div>  
         <div class="form-group">
-            <label for="cb_cor_busq">Corregimiento</label>
-            <select class="form-control" id="cb_cor_busq">
+            <label for="cb_corregimiento">Corregimiento</label>
+            <select class="form-control" id="cb_corregimiento">
             </select>        
         </div>  
 
         <div class="form-group">
-            <label for="tx_fin_busq">Sector</label>
-                <input type=text class="form-control" id="tx_fin_busq">
+            <label for="tx_sector">Sector</label>
+                <input type=text class="form-control" id="tx_sector">
         </div>
 
         <div class="form-group">
-            <label for="tx_tom_busq">Calle</label>
-                <input type=text class="form-control" id="tx_tom_busq">
+            <label for="tx_calle">Calle</label>
+                <input type=text class="form-control" id="tx_calle">
         </div>
             
         <div class="form-group">
-            <label for="tx_asi_busq">Condominio</label>
-                <input type=text class="form-control" id="tx_asi_busq">
+            <label for="tx_condominio">Condominio</label>
+                <input type=text class="form-control" id="tx_condominio">
         </div>
 
         <div class="form-group">
@@ -387,16 +388,54 @@
                 </select>   
             </div>
     </div>
-    
-</div>
-
-<!-- TELÉFONO FIJO y CELULAR -->
-<div class="row">
     <div class="col-lg-12">
         <div class="form-group">
             <label for="tx_dir_adicional">Dir. Adicional</label>
              <input type=text class="form-control" id="tx_dir_adicional">
         </div>
+         
+    </div>
+    
+</div>
+
+<br>
+<div class="well well-sm">Tipo de Reparto</div>
+<br>
+
+<!-- Direccion adicional -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+                <label for="cb_tipo_entrega">Tipo de Entrega</label>
+                <select class="form-control" id="cb_tipo_entrega">
+                </select>
+
+                <label for="cb_tipo_ubicacion">Tipo de Entrega</label>
+                <select class="form-control" id="cb_tipo_ubicacion">
+                   <option value="01"></option>URBANA</option>
+                   <option value="02">RURAL</option>
+                   <option value="03">METRO</option>
+               </select>  
+        </div>  
+        <div class="form-group">
+                <label for="cb_zona_postal">Zona Postal</label>
+                <select class="form-control" id="cb_zona_postal">
+                </select>
+            </div>  
+        <div class="form-group">
+            <label for="tx_apartado_postal">Apartado Postal</label>
+             <input type=text class="form-control" id="tx_apartado_postal">
+        </div>
+        <div class="form-group">
+                <label for="cb_agencia">Agencia</label>
+                <select class="form-control" id="cb_agencia">
+                </select>
+        </div>  
+        <div class="form-group">
+                <label for="cb_administrador">Administrador</label>
+                <select class="form-control" id="cb_administrador">
+                </select>
+        </div>  
          
     </div>
 </div>
