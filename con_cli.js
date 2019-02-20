@@ -133,12 +133,12 @@ $(document).ready(function() {
             if(!flag_dat_prop)
             {
                 // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                $("#div_propietario").load("div_dat_propietario.htm",fn_sum_ver);
+                $("#div_propietario").load("div_dat_propietario.htm",fn_prop_ver);
                 flag_dat_prop= true;
                 console.log("Aqui");
             }
             else{
-                $("#div_propietario").load("div_dat_propietario.htm",fn_sum_ver);
+                $("#div_propietario").load("div_dat_propietario.htm",fn_prop_ver);
             }
             
                 
@@ -240,6 +240,7 @@ function fn_hide_buscar()
     $("#div_busq").hide();
     $("#div_abastece").hide();
     $("#div_suministro").hide();
+    $("#div_propietario").hide();
     $("#frm_leer").show();
     $("#nav_ul_opc").show();
     $("#div_prin").show();
@@ -670,6 +671,8 @@ function fn_modal_ver()
    $("#div_prin").hide("blind");	
    $("#frm_busq").show();	
    $("#div_abastece").show();	
+   $("#div_propietario").hide();
+   $("#div_suministro").hide();
 
        	
 }
@@ -683,6 +686,8 @@ function fn_sum_ver()
    $("#div_prin").hide("blind");	
    $("#frm_busq").show();	
    $("#div_suministro").show();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
 
 
    if($contrato_madre>=1)
@@ -693,7 +698,7 @@ function fn_sum_ver()
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
-function fn_modal_ver()	
+function fn_prop_ver()	
 {	
        	
    $("#frm_leer").hide();	
@@ -701,6 +706,9 @@ function fn_modal_ver()
    $("#div_prin").hide("blind");	
    $("#frm_busq").show();	
    $("#div_propietario").show();	
+   $("#div_suministro").hide();
+   $("#div_abastece").hide();
+
        	
 }
 
