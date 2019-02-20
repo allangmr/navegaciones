@@ -5,14 +5,15 @@ var $grid_eve;
 var $grid_fac;
 var $grid_madre;
 var $contrato_madre =1;
-var $opcion;
 var $grid_con;
 var $grid_pag;
 var $grid_cor;
 var $grid_aju;
 var $grid_busq;
+var opcion;
 var flag_dat_tec;
 var flag_dat_sum;
+var flag_dat_prop;
 
 $(document).ready(function() {
 
@@ -110,22 +111,39 @@ $(document).ready(function() {
             
         });
 
-    $("#btn_sum").click(function(e){
-        e.preventDefault();
+        $("#btn_sum").click(function(e){
+            e.preventDefault();
 
-        if(!flag_dat_sum)
-        {
-            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-            $("#div_suministro").load("div_sum.htm",fn_sum_ver);
-            flag_dat_sum = true;
-            console.log("Aqui");
-        }
-        else{
-            $("#div_suministro").load("div_sum.htm",fn_sum_ver);
-        }
+            if(!flag_dat_sum)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
+                flag_dat_sum = true;
+                console.log("Aqui");
+            }
+            else{
+                $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
+            }
         
             
         });
+        $("#btn_propietario").click(function(e){
+            e.preventDefault();
+
+            if(!flag_dat_prop)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_propietario").load("div_dat_propietario.htm",fn_sum_ver);
+                flag_dat_prop= true;
+                console.log("Aqui");
+            }
+            else{
+                $("#div_propietario").load("div_dat_propietario.htm",fn_sum_ver);
+            }
+            
+                
+        });
+    
 
 
     var colM =
@@ -652,7 +670,7 @@ function fn_modal_ver()
    $("#div_prin").hide("blind");	
    $("#frm_busq").show();	
    $("#div_abastece").show();	
-   $("#div_suministro").hide();	
+
        	
 }
 
@@ -664,14 +682,25 @@ function fn_sum_ver()
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
    $("#frm_busq").show();	
-   $("#div_abastece").hide();	
    $("#div_suministro").show();	
+
 
    if($contrato_madre>=1)
    {
      fn_setea_grid_madre();
    }
+ 	
+}
 
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_modal_ver()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_busq").show();	
+   $("#div_propietario").show();	
        	
 }
 
