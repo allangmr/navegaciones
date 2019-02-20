@@ -14,7 +14,7 @@ var opcion;
 var flag_dat_tec;
 var flag_dat_sum;
 var flag_dat_prop;
-
+var flag_fac_cont;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -144,8 +144,22 @@ $(document).ready(function() {
                 
         });
     
+        $("#btn_fact_cont").click(function(e){
+            e.preventDefault();
 
-
+            if(!flag_fac_cont)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_fact_cont").load("div_fact_cont.htm",fn_fac_cont);
+                flag_fac_cont= true;
+                console.log("Aqui");
+            }
+            else{
+                $("#div_fact_cont").load("div_fact_cont.htm",fn_fac_cont);
+            }
+            
+                
+        });
     var colM =
     [
         { title: "Tipo Agrupación", width: 150, align: "left", dataIndx:"c1",editable: false},        
@@ -712,3 +726,18 @@ function fn_prop_ver()
        	
 }
 
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_fac_cont()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_busq").show();
+   $("#div_propietario").hide();
+   $("#div_fact_cont").show();	
+   $("#div_suministro").hide();
+   $("#div_abastece").hide();
+
+       	
+}
