@@ -14,6 +14,7 @@ var opcion;
 var flag_dat_tec;
 var flag_dat_sum;
 var flag_dat_prop;
+var flag_med_prop;
 
 $(document).ready(function() {
 
@@ -108,41 +109,59 @@ $(document).ready(function() {
             $("#div_abastece").load("div_dat_tec.htm",fn_modal_ver);
         }
         
-            
-        });
+        
+    });
 
-        $("#btn_sum").click(function(e){
-            e.preventDefault();
+    $("#btn_sum").click(function(e){
+        e.preventDefault();
 
-            if(!flag_dat_sum)
-            {
-                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
-                flag_dat_sum = true;
-                console.log("Aqui");
-            }
-            else{
-                $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
-            }
+        if(!flag_dat_sum)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
+            flag_dat_sum = true;
+            console.log("Aqui");
+        }
+        else{
+            $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
+        }
+    
+        
+    });
+    $("#btn_propietario").click(function(e){
+        e.preventDefault();
+
+        if(!flag_dat_prop)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_propietario").load("div_dat_propietario.htm",fn_prop_ver);
+            flag_dat_prop= true;
+            console.log("Propietario Tag Cargado");
+        }
+        else{
+            $("#div_propietario").load("div_dat_propietario.htm",fn_prop_ver);
+        }
         
             
-        });
-        $("#btn_propietario").click(function(e){
-            e.preventDefault();
+    });
 
-            if(!flag_dat_prop)
-            {
-                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                $("#div_propietario").load("div_dat_propietario.htm",fn_prop_ver);
-                flag_dat_prop= true;
-                console.log("Aqui");
-            }
-            else{
-                $("#div_propietario").load("div_dat_propietario.htm",fn_prop_ver);
-            }
+
+    $("#btn_medidor").click(function(e){
+        e.preventDefault();
+
+        if(!flag_med_prop)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_medidor").load("div_dat_med.htm",fn_med_ver);
+            flag_med_prop= true;
+            console.log("Medidor Tag Cargado");
+        }
+        else{
+            $("#div_medidor").load("div_dat_medidor.htm",fn_med_ver);
+        }
+        
             
-                
-        });
+    });
     
 
 
@@ -241,6 +260,7 @@ function fn_hide_buscar()
     $("#div_abastece").hide();
     $("#div_suministro").hide();
     $("#div_propietario").hide();
+    $("#div_medidor").hide();
     $("#frm_leer").show();
     $("#nav_ul_opc").show();
     $("#div_prin").show();
@@ -711,4 +731,21 @@ function fn_prop_ver()
 
        	
 }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_med_ver()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_busq").show();	
+   $("#div_propietario").hide();	
+   $("#div_suministro").hide();
+   $("#div_abastece").hide();
+   $("#div_medidor").show();	
+
+       	
+}
+
 
