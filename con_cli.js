@@ -11,6 +11,7 @@ var $grid_cor;
 var $grid_aju;
 var $grid_busq;
 var opcion;
+var opcion2;
 var flag_dat_tec;
 var flag_dat_sum;
 var flag_dat_prop;
