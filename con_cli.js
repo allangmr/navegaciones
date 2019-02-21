@@ -1,6 +1,7 @@
 var g_modulo="Módulo de Atención al Cliente";
 var g_tit = "Consulta de Clientes";
 var $grid;
+var $grid_selector_deuda;
 var $grid_eve;
 var $grid_fac;
 var $grid_madre;
@@ -10,12 +11,15 @@ var $grid_pag;
 var $grid_cor;
 var $grid_aju;
 var $grid_busq;
+var $grid_deudatotal;
+var $gridCorte;
 var opcion;
 var flag_dat_tec =  false;;
 var flag_dat_sum;
 var flag_dat_prop;
 var flag_fac_cont;
 var flag_med_prop;
+var flag_deuda_prop;
 
 $(document).ready(function() {
 
@@ -158,6 +162,23 @@ $(document).ready(function() {
         }
         else{
             $("#div_medidor").load("div_dat_medidor.htm",fn_med_ver);
+        }
+        
+            
+    });
+
+    $("#btn_deuda").click(function(e){
+        e.preventDefault();
+
+        if(!flag_deuda_prop)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_deuda").load("div_dat_deuda.htm",fn_deuda_ver);
+            flag_deuda_prop= true;
+            console.log("Deuda Tag Cargado");
+        }
+        else{
+            $("#div_deuda").load("div_dat_deuda.htm",fn_deuda_ver);
         }
         
             
@@ -696,8 +717,124 @@ function fn_setea_grid_busq()
     
 
 }
+
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grilla1(){
 	
-//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj0 = {
+            width:'100%',
+            height:250,
+            rowBorders: true,
+            editable: false,
+            pageModel: {type:"local", rPP: 500, rPPOptions: [10, 20, 50, 100]},
+            colModel:
+            [
+                { title: "Descripci&#243;n", width: "53%", align: "center", dataIndx:"C3"},
+                { title: "Convenido", width: "23%", align: "center", dataIndx:"C2"},
+                { title: "Monto", width: "23%", align: "center", dataIndx:"C4"}
+            ],
+            selectionModel: { type: 'row',mode:'single'},
+            filterModel: { on: true, mode: "OR" },
+            toolbar: {
+                cls: 'pq-toolbar-export',
+                items: [
+                    { type: 'button', label: '&#218;lt. Deuda H2O', icon: 'ui-icon-document', attr:'title=Nuevo&nbsp;Documento' },
+                    { type: 'button', label: 'Estado de Cuenta', icon: 'ui-icon-clipboard', attr:'title=Nuevo&nbsp;Documento' },				
+                    { type: 'button', label: 'Exportar Excel', icon: 'ui-icon-disk' },
+                    { type: 'button', label: 'Cerrar', icon: 'ui-icon-power', attr:'title=Cerrar&nbsp;Ventana'}
+                ]
+            }
+        };
+        
+        $grid_deudatotal =$("#grid_deudatotal").pqGrid(obj0);
+        $grid_deudatotal.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_deudatotal.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_deudatotal" ).pqGrid( "option", "showBottom", false );
+            
+        
+    }
+    
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
+function fn_Setea_Grilla2(){
+	
+    var obj = {
+        width:'100%',
+		height:200,
+		rowBorders:true,
+        editable: false,
+		pageModel: {type:"local", rPP: 500, rPPOptions: [10, 20, 50, 100]},
+        colModel:
+        [
+            { title: "Solicitud", width: 130, align: "left", dataIndx:"C1"},
+            { title: "Generaci&#243;n", width: 130, align: "left", dataIndx:"C2"},
+			{ title: "Ejecuci&#243;n", width: 130, align: "left", dataIndx:"C3"},
+			{ title: "Cierre", width: 130, align: "left", dataIndx:"C4"},
+            { title: "Evento", width: 120, align: "left", dataIndx:"C5"},
+            { title: "Motivo", width: 120, dataIndx:"C6"},
+            { title: "Instancia", width: 150, align: "left", dataIndx:"C7"},
+			{ title: "Sit. Encontrada", width: 150, align: "left", dataIndx:"C8"},
+			{ title: "Acci&#243;n Realizada", width: 170, align: "center", dataIndx:"C9"},
+            { title: "Fun", width: 100, align: "left", dataIndx:"C10"},
+            { title: "Corte &#201;xito", width: 100, dataIndx:"C11"},
+            { title: "Ejecutor", width: 100, align: "left", dataIndx:"C12" },
+			{ title: "Nombre Ejecutor", width: 150, align: "left", dataIndx:"C13"},
+			{ title: "Lectura", width: 100, align: "center", dataIndx:"C14"},
+            { title: "Sello Inst.", width: 100, align: "center", dataIndx:"C15"},
+            { title: "Sello Ret.", width: 100, align: "center", dataIndx:"C16"}
+        ],
+        dataModel: {
+			paging: "local",
+            location: "local",
+            sorting: "local",
+            sortDir: "up"
+        },
+        selectionModel: { type: 'row',mode:'single'},
+    };
+	
+	$gridCorte =$("#grid_corte").pqGrid(obj);
+	$gridCorte.pqGrid( "option", "scrollModel", {horizontal: true} );
+	$gridCorte.pqGrid( "expand" );
+	$( "#grid_corte" ).pqGrid( "option", "showBottom", false );
+		
+	
+}
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+
+function fn_setea_grilla3(){
+	
+    var obj2 = {
+        width:'100%',
+		height:270,
+		rowBorders:true,
+        editable: false,
+		pageModel: {type:"local", rPP: 500, rPPOptions: [100, 200, 500]},
+        colModel:
+        [           
+            { title: "Código", width: 0, dataIndx:"C1",hidden: true},
+            { title: "Descripción", width: "40%", align: "left", dataIndx:"C3" },
+			{ title: "Monto", width: "11%", align: "right", dataIndx:"C4"},
+			{ title: "Fecha", width: "11%", align: "center", dataIndx:"C5"},
+            { title: "Periodo", width: "11%", align: "center", dataIndx:"C6"},
+            { title: "Convenido", width: "11%", align: "center", dataIndx:"C7"}
+        ],
+        dataModel: {
+			paging: "local",
+            location: "local",
+            sorting: "local",
+            sortDir: "up"
+        },
+        selectionModel: { type: 'row',mode:'single'},
+    };
+	
+	
+	$grid_selector_deuda = $("#grid_selection_checkbox").pqGrid(obj2);
+	
+	$grid_selector_deuda.pqGrid( "option", "scrollModel", {horizontal: true} );
+}
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
+
 function fn_modal_ver()	
 {	
        	
@@ -707,9 +844,16 @@ function fn_modal_ver()
    $("#frm_busq").show();	
    $("#div_abastece").show();	
    $("#div_propietario").hide();
+   $("#div_deuda").hide();
    $("#div_suministro").hide();
 
        	
+}
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+function CerrarWin()
+{
+	window.close();
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
@@ -722,6 +866,7 @@ function fn_sum_ver()
    $("#frm_busq").show();	
    $("#div_suministro").show();	
    $("#div_propietario").hide();
+   $("#div_deuda").hide();
    $("#div_abastece").hide();
 
 
@@ -742,6 +887,7 @@ function fn_prop_ver()
    $("#frm_busq").show();	
    $("#div_propietario").show();	
    $("#div_suministro").hide();
+   $("#div_deuda").hide();
    $("#div_abastece").hide();
 
        	
@@ -758,6 +904,7 @@ function fn_fac_cont()
     $("#div_propietario").hide();
     $("#div_fact_cont").show();	
     $("#div_suministro").hide();
+    $("#div_deuda").hide();
     $("#div_abastece").hide();
 
 }
@@ -771,9 +918,29 @@ function fn_med_ver()
    $("#div_propietario").hide();	
    $("#div_suministro").hide();
    $("#div_abastece").hide();
+   $("#div_deuda").hide();
    $("#div_medidor").show();	
 
        	
+}
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_deuda_ver()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_busq").show();	
+   $("#div_suministro").hide();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
+   $("#div_deuda").show();
+   fn_setea_grilla1();
+   fn_Setea_Grilla2();
+   fn_setea_grilla3();
+   
+ 	
 }
 
 

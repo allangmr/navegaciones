@@ -42,9 +42,6 @@ h1, h2{
     height: 33px;
 
 }
-.padding-principal-group{
-
-}
 
 .input-group-addon:first-child + .input-group-addon:last-child {
     border-left: 1px solid #ccc;
