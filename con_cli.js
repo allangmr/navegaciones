@@ -31,6 +31,8 @@ $(document).ready(function() {
     fn_setea_grid_cor();
     fn_setea_grid_aju();
     // SE RECARGAN LOS GRIDS AL SELECCIONAR EL TAB CORRESPONDIENTE
+    $ .fn.bootstrapBtn = $ .fn.button.noConflict ();
+    $ .fn.bootstrapTooltip = $ .fn.tooltip.noConflict ();           
     $(".nav-tabs a").on("shown.bs.tab", function(event){
 
         var x = $(event.target).prop("href");  // tab activada
