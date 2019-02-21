@@ -296,6 +296,7 @@ function fn_hide_buscar()
     $("#div_suministro").hide();
     $("#div_propietario").hide();
     $("#div_fact_cont").hide();
+    $("#div_deuda").hide();
     $("#div_medidor").hide();
     $("#frm_leer").show();
     $("#nav_ul_opc").show();
@@ -729,6 +730,7 @@ function fn_setea_grilla1(){
             rowBorders: true,
             editable: false,
             pageModel: {type:"local", rPP: 500, rPPOptions: [10, 20, 50, 100]},
+            scrollModel:{theme:true},
             colModel:
             [
                 { title: "Descripci&#243;n", width: "53%", align: "center", dataIndx:"C3"},
@@ -740,10 +742,10 @@ function fn_setea_grilla1(){
             toolbar: {
                 cls: 'pq-toolbar-export',
                 items: [
-                    { type: 'button', label: '&#218;lt. Deuda H2O', icon: 'ui-icon-document', attr:'title=Nuevo&nbsp;Documento' },
-                    { type: 'button', label: 'Estado de Cuenta', icon: 'ui-icon-clipboard', attr:'title=Nuevo&nbsp;Documento' },				
-                    { type: 'button', label: 'Exportar Excel', icon: 'ui-icon-disk' },
-                    { type: 'button', label: 'Cerrar', icon: 'ui-icon-power', attr:'title=Cerrar&nbsp;Ventana'}
+                    { type: 'button', label: '&#218;lt. Deuda H2O', icon: 'ui-icon-document', attr:'title=Nuevo&nbsp;Documento', cls:"btn btn-primary" },
+                    { type: 'button', label: 'Estado de Cuenta', icon: 'ui-icon-clipboard', attr:'title=Nuevo&nbsp;Documento', cls:"btn btn-primary" },				
+                    { type: "button", label: " Exportar Excel", attr:"id=co_excel_eve", cls:"btn btn-primary"},
+                    { type: 'button', label: 'Cerrar', icon: 'ui-icon-power', attr:'title=Cerrar&nbsp;Ventana', cls:"btn btn-secondary"}
                 ]
             }
         };
