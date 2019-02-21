@@ -11,8 +11,7 @@ var $grid_cor;
 var $grid_aju;
 var $grid_busq;
 var opcion;
-var opcion2;
-var flag_dat_tec;
+var flag_dat_tec =  false;;
 var flag_dat_sum;
 var flag_dat_prop;
 var flag_fac_cont;
@@ -27,7 +26,6 @@ $(document).ready(function() {
     fn_setea_grid_pag();
     fn_setea_grid_cor();
     fn_setea_grid_aju();
-    flag_dat_tec = false;
     // SE RECARGAN LOS GRIDS AL SELECCIONAR EL TAB CORRESPONDIENTE
     $(".nav-tabs a").on("shown.bs.tab", function(event){
 
