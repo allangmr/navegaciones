@@ -12,6 +12,7 @@ var $grid_cor;
 var $grid_aju;
 var $grid_busq;
 var $grid_deudatotal;
+var $grid_audi_mod;
 var $gridCorte;
 var opcion;
 var flag_dat_tec =  false;;
@@ -782,7 +783,50 @@ function fn_setea_grilla1(){
             
         
     }
-    
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grillaaudimod(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj0 = {
+            width:'100%',
+            height:250,
+            title: "Auditoria de Modificaciones -  Cuenta # - USUARIO",
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Descripci&#243;n", width: "53%", align: "center", dataIndx:"C3"},
+                { title: "Convenido", width: "23%", align: "center", dataIndx:"C2"},
+                { title: "Monto", width: "23%", align: "center", dataIndx:"C4"}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'},
+            filterModel: { on: true, mode: "OR" },
+            toolbar: {
+                cls: 'pq-toolbar-export',
+                items: [
+                    { type: 'button', attr:'id=co_deuda', cls:"btn btn-primary" },
+                    { type: 'button', attr:'id=co_estado', cls:"btn btn-primary" },				
+                    { type: "button",attr:'id=co_excel', cls:"btn btn-primary"},
+                    { type: 'button',attr:'id=co_cerrar',   cls:"btn btn-secondary"}
+                ]
+            }
+        };
+        
+        $grid_audi_mod =$("#grid_audi_mod").pqGrid(obj0);
+        $grid_audi_mod.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_audi_mod.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_audi_mod" ).pqGrid( "option", "showBottom", false );
+            
+        
+    }
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 function fn_Setea_Grilla2(){
 	
@@ -1002,5 +1046,5 @@ function fn_audi_mod_ver()
    $("#div_abastece").hide();
    $("#div_deuda").hide();
    $("#div_audi_mod").show();
-   
+   fn_setea_grillaaudimod();
 }
