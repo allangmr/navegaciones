@@ -737,6 +737,12 @@ function fn_setea_grilla1(){
                 { title: "Convenido", width: "23%", align: "center", dataIndx:"C2"},
                 { title: "Monto", width: "23%", align: "center", dataIndx:"C4"}
             ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
             collapsible: false,
             selectionModel: { type: 'row',mode:'single'},
             filterModel: { on: true, mode: "OR" },
@@ -787,6 +793,12 @@ function fn_Setea_Grilla2(){
             { title: "Sello Inst.", width: 100, align: "center", dataIndx:"C15"},
             { title: "Sello Ret.", width: 100, align: "center", dataIndx:"C16"}
         ],
+        dataModel: {
+			paging: "local",
+            location: "local",
+            sorting: "local",
+            sortDir: "up"
+        },
         collapsible: false,
         selectionModel: { type: 'row',mode:'single'},
     };
@@ -800,7 +812,7 @@ function fn_Setea_Grilla2(){
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
 
 function fn_setea_grilla3(){
-	
+    
     var obj2 = {
         width:'100%',
         height:270,
@@ -809,13 +821,19 @@ function fn_setea_grilla3(){
         editable: false,
         colModel:
         [           
-            { title: "Código", width: 0, dataIndx:"C1",hidden: true},
+            { title: "Código", width: 0, dataIndx:"rank",hidden: true},
             { title: "Descripción", width: "40%", align: "left", dataIndx:"C3" },
 			{ title: "Monto", width: "11%", align: "right", dataIndx:"C4"},
 			{ title: "Fecha", width: "11%", align: "center", dataIndx:"C5"},
             { title: "Periodo", width: "11%", align: "center", dataIndx:"C6"},
             { title: "Convenido", width: "11%", align: "center", dataIndx:"C7"}
         ],
+        dataModel: {
+			paging: "local",
+            location: "local",
+            sorting: "local",
+            sortDir: "up"
+        },
         collapsible: false,
         selectionModel: { type: 'row',mode:'single'},
     };
