@@ -20,7 +20,7 @@ var flag_dat_prop;
 var flag_fac_cont;
 var flag_med_prop;
 var flag_deuda_prop;
-var flag_audi_mod;
+var flag_audi_mod = false;
 
 $(document).ready(function() {
 
@@ -192,11 +192,11 @@ $(document).ready(function() {
         {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_audi_mod").load("div_audi_mod.htm",fn_audi_mod_ver);
-            flag_audi_mod= true;
+            flag_audi_mod = true;
             console.log("Deuda Tag Cargado");
         }
         else{
-            $("#div_audi_mod").load("div_audi_mod",fn_audi_mod_ver);
+            $("#div_audi_mod").load("div_audi_mod.htm",fn_audi_mod_ver);
         }
         
             
