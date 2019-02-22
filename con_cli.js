@@ -787,13 +787,13 @@ function fn_Setea_Grilla2(){
             { title: "Sello Inst.", width: 100, align: "center", dataIndx:"C15"},
             { title: "Sello Ret.", width: 100, align: "center", dataIndx:"C16"}
         ],
+        collapsible: false,
         selectionModel: { type: 'row',mode:'single'},
     };
 	
-	$gridCorte =$("#grid_corte").pqGrid(obj);
-	$gridCorte.pqGrid( "option", "scrollModel", {horizontal: true} );
-	$gridCorte.pqGrid( "expand" );
-	$( "#grid_corte" ).pqGrid( "option", "showBottom", false );
+    $gridCorte =$("#grid_corte").pqGrid(obj);
+    $gridCorte.pqGrid( "option", "scrollModel", {horizontal: true} );
+
 		
 	
 }
