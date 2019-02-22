@@ -20,6 +20,7 @@ var flag_dat_prop;
 var flag_fac_cont;
 var flag_med_prop;
 var flag_deuda_prop;
+var flag_audi_mod;
 
 $(document).ready(function() {
 
@@ -183,6 +184,23 @@ $(document).ready(function() {
         
             
     });
+
+    $("#btn_audi_mod").click(function(e){
+        e.preventDefault();
+
+        if(!flag_audi_mod)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_audi_mod").load("div_audi_mod.htm",fn_audi_mod_ver);
+            flag_audi_mod= true;
+            console.log("Deuda Tag Cargado");
+        }
+        else{
+            $("#div_audi_mod").load("div_audi_mod",fn_audi_mod_ver);
+        }
+        
+            
+    });
     
         $("#btn_fact_cont").click(function(e){
             e.preventDefault();
@@ -190,12 +208,12 @@ $(document).ready(function() {
             if(!flag_fac_cont)
             {
                 // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                $("#div_fact_cont").load("div_dat_fact.htm",fn_fac_cont);
+                $("#div_fact_cont").load("div_fact_cont.htm",fn_fac_cont);
                 flag_fac_cont= true;
                 console.log("Aqui");
             }
             else{
-                $("#div_fact_cont").load("div_dat_fact.htm",fn_fac_cont);
+                $("#div_fact_cont").load("div_fact_cont.htm",fn_fac_cont);
             }
             
                 
@@ -341,6 +359,7 @@ function fn_setea_grid_madre()
             editable:false,
             selectionModel: { type: 'row',mode:'single'},
             numberCell: { show: true },
+            pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
             scrollModel:{theme:true},   
         };
             
@@ -840,11 +859,11 @@ function fn_setea_grilla3(){
             cls: 'pq-toolbar-export',
             items: [
 				{ type: "<span style='margin:5px;'>Buscar   :</span>" },
-                { type: 'select', style: "margin:0px 5px;", cls: "filterCondition",
+                { type: "select", style: "margin:0px 5px;", cls: "filterCondition",
                     options: [
-						{'*** TODOS ***':'*** TODOS ***'},
-						{'1':'IDAAN'},
-						{'2':'ASEO'}						
+						{"*** TODOS ***":"*** TODOS ***"},
+						{"1":"IDAAN"},
+						{"2":"ASEO"}						
                     ]
                 }
             ]
@@ -970,3 +989,18 @@ function fn_deuda_ver()
 }
 
 
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_audi_mod_ver()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_busq").show();	
+   $("#div_suministro").hide();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
+   $("#div_deuda").hide();
+   $("#div_audi_mod").show();
+   
+}
