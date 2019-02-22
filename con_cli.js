@@ -228,12 +228,12 @@ $(document).ready(function() {
             if(!flag_fac_cont)
             {
                 // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                $("#div_fact_cont").load("div_fact_cont.htm",fn_fac_cont);
+                $("#div_fact_cont").load("div_dat_fac.htm",fn_fac_cont);
                 flag_fac_cont= true;
                 console.log("Aqui");
             }
             else{
-                $("#div_fact_cont").load("div_fact_cont.htm",fn_fac_cont);
+                $("#div_fact_cont").load("div_dat_fac.htm",fn_fac_cont);
             }
             
                 
