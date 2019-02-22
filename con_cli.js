@@ -842,8 +842,7 @@ function fn_setea_grillaaudimod(){
                             {"4":"CAMBIO EN EL CICLO"}
                         ]
                     },		
-                    { type: "button",attr:'id=co_excel_audi', cls:"btn btn-primary"},                
-                    { type: 'button',attr:'id=co_cerrar_audi',   cls:"btn btn-secondary"}
+                    { type: "button",attr:'id=co_excel_audi', cls:"btn btn-primary"}
                 ]
             }
         };
@@ -1152,5 +1151,4 @@ function fn_audi_mod_ver()
    $("#div_audi_mod").show();
    fn_setea_grillaaudimod();
    $("#co_excel_audi").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
-   $("#co_cerrar_audi").html("<span class='glyphicon glyphicon-off'></span> Volver");
 }
