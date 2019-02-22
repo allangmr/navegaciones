@@ -814,9 +814,12 @@ function fn_setea_grillaaudimod(){
             scrollModel:{theme:true},
             colModel:
             [
-                { title: "Descripci&#243;n", width: "53%", align: "center", dataIndx:"C3"},
-                { title: "Convenido", width: "23%", align: "center", dataIndx:"C2"},
-                { title: "Monto", width: "23%", align: "center", dataIndx:"C4"}
+                { title: "Funcionario", width: "53%", align: "center", dataIndx:"C1"},
+                { title: "Fecha", width: "23%", align: "center", dataIndx:"C2"},
+                { title: "Tipo", width: "23%", align: "center", dataIndx:"C3"},
+                { title: "Dato Anterior", width: "23%", align: "center", dataIndx:"C4"},
+                { title: "Dato Actual", width: "23%", align: "center", dataIndx:"C5"},
+                { title: "Observación", width: "23%", align: "center", dataIndx:"C6"}
             ],
             dataModel: {
                 paging: "local",
@@ -830,10 +833,17 @@ function fn_setea_grillaaudimod(){
             toolbar: {
                 cls: 'pq-toolbar-export',
                 items: [
-                    { type: 'button', attr:'id=co_deuda', cls:"btn btn-primary" },
-                    { type: 'button', attr:'id=co_estado', cls:"btn btn-primary" },				
-                    { type: "button",attr:'id=co_excel', cls:"btn btn-primary"},
-                    { type: 'button',attr:'id=co_cerrar',   cls:"btn btn-secondary"}
+                        { type: "select", style: "margin:0px 5px;", cls: "filterCondition",
+                        options: [
+                            {"*** TODOS ***":"*** TODOS ***"},
+                            {"1":"APARTAMENTO"},
+                            {"2":"BARRIO"},
+                            {"3":"CALLE SUMINISTRO"},
+                            {"4":"CAMBIO EN EL CICLO"}
+                        ]
+                    },		
+                    { type: "button",attr:'id=co_excel_audi', cls:"btn btn-primary"},                
+                    { type: 'button',attr:'id=co_cerrar_audi',   cls:"btn btn-secondary"}
                 ]
             }
         };
@@ -1141,4 +1151,6 @@ function fn_audi_mod_ver()
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").show();
    fn_setea_grillaaudimod();
+   $("#co_excel_audi").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   $("#co_cerrar_audi").html("<span class='glyphicon glyphicon-off'></span> Volver");
 }
