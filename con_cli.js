@@ -30,9 +30,7 @@ $(document).ready(function() {
     fn_setea_grid_pag();
     fn_setea_grid_cor();
     fn_setea_grid_aju();
-    // SE RECARGAN LOS GRIDS AL SELECCIONAR EL TAB CORRESPONDIENTE
-    $ .fn.bootstrapBtn = $ .fn.button.noConflict ();
-    $ .fn.bootstrapTooltip = $ .fn.tooltip.noConflict ();           
+    // SE RECARGAN LOS GRIDS AL SELECCIONAR EL TAB CORRESPONDIENTE         
     $(".nav-tabs a").on("shown.bs.tab", function(event){
 
         var x = $(event.target).prop("href");  // tab activada
@@ -729,9 +727,9 @@ function fn_setea_grilla1(){
         var obj0 = {
             width:'100%',
             height:250,
+            title: "Resumen de la Deuda por Cargo -  Cuenta # - USUARIO",
             rowBorders: true,
             editable: false,
-            pageModel: {type:"local", rPP: 500, rPPOptions: [10, 20, 50, 100]},
             scrollModel:{theme:true},
             colModel:
             [
@@ -739,15 +737,16 @@ function fn_setea_grilla1(){
                 { title: "Convenido", width: "23%", align: "center", dataIndx:"C2"},
                 { title: "Monto", width: "23%", align: "center", dataIndx:"C4"}
             ],
+            collapsible: false,
             selectionModel: { type: 'row',mode:'single'},
             filterModel: { on: true, mode: "OR" },
             toolbar: {
                 cls: 'pq-toolbar-export',
                 items: [
-                    { type: 'button', label: '&#218;lt. Deuda H2O', icon: 'ui-icon-document', attr:'title=Nuevo&nbsp;Documento', cls:"btn btn-primary" },
-                    { type: 'button', label: 'Estado de Cuenta', icon: 'ui-icon-clipboard', attr:'title=Nuevo&nbsp;Documento', cls:"btn btn-primary" },				
-                    { type: "button", label: " Exportar Excel", attr:"id=co_excel_eve", cls:"btn btn-primary"},
-                    { type: 'button', label: 'Cerrar', icon: 'ui-icon-power', attr:'title=Cerrar&nbsp;Ventana', cls:"btn btn-secondary"}
+                    { type: 'button', attr:'id=co_deuda', cls:"btn btn-primary" },
+                    { type: 'button', attr:'id=co_estado', cls:"btn btn-primary" },				
+                    { type: "button",attr:'id=co_excel', cls:"btn btn-primary"},
+                    { type: 'button',attr:'id=co_cerrar',   cls:"btn btn-secondary"}
                 ]
             }
         };
@@ -766,9 +765,9 @@ function fn_Setea_Grilla2(){
     var obj = {
         width:'100%',
 		height:200,
-		rowBorders:true,
+        rowBorders:true,
+        title:"Corte y Reposición",
         editable: false,
-		pageModel: {type:"local", rPP: 500, rPPOptions: [10, 20, 50, 100]},
         colModel:
         [
             { title: "Solicitud", width: 130, align: "left", dataIndx:"C1"},
@@ -788,12 +787,6 @@ function fn_Setea_Grilla2(){
             { title: "Sello Inst.", width: 100, align: "center", dataIndx:"C15"},
             { title: "Sello Ret.", width: 100, align: "center", dataIndx:"C16"}
         ],
-        dataModel: {
-			paging: "local",
-            location: "local",
-            sorting: "local",
-            sortDir: "up"
-        },
         selectionModel: { type: 'row',mode:'single'},
     };
 	
@@ -810,10 +803,10 @@ function fn_setea_grilla3(){
 	
     var obj2 = {
         width:'100%',
-		height:270,
+        height:270,
+        title:"Detalle de la Deuda por Cargo",
 		rowBorders:true,
         editable: false,
-		pageModel: {type:"local", rPP: 500, rPPOptions: [100, 200, 500]},
         colModel:
         [           
             { title: "Código", width: 0, dataIndx:"C1",hidden: true},
@@ -823,12 +816,7 @@ function fn_setea_grilla3(){
             { title: "Periodo", width: "11%", align: "center", dataIndx:"C6"},
             { title: "Convenido", width: "11%", align: "center", dataIndx:"C7"}
         ],
-        dataModel: {
-			paging: "local",
-            location: "local",
-            sorting: "local",
-            sortDir: "up"
-        },
+        collapsible: false,
         selectionModel: { type: 'row',mode:'single'},
     };
 	
@@ -943,7 +931,10 @@ function fn_deuda_ver()
    fn_setea_grilla1();
    fn_Setea_Grilla2();
    fn_setea_grilla3();
-   
+   $("#co_deuda").html("<span class='glyphicon glyphicon-file'></span>&#218;lt. Deuda H2O ");
+   $("#co_estado").html("<span class='glyphicon glyphicon-duplicate'></span> Estado de Cuenta"); 
+   $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   $("#co_cerrar").html("<span class='glyphicon glyphicon-off'></span> Cerrar&nbsp;Ventana");
  	
 }
 
