@@ -17,12 +17,13 @@ var $gridCorte;
 var opcion;
 var grid_historico_medidores;
 var flag_dat_tec =  false;
-var flag_dat_sum;
-var flag_dat_prop;
-var flag_fac_cont;
-var flag_med_prop;
-var flag_deuda_prop;
+var flag_dat_sum = false;
+var flag_dat_prop = false;
+var flag_fac_cont = false;
+var flag_med_prop = false;
+var flag_deuda_prop = false;
 var flag_audi_mod = false;
+var flag_hist_med_prop = false;
 
 $(document).ready(function() {
 
@@ -173,11 +174,11 @@ $(document).ready(function() {
     $("#btn_historico_medidores").click(function(e){
         e.preventDefault();
 
-        if(!flag_med_prop)
+        if(!flag_hist_med_prop)
         {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_historico_medidores").load("div_dat_historico_medidores.htm",fn_historico_medidores_ver);
-            flag_med_prop= true;
+            flag_hist_med_prop= true;
             console.log("Historico Medidores Tag Cargado");
         }
         else{
@@ -1006,7 +1007,7 @@ function fn_modal_ver()
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
-   $("#frm_busq").show();	
+   $("#frm_volver").show();	
    $("#div_abastece").show();	
    $("#div_propietario").hide();
    $("#div_deuda").hide();
@@ -1024,7 +1025,7 @@ function fn_sum_ver()
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
-   $("#frm_busq").show();	
+   $("#frm_volver").show();
    $("#div_suministro").show();	
    $("#div_propietario").hide();
    $("#div_deuda").hide();
@@ -1046,7 +1047,7 @@ function fn_prop_ver()
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
-   $("#frm_busq").show();	
+   $("#frm_volver").show();	
    $("#div_propietario").show();	
    $("#div_suministro").hide();
    $("#div_deuda").hide();
@@ -1063,7 +1064,7 @@ function fn_fac_cont()
     $("#frm_leer").hide();	
     $("#nav_ul_opc").hide();	
     $("#div_prin").hide("blind");
-    $("#frm_busq").show();
+    $("#frm_volver").show();
     $("#div_propietario").hide();
     $("#div_fact_cont").show();	
     $("#div_suministro").hide();
@@ -1078,7 +1079,7 @@ function fn_med_ver()
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
-   $("#frm_busq").show();	
+   $("#frm_volver").show();
    $("#div_propietario").hide();	
    $("#div_suministro").hide();
    $("#div_abastece").hide();
@@ -1096,7 +1097,7 @@ function fn_deuda_ver()
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
-   $("#frm_busq").show();	
+   $("#frm_volver").show();
    $("#div_suministro").hide();	
    $("#div_propietario").hide();
    $("#div_abastece").hide();
@@ -1117,7 +1118,7 @@ function fn_historico_medidores_ver()
     $("#frm_leer").hide();	
     $("#nav_ul_opc").hide();	
     $("#div_prin").hide("blind");	
-    $("#frm_busq").show();	
+    $("#frm_volver").show();	
     $("#div_suministro").hide();	
     $("#div_propietario").hide();
     $("#div_abastece").hide();
@@ -1133,7 +1134,7 @@ function fn_audi_mod_ver()
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
-   $("#frm_busq").show();	
+   $("#frm_volver").show();
    $("#div_suministro").hide();	
    $("#div_propietario").hide();
    $("#div_abastece").hide();
