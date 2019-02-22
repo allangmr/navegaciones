@@ -788,8 +788,7 @@ function fn_setea_grill_resumen_deuda(){
                 items: [
                     { type: 'button', attr:'id=co_deuda', cls:"btn btn-primary" },
                     { type: 'button', attr:'id=co_estado', cls:"btn btn-primary" },				
-                    { type: "button",attr:'id=co_excel', cls:"btn btn-primary"},
-                    { type: 'button',attr:'id=co_cerrar',   cls:"btn btn-secondary"}
+                    { type: "button",attr:'id=co_excel', cls:"btn btn-primary"}
                 ]
             }
         };
@@ -842,8 +841,7 @@ function fn_setea_grillaaudimod(){
                             {"4":"CAMBIO EN EL CICLO"}
                         ]
                     },		
-                    { type: "button",attr:'id=co_excel_audi', cls:"btn btn-primary"},                
-                    { type: 'button',attr:'id=co_cerrar_audi',   cls:"btn btn-secondary"}
+                    { type: "button",attr:'id=co_excel_audi', cls:"btn btn-primary"}
                 ]
             }
         };
@@ -987,8 +985,7 @@ function fn_setea_grilla_historico_medidores(){
             toolbar: {
                 cls: 'pq-toolbar-export',
                 items: [			
-                    { type: "button",attr:'id=co_excel', cls:"btn btn-primary"},
-                    { type: 'button',attr:'id=co_cerrar',   cls:"btn btn-secondary"}
+                    { type: "button",attr:'id=co_excel', cls:"btn btn-primary"}
                 ]
             }
         };
@@ -1019,11 +1016,6 @@ function fn_modal_ver()
        	
 }
 
-//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
-function CerrarWin()
-{
-	window.close();
-}
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
 function fn_sum_ver()	
@@ -1116,7 +1108,6 @@ function fn_deuda_ver()
    $("#co_deuda").html("<span class='glyphicon glyphicon-file'></span>&#218;lt. Deuda H2O ");
    $("#co_estado").html("<span class='glyphicon glyphicon-duplicate'></span> Estado de Cuenta"); 
    $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
-   $("#co_cerrar").html("<span class='glyphicon glyphicon-off'></span> Cerrar&nbsp;Ventana");
  	
 }
 
@@ -1134,7 +1125,6 @@ function fn_historico_medidores_ver()
     $("#div_historico_medidores").show();
     fn_setea_grilla_historico_medidores()
     $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
-    $("#co_cerrar").html("<span class='glyphicon glyphicon-off'></span> Cerrar&nbsp;Ventana");
 }
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
 function fn_audi_mod_ver()	
@@ -1152,5 +1142,4 @@ function fn_audi_mod_ver()
    $("#div_audi_mod").show();
    fn_setea_grillaaudimod();
    $("#co_excel_audi").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
-   $("#co_cerrar_audi").html("<span class='glyphicon glyphicon-off'></span> Volver");
 }
