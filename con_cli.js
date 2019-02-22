@@ -14,7 +14,8 @@ var $grid_busq;
 var $grid_deudatotal;
 var $gridCorte;
 var opcion;
-var flag_dat_tec =  false;;
+var grid_historico_medidores;
+var flag_dat_tec =  false;
 var flag_dat_sum;
 var flag_dat_prop;
 var flag_fac_cont;
@@ -162,6 +163,23 @@ $(document).ready(function() {
         }
         else{
             $("#div_medidor").load("div_dat_medidor.htm",fn_med_ver);
+        }
+        
+            
+    });
+
+    $("#btn_historico_medidores").click(function(e){
+        e.preventDefault();
+
+        if(!flag_med_prop)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_historico_medidores").load("div_dat_historico_medidores.htm",fn_historico_medidores_ver);
+            flag_med_prop= true;
+            console.log("Historico Medidores Tag Cargado");
+        }
+        else{
+            $("#div_historico_medidores").load("div_dat_historico_medidores.htm",fn_historico_medidores_ver);
         }
         
             
@@ -720,7 +738,7 @@ function fn_setea_grid_busq()
 
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
-function fn_setea_grilla1(){
+function fn_setea_grill_resumen_deuda(){
 	
     /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
         var obj0 = {
@@ -765,7 +783,7 @@ function fn_setea_grilla1(){
     }
     
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
-function fn_Setea_Grilla2(){
+function fn_setea_grilla_corte_y_reposicion(){
 	
     var obj = {
         width:'100%',
@@ -810,7 +828,7 @@ function fn_Setea_Grilla2(){
 }
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
 
-function fn_setea_grilla3(){
+function fn_setea_grilla_deuda_por_cargo(){
     
     var obj2 = {
         width:'100%',
@@ -856,6 +874,60 @@ function fn_setea_grilla3(){
 	
 	$grid_selector_deuda.pqGrid( "option", "scrollModel", {horizontal: true} );
 }
+
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grilla_historico_medidores(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            width:'100%',
+            height:400,
+            title: "Histórico de medidores del suministro Nº 11",
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Nº Orden", width: 80, align: "center",dataIndx:"c1", editable: false},
+                { title: "Tipo Acción", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Fecha Terreno", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Fecha Registro", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "Medidor", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "Marca", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Modelo", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Diámetro", width: 80, align: "center" ,dataIndx:"c8", editable: false},
+                { title: "Tipo Medida", width: 140, align: "left" ,dataIndx:"c9", editable: false},
+                { title: "Constante", width: 80, align: "center" ,dataIndx:"c10", editable: false},
+                { title: "Enteros", width: 80, align: "center" ,dataIndx:"c11", editable: false},
+                { title: "Decimales", width: 80, align: "center" ,dataIndx:"c12", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'},
+            filterModel: { on: true, mode: "OR" },
+            toolbar: {
+                cls: 'pq-toolbar-export',
+                items: [			
+                    { type: "button",attr:'id=co_excel', cls:"btn btn-primary"},
+                    { type: 'button',attr:'id=co_cerrar',   cls:"btn btn-secondary"}
+                ]
+            }
+        };
+        
+        $grid_historico_medidores =$("#grid_historico_medidores").pqGrid(obj3);
+        $grid_historico_medidores.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_historico_medidores.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_historico_medidores" ).pqGrid( "option", "showBottom", false );
+            
+        
+    }
+
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 
 function fn_modal_ver()	
@@ -869,6 +941,7 @@ function fn_modal_ver()
    $("#div_propietario").hide();
    $("#div_deuda").hide();
    $("#div_suministro").hide();
+   $("#div_historico_medidores").hide();
 
        	
 }
@@ -891,6 +964,7 @@ function fn_sum_ver()
    $("#div_propietario").hide();
    $("#div_deuda").hide();
    $("#div_abastece").hide();
+   $("#div_historico_medidores").hide();
 
 
    if($contrato_madre>=1)
@@ -912,6 +986,7 @@ function fn_prop_ver()
    $("#div_suministro").hide();
    $("#div_deuda").hide();
    $("#div_abastece").hide();
+   $("#div_historico_medidores").hide();
 
        	
 }
@@ -929,6 +1004,7 @@ function fn_fac_cont()
     $("#div_suministro").hide();
     $("#div_deuda").hide();
     $("#div_abastece").hide();
+    $("#div_historico_medidores").hide();
 
 }
 function fn_med_ver()	
@@ -942,7 +1018,8 @@ function fn_med_ver()
    $("#div_suministro").hide();
    $("#div_abastece").hide();
    $("#div_deuda").hide();
-   $("#div_medidor").show();	
+   $("#div_medidor").show();
+   $("#div_historico_medidores").hide();	
 
        	
 }
@@ -959,9 +1036,10 @@ function fn_deuda_ver()
    $("#div_propietario").hide();
    $("#div_abastece").hide();
    $("#div_deuda").show();
-   fn_setea_grilla1();
-   fn_Setea_Grilla2();
-   fn_setea_grilla3();
+   $("#div_historico_medidores").hide();
+   fn_setea_grill_resumen_deuda();
+   fn_setea_grilla_corte_y_reposicion();
+   fn_setea_grilla_deuda_por_cargo();
    $("#co_deuda").html("<span class='glyphicon glyphicon-file'></span>&#218;lt. Deuda H2O ");
    $("#co_estado").html("<span class='glyphicon glyphicon-duplicate'></span> Estado de Cuenta"); 
    $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
@@ -970,3 +1048,20 @@ function fn_deuda_ver()
 }
 
 
+function fn_historico_medidores_ver()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_busq").show();	
+   $("#div_suministro").hide();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
+   $("#div_deuda").hide();
+   $("#div_historico_medidores").show();
+   fn_setea_grilla_historico_medidores()
+   $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   $("#co_cerrar").html("<span class='glyphicon glyphicon-off'></span> Cerrar&nbsp;Ventana");
+ 	
+}
