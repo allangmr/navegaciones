@@ -12,6 +12,7 @@ var $grid_cor;
 var $grid_aju;
 var $grid_busq;
 var $grid_deudatotal;
+var $grid_audi_mod;
 var $gridCorte;
 var opcion;
 var grid_historico_medidores;
@@ -800,7 +801,60 @@ function fn_setea_grill_resumen_deuda(){
             
         
     }
-    
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grillaaudimod(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj0 = {
+            width:'100%',
+            height:250,
+            title: "Auditoria de Modificaciones -  Cuenta # - USUARIO",
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Funcionario", width: "53%", align: "center", dataIndx:"C1"},
+                { title: "Fecha", width: "23%", align: "center", dataIndx:"C2"},
+                { title: "Tipo", width: "23%", align: "center", dataIndx:"C3"},
+                { title: "Dato Anterior", width: "23%", align: "center", dataIndx:"C4"},
+                { title: "Dato Actual", width: "23%", align: "center", dataIndx:"C5"},
+                { title: "Observación", width: "23%", align: "center", dataIndx:"C6"}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'},
+            filterModel: { on: true, mode: "OR" },
+            toolbar: {
+                cls: 'pq-toolbar-export',
+                items: [
+                        { type: "select", style: "margin:0px 5px;", cls: "filterCondition",
+                        options: [
+                            {"*** TODOS ***":"*** TODOS ***"},
+                            {"1":"APARTAMENTO"},
+                            {"2":"BARRIO"},
+                            {"3":"CALLE SUMINISTRO"},
+                            {"4":"CAMBIO EN EL CICLO"}
+                        ]
+                    },		
+                    { type: "button",attr:'id=co_excel_audi', cls:"btn btn-primary"},                
+                    { type: 'button',attr:'id=co_cerrar_audi',   cls:"btn btn-secondary"}
+                ]
+            }
+        };
+        
+        $grid_audi_mod =$("#grid_audi_mod").pqGrid(obj0);
+        $grid_audi_mod.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_audi_mod.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_audi_mod" ).pqGrid( "option", "showBottom", false );
+            
+        
+    }
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 function fn_setea_grilla_corte_y_reposicion(){
 	
@@ -1096,5 +1150,7 @@ function fn_audi_mod_ver()
    $("#div_deuda").hide();
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").show();
-   
+   fn_setea_grillaaudimod();
+   $("#co_excel_audi").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   $("#co_cerrar_audi").html("<span class='glyphicon glyphicon-off'></span> Volver");
 }
