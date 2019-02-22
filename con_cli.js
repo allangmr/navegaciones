@@ -836,6 +836,20 @@ function fn_setea_grilla3(){
         },
         collapsible: false,
         selectionModel: { type: 'row',mode:'single'},
+		filterModel: { mode: 'OR' },
+		toolbar: {
+            cls: 'pq-toolbar-export',
+            items: [
+				{ type: "<span style='margin:5px;'>Buscar   :</span>" },
+                { type: 'select', style: "margin:0px 5px;", cls: "filterCondition",
+                    options: [
+						{'*** TODOS ***':'*** TODOS ***'},
+						{'1':'IDAAN'},
+						{'2':'ASEO'}						
+                    ]
+                }
+            ]
+        }
     };
 	
 	
