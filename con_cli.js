@@ -235,8 +235,7 @@ $(document).ready(function() {
             else{
                 $("#div_fact_cont").load("div_dat_fac.htm",fn_fac_cont);
             }
-            
-                
+                            
         });
     var colM =
     [
