@@ -190,12 +190,12 @@ $(document).ready(function() {
             if(!flag_fac_cont)
             {
                 // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                $("#div_fact_cont").load("div_fact_cont.htm",fn_fac_cont);
+                $("#div_fact_cont").load("div_dat_fact.htm",fn_fac_cont);
                 flag_fac_cont= true;
                 console.log("Aqui");
             }
             else{
-                $("#div_fact_cont").load("div_fact_cont.htm",fn_fac_cont);
+                $("#div_fact_cont").load("div_dat_fact.htm",fn_fac_cont);
             }
             
                 
@@ -341,7 +341,6 @@ function fn_setea_grid_madre()
             editable:false,
             selectionModel: { type: 'row',mode:'single'},
             numberCell: { show: true },
-            pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
             scrollModel:{theme:true},   
         };
             
