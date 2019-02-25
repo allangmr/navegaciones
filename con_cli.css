@@ -31,7 +31,8 @@ h1, h2{
 }
 
 #estandar{
-    width: 65%;
+    width: 40%;
+    text-align: left;
 }
 
 .gr-con{
