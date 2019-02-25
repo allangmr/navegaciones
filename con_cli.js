@@ -951,7 +951,7 @@ function fn_setea_grilla_medidor_reg(){
 	
     /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
         var obj3 = {
-            showTop: false,
+            title:"Contador de Agua",
             width:'100%',
             height:200,
             rowBorders: true,
@@ -994,7 +994,7 @@ function fn_setea_grilla_cargo_fac(){
 	
     /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
         var obj3 = {
-            showTop: false,
+            title:"Conceptos por Facturar",
             width:'100%',
             height:200,
             rowBorders: true,
@@ -1002,7 +1002,7 @@ function fn_setea_grilla_cargo_fac(){
             scrollModel:{theme:true},
             colModel:
             [
-                { title: "Cargo Facturado", width: 400, align: "center",dataIndx:"c1", editable: false},
+                { title: "Descripción", width: 400, align: "center",dataIndx:"c1", editable: false},
                 { title: "Valor Facturado", width: 400, align: "left" ,dataIndx:"c2", editable: false}
             ],
             dataModel: {
