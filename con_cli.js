@@ -262,8 +262,7 @@ $(document).ready(function() {
    var obj =
 
    {
-	
-           showTop: false,
+            title:"Agrupaciones",
 	
            height: 100,
 	
