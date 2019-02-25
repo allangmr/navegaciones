@@ -264,7 +264,7 @@ $(document).ready(function() {
    {
             title:"Agrupaciones",
 	
-           height: 100,
+           height: 150,
 	
            showBottom: false,
 	
