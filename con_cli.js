@@ -111,7 +111,7 @@ $(document).ready(function() {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_abastece").load("div_dat_tec.htm",fn_modal_ver);
             flag_dat_tec = true;
-            console.log("Aca");
+            console.log("Tag Datos Tecnicos Cargado");
         }
         else{
             $("#div_abastece").load("div_dat_tec.htm",fn_modal_ver);
@@ -128,7 +128,7 @@ $(document).ready(function() {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
             flag_dat_sum = true;
-            console.log("Aqui");
+            console.log("Tag Datos de Suministro");
         }
         else{
             $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
