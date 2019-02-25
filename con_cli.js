@@ -953,7 +953,7 @@ function fn_setea_grilla_medidor_reg(){
         var obj3 = {
             showTop: false,
             width:'100%',
-            height:400,
+            height:200,
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
@@ -996,7 +996,7 @@ function fn_setea_grilla_cargo_fac(){
         var obj3 = {
             showTop: false,
             width:'100%',
-            height:400,
+            height:200,
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
