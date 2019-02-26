@@ -20,6 +20,7 @@ var $grid_historico_medidores;
 var $grid_concepto_facturar;
 var $grid_contrato_madre; 
 var $grid_historial_subsidio;
+var $grid_historial_aseo;
 var $gridCorte;
 var opcion;
 var flag_dat_tec =  false;
@@ -33,6 +34,7 @@ var flag_hist_med_prop = false;
 var flag_concepto_facturar = false;
 var flag_contrato_madre = false;
 var flag_historial_subsidio = false;
+var flag_historial_aseo = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -242,6 +244,23 @@ $(document).ready(function() {
         }
         else{
             $("#div_historico_medidores").load("div_dat_historico_medidores.htm",fn_historico_medidores_ver);
+        }
+        
+            
+    });
+
+    $("#btn_historial_aseo").click(function(e){
+        e.preventDefault();
+
+        if(!flag_historial_aseo)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_historial_aseo").load("div_dat_historial_aseo.htm",fn_historial_aseo);
+            flag_historial_aseo= true;
+            console.log("Historial Aseo Tag Cargado");
+        }
+        else{
+            $("#div_historial_aseo").load("div_dat_historial_aseo.htm",fn_historial_aseo);
         }
         
             
@@ -1282,6 +1301,55 @@ function fn_setea_contrato_madre(){
     }
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 
+function fn_setea_historial_aseo(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            width:'100%',
+            height:400,
+            title: "Historial de Movimientos de Aseo [Cliente: 697588 – TORRE GLOBAL BANK]",
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Empresa", width: 180, align: "center",dataIndx:"empresa", editable: false},
+                { title: "Fecha", width: 120, align: "left" ,dataIndx:"fecha", editable: false},
+                { title: "Tipo Mov.", width: 150, align: "center" ,dataIndx:"tipo_mov", editable: false},
+                { title: "Valor", width: 110, align: "left" ,dataIndx:"valor", editable: false},
+                { title: "Cantidad", width: 100, align: "left" ,dataIndx:"cantidad", editable: false},
+                { title: "Cargo", width: 120, align: "left" ,dataIndx:"cargo", editable: false},
+                { title: "Observacion", width: 280, align: "center" ,dataIndx:"observacion", editable: false},
+                { title: "Rol", width: 120, align: "left" ,dataIndx:"rol", editable: false},
+                { title: "Nombre", width: 240, align: "left" ,dataIndx:"nombre", editable: false},
+                { title: "Ip", width: 120, align: "center" ,dataIndx:"ip", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: { on : false,toggle:true },
+            selectionModel: { type: 'row',mode:'single'},
+            filterModel: { on: true, mode: "OR" },
+            toolbar: {
+                cls: 'pq-toolbar-export',
+                items: [			
+                    { type: "button",attr:'id=co_excel_historial_aseo', cls:"btn btn-primary"}
+                ]
+            }
+        };
+        
+        $grid_historial_aseo =$("#grid_historial_aseo").pqGrid(obj3);
+        $grid_historial_aseo.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_historial_aseo.pqGrid("option", "pageModel.type", {checked:false});
+        $("#grid_historial_aseo" ).pqGrid( "option", "showBottom", false );
+            
+        
+    }
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
+
 function fn_modal_ver()	
 {	
        	
@@ -1294,6 +1362,7 @@ function fn_modal_ver()
    $("#div_deuda").hide();
    $("#div_suministro").hide();
    $("#div_historico_medidores").hide();
+   $("#div_historial_aseo").hide();
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
    $("#div_historial_subsidio").hide();
@@ -1315,6 +1384,7 @@ function fn_sum_ver()
    $("#div_deuda").hide();
    $("#div_abastece").hide();
    $("#div_historico_medidores").hide();
+   $("#div_historial_aseo").hide();
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
    $("#div_historial_subsidio").hide();
@@ -1339,6 +1409,7 @@ function fn_prop_ver()
    $("#div_deuda").hide();
    $("#div_abastece").hide();
    $("#div_historico_medidores").hide();
+   $("#div_historial_aseo").hide();
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
    $("#div_historial_subsidio").hide();
@@ -1362,6 +1433,7 @@ function fn_fac_cont()
     $("#div_concepto_facturar").hide();
     $("#div_contrato_show").hide();
     $("#div_historial_subsidio").hide();
+    $("#div_historial_aseo").hide();
     fn_setea_grilla_medidor_reg();
     fn_setea_grilla_cargo_fac();
 }
@@ -1380,7 +1452,8 @@ function fn_med_ver()
    $("#div_abastece").hide();
    $("#div_deuda").hide();
    $("#div_medidor").show();
-   $("#div_historico_medidores").hide();	
+   $("#div_historico_medidores").hide();
+   $("#div_historial_aseo").hide();	
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
    $("#div_historial_subsidio").hide();
@@ -1404,6 +1477,7 @@ function fn_deuda_ver()
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
    $("#div_historial_subsidio").hide();
+   $("#div_historial_aseo").hide();
    fn_setea_grill_resumen_deuda();
    fn_setea_grilla_corte_y_reposicion();
    fn_setea_grilla_deuda_por_cargo();
@@ -1429,6 +1503,7 @@ function fn_historico_medidores_ver()
     $("#div_concepto_facturar").hide();
     $("#div_contrato_show").hide();
     $("#div_historial_subsidio").hide();
+    $("#div_historial_aseo").hide();
     fn_setea_grilla_historico_medidores();
     $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
@@ -1449,6 +1524,7 @@ function fn_audi_mod_ver()
    $("#div_audi_mod").show();
    $("#div_concepto_facturar").hide();
    $("#div_historial_subsidio").hide();
+   $("#div_historial_aseo").hide();
    $("#div_contrato_show").hide();
    fn_setea_grillaaudimod();
    $("#co_excel_audi").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
@@ -1470,6 +1546,7 @@ function fn_contrato_madre()
    $("#div_audi_mod").hide();
    $("#div_concepto_facturar").hide();
    $("#div_historial_subsidio").hide();
+   $("#div_historial_aseo").hide();
    $("#div_contrato_madre").show();
    fn_setea_contrato_madre();
    $("#co_excel_contrato_madre").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
@@ -1491,9 +1568,32 @@ function fn_historial_subsidio()
    $("#div_audi_mod").hide();
    $("#div_concepto_facturar").hide();
    $("#div_historial_subsidio").show();
-   $("#div_contrato_madre").show();
+   $("#div_historial_aseo").hide();
+   $("#div_contrato_madre").hide();
    fn_setea_historial_subsidio();
    $("#co_excel_historial_subsidio").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+}
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_historial_aseo()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_volver").show();
+   $("#div_suministro").hide();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
+   $("#div_deuda").hide();
+   $("#div_historico_medidores").hide();
+   $("#div_audi_mod").hide();
+   $("#div_concepto_facturar").hide();
+   $("#div_historial_subsidio").hide();
+   $("#div_historial_aseo").show();
+   $("#div_contrato_madre").hide();
+   fn_setea_historial_aseo();
+   $("#co_excel_historial_aseo").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
@@ -1511,6 +1611,7 @@ function fn_concepto_facturar()
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").hide();
    $("#div_concepto_facturar").show();
+   $("#div_historial_aseo").hide();
    $("#div_contrato_show").hide();
    fn_setea_concepto_facturar();
    $("#co_excel_concepto_facturar").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
