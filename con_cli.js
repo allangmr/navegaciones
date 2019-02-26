@@ -17,6 +17,7 @@ var $grid_cargo_fac;
 var $gridCorte;
 var opcion;
 var grid_historico_medidores;
+var grid_concepto_facturar;
 var flag_dat_tec =  false;
 var flag_dat_sum = false;
 var flag_dat_prop = false;
@@ -25,6 +26,7 @@ var flag_med_prop = false;
 var flag_deuda_prop = false;
 var flag_audi_mod = false;
 var flag_hist_med_prop = false;
+var flag_concepto_facturar = false;
 var $grid_medidor_reg;
 $(document).ready(function() {
 
@@ -102,6 +104,22 @@ $(document).ready(function() {
         fn_hide_buscar();
     });
 
+    $("#btn_concepto_facturar").click(function(e){
+        e.preventDefault();
+
+        if(!flag_concepto_facturar)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
+            flag_concepto_facturar = true;
+            console.log("Tag Datos Tecnicos Cargado");
+        }
+        else{
+            $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
+        }
+        
+        
+    });
 
 
     $("#btn_Dat_Tec").click(function(e){
@@ -1075,6 +1093,57 @@ function fn_setea_grilla_historico_medidores(){
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 
+function fn_setea_concepto_facturar(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            width:'100%',
+            height:400,
+            /*title: "Histórico de medidores del suministro Nº 11",*/
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Nº", width: 80, align: "center",dataIndx:"c1", editable: false},
+                { title: "Concepto", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Ingreso", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Cuotas", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "Valor Cuota", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "Valor Ult. Cuota", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Pend. Facturar", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Valor Total Inicial", width: 80, align: "center" ,dataIndx:"c8", editable: false},
+                { title: "Tipo Medida", width: 140, align: "left" ,dataIndx:"c9", editable: false},
+                { title: "Origen", width: 80, align: "center" ,dataIndx:"c10", editable: false},
+                { title: "Observacion", width: 80, align: "center" ,dataIndx:"c11", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'},
+            filterModel: { on: true, mode: "OR" },
+            toolbar: {
+                cls: 'pq-toolbar-export',
+                items: [			
+                    { type: "button",attr:'id=co_excel_concepto_facturar', cls:"btn btn-primary"}
+                ]
+            }
+        };
+        
+        $grid_concepto_facturar =$("#grid_concepto_facturar").pqGrid(obj3);
+        $grid_concepto_facturar.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_concepto_facturar.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_concepto_facturar" ).pqGrid( "option", "showBottom", false );
+            
+        
+    }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
+
 function fn_modal_ver()	
 {	
        	
@@ -1087,6 +1156,7 @@ function fn_modal_ver()
    $("#div_deuda").hide();
    $("#div_suministro").hide();
    $("#div_historico_medidores").hide();
+   $("#div_concepto_facturar").hide();
 
        	
 }
@@ -1105,6 +1175,7 @@ function fn_sum_ver()
    $("#div_deuda").hide();
    $("#div_abastece").hide();
    $("#div_historico_medidores").hide();
+   $("#div_concepto_facturar").hide();
 
 
    if($contrato_madre>=1)
@@ -1127,6 +1198,7 @@ function fn_prop_ver()
    $("#div_deuda").hide();
    $("#div_abastece").hide();
    $("#div_historico_medidores").hide();
+   $("#div_concepto_facturar").hide();
 
        	
 }
@@ -1144,6 +1216,7 @@ function fn_fac_cont()
     $("#div_deuda").hide();
     $("#div_abastece").hide();
     $("#div_historico_medidores").hide();
+    $("#div_concepto_facturar").hide();
     fn_setea_grilla_medidor_reg();
     fn_setea_grilla_cargo_fac();
 }
@@ -1160,6 +1233,7 @@ function fn_med_ver()
    $("#div_deuda").hide();
    $("#div_medidor").show();
    $("#div_historico_medidores").hide();	
+   $("#div_concepto_facturar").hide();
 
        	
 }
@@ -1177,6 +1251,7 @@ function fn_deuda_ver()
    $("#div_abastece").hide();
    $("#div_deuda").show();
    $("#div_historico_medidores").hide();
+   $("#div_concepto_facturar").hide();
    fn_setea_grill_resumen_deuda();
    fn_setea_grilla_corte_y_reposicion();
    fn_setea_grilla_deuda_por_cargo();
@@ -1198,6 +1273,7 @@ function fn_historico_medidores_ver()
     $("#div_abastece").hide();
     $("#div_deuda").hide();
     $("#div_historico_medidores").show();
+    $("#div_concepto_facturar").hide();
     fn_setea_grilla_historico_medidores();
     $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
@@ -1215,6 +1291,25 @@ function fn_audi_mod_ver()
    $("#div_deuda").hide();
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").show();
+   $("#div_concepto_facturar").hide();
    fn_setea_grillaaudimod();
    $("#co_excel_audi").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+}
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_concepto_facturar()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_volver").show();
+   $("#div_suministro").hide();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
+   $("#div_deuda").hide();
+   $("#div_historico_medidores").hide();
+   $("#div_audi_mod").hide();
+   $("#div_concepto_facturar").show();
+   fn_setea_concepto_facturar();
+   $("#co_excel_concepto_facturar").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
