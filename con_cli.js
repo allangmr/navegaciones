@@ -864,7 +864,7 @@ function fn_setea_grillaaudimod(){
                 sorting: "local",
                 sortDir: "up"
             },
-            collapsible: false,
+            collapsible: { on : false,toggle:true },
             selectionModel: { type: 'row',mode:'single'},
             filterModel: { on: true, mode: "OR" },
             toolbar: {
@@ -1092,7 +1092,7 @@ function fn_setea_grilla_historico_medidores(){
                 sorting: "local",
                 sortDir: "up"
             },
-            collapsible: false,
+            collapsible: { on : false,toggle:true },
             selectionModel: { type: 'row',mode:'single'},
             filterModel: { on: true, mode: "OR" },
             toolbar: {
@@ -1119,7 +1119,7 @@ function fn_setea_concepto_facturar(){
         var obj3 = {
             width:'100%',
             height:400,
-            /*title: "Histórico de medidores del suministro Nº 11",*/
+            title: "Conceptos Pendientes por Facturar [Cliente: 697588 – TORRE GLOBAL BANK]",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
@@ -1143,7 +1143,7 @@ function fn_setea_concepto_facturar(){
                 sorting: "local",
                 sortDir: "up"
             },
-            collapsible: false,
+            collapsible: { on : false,toggle:true },
             selectionModel: { type: 'row',mode:'single'},
             filterModel: { on: true, mode: "OR" },
             toolbar: {
@@ -1170,20 +1170,20 @@ function fn_setea_contrato_madre(){
         var obj3 = {
             width:'100%',
             height:400,
-            title: "Agrupación de Clientes - Nic:11",
+            title: "Clientes Asociados a Contrato Madre [Cliente: 697588 – TORRE GLOBAL BANK]",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
             colModel:
             [
-                { title: "Nic", width: 80, align: "center",dataIndx:"c1", editable: false},
-                { title: "Ruta", width: 100, align: "left" ,dataIndx:"c2", editable: false},
-                { title: "Nombre", width: 120, align: "center" ,dataIndx:"c3", editable: false},
-                { title: "Tarifa", width: 150, align: "left" ,dataIndx:"c4", editable: false},
-                { title: "Actividad", width: 100, align: "left" ,dataIndx:"c5", editable: false},
-                { title: "Sector", width: 120, align: "left" ,dataIndx:"c6", editable: false},
-                { title: "Finca", width: 140, align: "left" ,dataIndx:"c7", editable: false},
-                { title: "Medidor", width: 80, align: "center" ,dataIndx:"c8", editable: false}
+                { title: "Nic", width: 60, align: "center",dataIndx:"Nic", editable: false},
+                { title: "Ruta", width: 140, align: "left" ,dataIndx:"Ruta", editable: false},
+                { title: "Nombre", width: 350, align: "center" ,dataIndx:"Nombre", editable: false},
+                { title: "Tarifa", width: 350, align: "left" ,dataIndx:"Tarifa", editable: false},
+                { title: "Actividad", width: 100, align: "left" ,dataIndx:"Actividad", editable: false},
+                { title: "Sector", width: 120, align: "left" ,dataIndx:"Sector", editable: false},
+                { title: "Finca", width: 240, align: "left" ,dataIndx:"Finca", editable: false},
+                { title: "Medidor", width: 280, align: "center" ,dataIndx:"Medidor", editable: false}
             ],
             dataModel: {
                 paging: "local",
@@ -1191,7 +1191,7 @@ function fn_setea_contrato_madre(){
                 sorting: "local",
                 sortDir: "up"
             },
-            collapsible: false,
+            collapsible: { on : false,toggle:true },
             selectionModel: { type: 'row',mode:'single'},
             filterModel: { on: true, mode: "OR" },
             toolbar: {
