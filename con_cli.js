@@ -16,9 +16,10 @@ var $grid_audi_mod;
 var $grid_cargo_fac;
 var $grid_contrato_madre;
 var $grid_medidor_reg;
-var grid_historico_medidores;
-var grid_concepto_facturar;
-var grid_contrato_madre;
+var $grid_historico_medidores;
+var $grid_concepto_facturar;
+var $grid_contrato_madre; 
+var $grid_historial_subsidio;
 var $gridCorte;
 var opcion;
 var flag_dat_tec =  false;
@@ -31,6 +32,7 @@ var flag_audi_mod = false;
 var flag_hist_med_prop = false;
 var flag_concepto_facturar = false;
 var flag_contrato_madre = false;
+var flag_historial_subsidio = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -119,6 +121,24 @@ $(document).ready(function() {
         }
         else{
             $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
+        }
+        
+        
+    });
+
+    
+    $("#btn_historial_subsidio").click(function(e){
+        e.preventDefault();
+
+        if(!flag_historial_subsidio)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_historial_subsidio").load("div_dat_historial_subsidio.htm",fn_historial_subsidio);
+            flag_historial_subsidio = true;
+            console.log("Tag Historial Subsidio Cargado");
+        }
+        else{
+            $("#div_historial_subsidio").load("div_dat_historial_subsidio.htm",fn_historial_subsidio);
         }
         
         
@@ -1212,6 +1232,56 @@ function fn_setea_contrato_madre(){
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 
+    function fn_setea_historial_subsidio(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            width:'100%',
+            height:400,
+            title: "Historial de Subsidio por Caso Social [Cliente: 697588 – TORRE GLOBAL BANK]",
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Evento", width: 60, align: "center",dataIndx:"evento", editable: false},
+                { title: "Tipo", width: 140, align: "left" ,dataIndx:"tipo", editable: false},
+                { title: "Subsidio", width: 350, align: "center" ,dataIndx:"subsidio", editable: false},
+                { title: "Inicio", width: 350, align: "left" ,dataIndx:"inicio", editable: false},
+                { title: "Aplicación", width: 100, align: "left" ,dataIndx:"aplicación", editable: false},
+                { title: "Observación", width: 120, align: "left" ,dataIndx:"observacion", editable: false},
+                { title: "Nombre", width: 240, align: "left" ,dataIndx:"nombre", editable: false},
+                { title: "Identidad", width: 280, align: "center" ,dataIndx:"identidad", editable: false},
+                { title: "Tarifa", width: 120, align: "left" ,dataIndx:"tarifa", editable: false},
+                { title: "Rol", width: 240, align: "left" ,dataIndx:"rol", editable: false},
+                { title: "Ip", width: 280, align: "center" ,dataIndx:"ip", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: { on : false,toggle:true },
+            selectionModel: { type: 'row',mode:'single'},
+            filterModel: { on: true, mode: "OR" },
+            toolbar: {
+                cls: 'pq-toolbar-export',
+                items: [			
+                    { type: "button",attr:'id=co_excel_historial_subsidio', cls:"btn btn-primary"}
+                ]
+            }
+        };
+        
+        $grid_historial_subsidio =$("#grid_historial_subsidio").pqGrid(obj3);
+        $grid_historial_subsidio.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_historial_subsidio.pqGrid("option", "pageModel.type", {checked:false});
+        $("#grid_historial_subsidio" ).pqGrid( "option", "showBottom", false );
+            
+        
+    }
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
+
 function fn_modal_ver()	
 {	
        	
@@ -1226,6 +1296,7 @@ function fn_modal_ver()
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
+   $("#div_historial_subsidio").hide();
 
        	
 }
@@ -1246,6 +1317,7 @@ function fn_sum_ver()
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
+   $("#div_historial_subsidio").hide();
 
    if($contrato_madre>=1)
    {
@@ -1269,6 +1341,7 @@ function fn_prop_ver()
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
+   $("#div_historial_subsidio").hide();
 
        	
 }
@@ -1288,6 +1361,7 @@ function fn_fac_cont()
     $("#div_historico_medidores").hide();
     $("#div_concepto_facturar").hide();
     $("#div_contrato_show").hide();
+    $("#div_historial_subsidio").hide();
     fn_setea_grilla_medidor_reg();
     fn_setea_grilla_cargo_fac();
 }
@@ -1309,6 +1383,7 @@ function fn_med_ver()
    $("#div_historico_medidores").hide();	
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
+   $("#div_historial_subsidio").hide();
 
        	
 }
@@ -1328,6 +1403,7 @@ function fn_deuda_ver()
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
+   $("#div_historial_subsidio").hide();
    fn_setea_grill_resumen_deuda();
    fn_setea_grilla_corte_y_reposicion();
    fn_setea_grilla_deuda_por_cargo();
@@ -1352,6 +1428,7 @@ function fn_historico_medidores_ver()
     $("#div_historico_medidores").show();
     $("#div_concepto_facturar").hide();
     $("#div_contrato_show").hide();
+    $("#div_historial_subsidio").hide();
     fn_setea_grilla_historico_medidores();
     $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
@@ -1371,6 +1448,7 @@ function fn_audi_mod_ver()
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").show();
    $("#div_concepto_facturar").hide();
+   $("#div_historial_subsidio").hide();
    $("#div_contrato_show").hide();
    fn_setea_grillaaudimod();
    $("#co_excel_audi").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
@@ -1391,9 +1469,31 @@ function fn_contrato_madre()
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").hide();
    $("#div_concepto_facturar").hide();
+   $("#div_historial_subsidio").hide();
    $("#div_contrato_madre").show();
    fn_setea_contrato_madre();
    $("#co_excel_contrato_madre").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+}
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_historial_subsidio()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_volver").show();
+   $("#div_suministro").hide();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
+   $("#div_deuda").hide();
+   $("#div_historico_medidores").hide();
+   $("#div_audi_mod").hide();
+   $("#div_concepto_facturar").hide();
+   $("#div_historial_subsidio").show();
+   $("#div_contrato_madre").show();
+   fn_setea_historial_subsidio();
+   $("#co_excel_historial_subsidio").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
