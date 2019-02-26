@@ -1126,16 +1126,16 @@ function fn_setea_concepto_facturar(){
             colModel:
             [
                 { title: "Nº", width: 80, align: "center",dataIndx:"c1", editable: false},
-                { title: "Concepto", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Concepto", width: 80, align: "left" ,dataIndx:"c2", editable: false},
                 { title: "Ingreso", width: 120, align: "center" ,dataIndx:"c3", editable: false},
-                { title: "Cuotas", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "Cuotas", width: 80, align: "left" ,dataIndx:"c4", editable: false},
                 { title: "Valor Cuota", width: 100, align: "left" ,dataIndx:"c5", editable: false},
                 { title: "Valor Ult. Cuota", width: 120, align: "left" ,dataIndx:"c6", editable: false},
                 { title: "Pend. Facturar", width: 140, align: "left" ,dataIndx:"c7", editable: false},
                 { title: "Valor Total Inicial", width: 80, align: "center" ,dataIndx:"c8", editable: false},
                 { title: "Tipo Medida", width: 140, align: "left" ,dataIndx:"c9", editable: false},
                 { title: "Origen", width: 80, align: "center" ,dataIndx:"c10", editable: false},
-                { title: "Observacion", width: 80, align: "center" ,dataIndx:"c11", editable: false}
+                { title: "Observacion", width: 120, align: "center" ,dataIndx:"c11", editable: false}
             ],
             dataModel: {
                 paging: "local",
