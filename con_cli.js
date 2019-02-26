@@ -14,10 +14,13 @@ var $grid_busq;
 var $grid_deudatotal;
 var $grid_audi_mod;
 var $grid_cargo_fac;
-var $gridCorte;
-var opcion;
+var $grid_contrato_madre;
+var $grid_medidor_reg;
 var grid_historico_medidores;
 var grid_concepto_facturar;
+var grid_contrato_madre;
+var $gridCorte;
+var opcion;
 var flag_dat_tec =  false;
 var flag_dat_sum = false;
 var flag_dat_prop = false;
@@ -27,7 +30,7 @@ var flag_deuda_prop = false;
 var flag_audi_mod = false;
 var flag_hist_med_prop = false;
 var flag_concepto_facturar = false;
-var $grid_medidor_reg;
+var flag_contrato_madre = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -134,6 +137,23 @@ $(document).ready(function() {
         }
         else{
             $("#div_abastece").load("div_dat_tec.htm",fn_modal_ver);
+        }
+        
+        
+    });
+
+    $("#btn_contrato_madre").click(function(e){
+        e.preventDefault();
+
+        if(!flag_contrato_madre)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_contrato_madre").load("div_dat_contrato_madre.htm",fn_contrato_madre);
+            flag_contrato_madre = true;
+            console.log("Tag Contrato Madre Cargado");
+        }
+        else{
+            $("#div_contrato_madre").load("div_dat_contrato_madre.htm",fn_contrato_madre);
         }
         
         
@@ -1144,6 +1164,54 @@ function fn_setea_concepto_facturar(){
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 
+function fn_setea_contrato_madre(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            width:'100%',
+            height:400,
+            title: "Agrupación de Clientes - Nic:11",
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Nic", width: 80, align: "center",dataIndx:"c1", editable: false},
+                { title: "Ruta", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Nombre", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Tarifa", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "Actividad", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "Sector", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Finca", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Medidor", width: 80, align: "center" ,dataIndx:"c8", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'},
+            filterModel: { on: true, mode: "OR" },
+            toolbar: {
+                cls: 'pq-toolbar-export',
+                items: [			
+                    { type: "button",attr:'id=co_excel_contrato_madre', cls:"btn btn-primary"}
+                ]
+            }
+        };
+        
+        $grid_contrato_madre =$("#grid_contrato_madre").pqGrid(obj3);
+        $grid_contrato_madre.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_contrato_madre.pqGrid("option", "pageModel.type", {checked:false});
+        $("#grid_contrato_madre" ).pqGrid( "option", "showBottom", false );
+            
+        
+    }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
+
 function fn_modal_ver()	
 {	
        	
@@ -1157,6 +1225,7 @@ function fn_modal_ver()
    $("#div_suministro").hide();
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
+   $("#div_contrato_show").hide();
 
        	
 }
@@ -1176,7 +1245,7 @@ function fn_sum_ver()
    $("#div_abastece").hide();
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
-
+   $("#div_contrato_show").hide();
 
    if($contrato_madre>=1)
    {
@@ -1199,6 +1268,7 @@ function fn_prop_ver()
    $("#div_abastece").hide();
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
+   $("#div_contrato_show").hide();
 
        	
 }
@@ -1217,9 +1287,13 @@ function fn_fac_cont()
     $("#div_abastece").hide();
     $("#div_historico_medidores").hide();
     $("#div_concepto_facturar").hide();
+    $("#div_contrato_show").hide();
     fn_setea_grilla_medidor_reg();
     fn_setea_grilla_cargo_fac();
 }
+
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
 function fn_med_ver()	
 {	
        	
@@ -1234,6 +1308,7 @@ function fn_med_ver()
    $("#div_medidor").show();
    $("#div_historico_medidores").hide();	
    $("#div_concepto_facturar").hide();
+   $("#div_contrato_show").hide();
 
        	
 }
@@ -1252,6 +1327,7 @@ function fn_deuda_ver()
    $("#div_deuda").show();
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
+   $("#div_contrato_show").hide();
    fn_setea_grill_resumen_deuda();
    fn_setea_grilla_corte_y_reposicion();
    fn_setea_grilla_deuda_por_cargo();
@@ -1262,6 +1338,7 @@ function fn_deuda_ver()
 }
 
 
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
 function fn_historico_medidores_ver()	
 {
     $("#frm_leer").hide();	
@@ -1274,9 +1351,11 @@ function fn_historico_medidores_ver()
     $("#div_deuda").hide();
     $("#div_historico_medidores").show();
     $("#div_concepto_facturar").hide();
+    $("#div_contrato_show").hide();
     fn_setea_grilla_historico_medidores();
     $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
+
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
 function fn_audi_mod_ver()	
 {	
@@ -1292,9 +1371,31 @@ function fn_audi_mod_ver()
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").show();
    $("#div_concepto_facturar").hide();
+   $("#div_contrato_show").hide();
    fn_setea_grillaaudimod();
    $("#co_excel_audi").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_contrato_madre()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_volver").show();
+   $("#div_suministro").hide();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
+   $("#div_deuda").hide();
+   $("#div_historico_medidores").hide();
+   $("#div_audi_mod").hide();
+   $("#div_concepto_facturar").hide();
+   $("#div_contrato_madre").show();
+   fn_setea_contrato_madre();
+   $("#co_excel_contrato_madre").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+}
+
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
 function fn_concepto_facturar()	
 {	
@@ -1310,6 +1411,7 @@ function fn_concepto_facturar()
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").hide();
    $("#div_concepto_facturar").show();
+   $("#div_contrato_show").hide();
    fn_setea_concepto_facturar();
    $("#co_excel_concepto_facturar").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
