@@ -112,7 +112,7 @@ $(document).ready(function() {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
             flag_concepto_facturar = true;
-            console.log("Tag Datos Tecnicos Cargado");
+            console.log("Tag Concepto por facturar Cargado");
         }
         else{
             $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
