@@ -31,6 +31,8 @@ var flag_audi_mod = false;
 var flag_hist_med_prop = false;
 var flag_concepto_facturar = false;
 var flag_contrato_madre = false;
+var flag_pagos_aplicar = false;
+var flag_pagos_otros = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -276,6 +278,45 @@ $(document).ready(function() {
             }
                             
         });
+
+
+        $("#btn_pagos_aplica").click(function(e){
+            e.preventDefault();
+    
+            if(!flag_pagos_aplicar)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_audi_mod_ver);
+                flag_pagos_aplicar = true;
+                console.log("Deuda Tag Cargado");
+            }
+            else{
+                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_audi_mod_ver);
+            }
+            
+                
+        });
+
+
+        $("#btn_pagos_otros").click(function(e){
+            e.preventDefault();
+    
+            if(!flag_pagos_otros)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_audi_mod_ver);
+                flag_pagos_otros = true;
+                console.log("Deuda Tag Cargado");
+            }
+            else{
+                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_audi_mod_ver);
+            }
+            
+                
+        });
+
+
+
     var colM =
     [
         { title: "Tipo Agrupación", width: 150, align: "left", dataIndx:"c1",editable: false},        
