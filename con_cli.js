@@ -498,7 +498,7 @@ function fn_setea_grid_fac()
 {
     // HISTORIAL DE FACTURACIONES
     var data = [
-        { Periodo: 1, Lectura: 'Exxon Mobil', Emisión: 339938.0, Vencimiento: 36130.0, Agua: 5.68, Compensacion:0.00, Jubilado:0.00, Alcantarillado:0.00, Recargo:0.57, Saldo:0.00, Aseo:0.00, Total:0.00 }
+        { Periodo: 11, Lectura: '14/03/18', Emision: '15/03/18', Vencimiento: '16/03/18', Agua: 5.68, Compensacion:0.00, Jubilado:0.00, Alcantarillado:0.00, Recargo:0.57, Saldo:0.00, Aseo:0.00, cor:11,Total:0.00 }
     ];
     var obj = {  
 	        height: "100%",
@@ -543,6 +543,7 @@ function fn_setea_grid_fac()
             { title: "Recargo", width: 120, dataType: "string", dataIndx: "Recargo", halign:"center", align:"right"},
             { title: "Saldo Anterior", width: 120, dataType: "string", dataIndx: "Saldo", halign:"center", align:"right"},
             { title: "Aseo", width: 120, dataType: "string", dataIndx: "Aseo", halign:"center", align:"right"},
+            { title: "cor", width: 120, dataType: "string", dataIndx: "cor", halign:"center",hidden:true, align:"right"},
             { title: "Total Documento", width: 120, dataType: "string", dataIndx: "Total", halign:"center", align:"right"}  
         ];
 		
@@ -554,7 +555,7 @@ function fn_setea_grid_fac()
     if (ui.rowData)
     {
     var dataCell = ui.rowData;
-    $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura);	
+    $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura(dataCell.cor));
     $(window).scrollTop(0);
     }
     }
@@ -1730,7 +1731,7 @@ function fn_historial_aseo()
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
-function fn_informacion_factura()	
+function fn_informacion_factura(n)	
 {	
        	
    $("#frm_leer").hide();	
@@ -1748,6 +1749,7 @@ function fn_informacion_factura()
    $("#div_historial_aseo").hide();
    $("#div_contrato_madre").hide();
    $("#div_informacion_factura").show();
+   console.log(n);
    fn_setea_contador_agua_if();
    fn_setea_conceptos_facturados_if();
 }
