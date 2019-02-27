@@ -547,6 +547,18 @@ function fn_setea_grid_fac()
         ];
 		
     $grid_fac = $("#div_fac").pqGrid(obj);
+
+    //EVENTO DBL_CLICK DE LA GRILLA
+    $grid_fac.pqGrid({
+    rowDblClick: function( event, ui ) {
+    if (ui.rowData)
+    {
+    var dataCell = ui.rowData;
+    $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura);	
+    $(window).scrollTop(0);
+    }
+    }
+    });
 }
 
 
