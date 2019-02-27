@@ -21,6 +21,8 @@ var $grid_concepto_facturar;
 var $grid_contrato_madre; 
 var $grid_historial_subsidio;
 var $grid_historial_aseo;
+var $grid_contador_agua;
+var $grid_conceptos_facturados;
 var $gridCorte;
 var opcion;
 var flag_dat_tec =  false;
@@ -35,6 +37,7 @@ var flag_concepto_facturar = false;
 var flag_contrato_madre = false;
 var flag_historial_subsidio = false;
 var flag_historial_aseo = false;
+var flag_informacion_factura = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -117,12 +120,29 @@ $(document).ready(function() {
         if(!flag_concepto_facturar)
         {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-            $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
+            $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm#top",fn_concepto_facturar);
             flag_concepto_facturar = true;
             console.log("Tag Concepto por facturar Cargado");
         }
         else{
-            $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
+            $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm#top",fn_concepto_facturar);
+        }
+        
+        
+    });
+
+    $("#btn_info_factura").click(function(e){
+        e.preventDefault();
+
+        if(!flag_informacion_factura)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura);
+            flag_informacion_factura = true;
+            console.log("Tag Concepto por facturar Cargado");
+        }
+        else{
+            $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura);
         }
         
         
@@ -473,13 +493,13 @@ function fn_setea_grid_madre()
 
 }
 
-
-//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
-
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 function fn_setea_grid_fac()
 {
-// HISTORIAL DE FACTURACIONES
+    // HISTORIAL DE FACTURACIONES
+    var data = [
+        { Periodo: 1, Lectura: 'Exxon Mobil', Emisión: 339938.0, Vencimiento: 36130.0, Agua: 5.68, Compensacion:0.00, Jubilado:0.00, Alcantarillado:0.00, Recargo:0.57, Saldo:0.00, Aseo:0.00, Total:0.00 }
+    ];
     var obj = {  
 	        height: "100%",
             showTop: true,
@@ -493,7 +513,14 @@ function fn_setea_grid_fac()
             selectionModel: { type: 'row',mode:'single'},
             numberCell: { show: true },
 			pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
-        	scrollModel:{theme:true},
+            scrollModel:{theme:true},
+            dataModel: {
+                data: data,
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
 			toolbar:
            {
                cls: "pq-toolbar-export",
@@ -505,18 +532,18 @@ function fn_setea_grid_fac()
         };
 			
 		obj.colModel = [            
-            { title: "Periodo", width: 110, dataType: "string", dataIndx: "C1", halign:"center", align:"left"},
-            { title: "Lectura", width: 110, dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
-            { title: "Emisión", width: 110, dataType: "string", dataIndx: "C3", halign:"center", align:"left"},
-            { title: "Vencimiento", width: 110, dataType: "string", dataIndx: "C4", halign:"center", align:"left"},
-            { title: "Agua", width: 120, dataType: "string", dataIndx: "C5", halign:"center", align:"right"},
-            { title: "Compensación y Subsidio", width: 120, dataType: "string",  dataIndx: "C6", halign:"center", align:"right"},
-            { title: "Descuento Jubilado", width: 120, dataType: "string", dataIndx: "C7", halign:"center", align:"right"},
-            { title: "Alcantarillado", width: 120, dataType: "string", dataIndx: "C8", halign:"center", align:"right"},
-            { title: "Recargo", width: 120, dataType: "string", dataIndx: "C9", halign:"center", align:"right"},
-            { title: "Saldo Anterior", width: 120, dataType: "string", dataIndx: "C10", halign:"center", align:"right"},
-            { title: "Aseo", width: 120, dataType: "string", dataIndx: "C11", halign:"center", align:"right"},
-            { title: "Total Documento", width: 120, dataType: "string", dataIndx: "C12", halign:"center", align:"right"}  
+            { title: "Periodo", width: 110, dataType: "string", dataIndx: "Periodo", halign:"center", align:"left"},
+            { title: "Lectura", width: 110, dataType: "string", dataIndx: "Lectura", halign:"center", align:"left"},
+            { title: "Emisión", width: 110, dataType: "string", dataIndx: "Emision", halign:"center", align:"left"},
+            { title: "Vencimiento", width: 110, dataType: "string", dataIndx: "Vencimiento", halign:"center", align:"left"},
+            { title: "Agua", width: 120, dataType: "string", dataIndx: "Agua", halign:"center", align:"right"},
+            { title: "Compensación y Subsidio", width: 120, dataType: "string",  dataIndx: "Compensacion", halign:"center", align:"right"},
+            { title: "Descuento Jubilado", width: 120, dataType: "string", dataIndx: "Descuento", halign:"center", align:"right"},
+            { title: "Alcantarillado", width: 120, dataType: "string", dataIndx: "Alcantarillado", halign:"center", align:"right"},
+            { title: "Recargo", width: 120, dataType: "string", dataIndx: "Recargo", halign:"center", align:"right"},
+            { title: "Saldo Anterior", width: 120, dataType: "string", dataIndx: "Saldo", halign:"center", align:"right"},
+            { title: "Aseo", width: 120, dataType: "string", dataIndx: "Aseo", halign:"center", align:"right"},
+            { title: "Total Documento", width: 120, dataType: "string", dataIndx: "Total", halign:"center", align:"right"}  
         ];
 		
     $grid_fac = $("#div_fac").pqGrid(obj);
@@ -833,6 +860,83 @@ function fn_setea_grid_busq()
 
 }
 
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
+function fn_setea_conceptos_facturados_if()
+// BÚSQUEDA DE CLIENTES
+
+{  
+
+    var obj0 = {
+        width:'100%',
+        height:250,
+        title: "Detalle de los Conceptos Facturados",
+        rowBorders: true,
+        editable: false,
+        scrollModel:{theme:true},
+        colModel:
+        [
+            { title: "Periodo", width: "15%", dataType: "string", dataIndx: "medidor", halign:"center", align:"left"},
+            { title: "Cargo", width: "15%", dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
+            { title: "Descripción", width: "35%", dataType: "string", dataIndx: "C3", halign:"center", align:"left"},
+            { title: "Unidad", width: "15%", dataType: "string", dataIndx: "C4", halign:"center", align:"left"},
+            { title: "Valor", width: "20%", dataType: "string", dataIndx: "C5", halign:"center", align:"left"}
+        ],
+        dataModel: {
+            paging: "local",
+            location: "local",
+            sorting: "local",
+            sortDir: "up"
+        },
+        collapsible: false,
+        selectionModel: { type: 'row',mode:'single'},
+        filterModel: { on: true, mode: "OR" }
+    };
+    
+    $grid_conceptos_facturados =$("#grid_conceptos_facturados").pqGrid(obj0);
+    $grid_conceptos_facturados.pqGrid( "option", "scrollModel", {horizontal: true} );
+    $grid_conceptos_facturados.pqGrid("option", "pageModel.type", {checked:false});
+    $( "#grid_conceptos_facturados" ).pqGrid( "option", "showBottom", false );
+
+}
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
+function fn_setea_contador_agua_if()
+// BÚSQUEDA DE CLIENTES
+
+{  
+
+    var obj0 = {
+        width:'100%',
+        height:250,
+        title: "Información del Contador de Agua",
+        rowBorders: true,
+        editable: false,
+        scrollModel:{theme:true},
+        colModel:
+        [
+            { title: "N° Medidor", width: "20%", dataType: "string", dataIndx: "medidor", halign:"center", align:"left"},
+            { title: "Marca", width: "20%", dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
+            { title: "Tipo Medida", width: "20%", dataType: "string", dataIndx: "C3", halign:"center", align:"left"},
+            { title: "Modelo", width: "20%", dataType: "string", dataIndx: "C4", halign:"center", align:"left"},
+            { title: "Diámetro", width: "20%", dataType: "string", dataIndx: "C5", halign:"center", align:"left"}
+        ],
+        dataModel: {
+            paging: "local",
+            location: "local",
+            sorting: "local",
+            sortDir: "up"
+        },
+        collapsible: false,
+        selectionModel: { type: 'row',mode:'single'},
+        filterModel: { on: true, mode: "OR" }
+    };
+    
+    $grid_contador_agua =$("#grid_contador_agua").pqGrid(obj0);
+    $grid_contador_agua.pqGrid( "option", "scrollModel", {horizontal: true} );
+    $grid_contador_agua.pqGrid("option", "pageModel.type", {checked:false});
+    $( "#grid_contador_agua" ).pqGrid( "option", "showBottom", false );
+
+}
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
 function fn_setea_grill_resumen_deuda(){
@@ -1349,7 +1453,13 @@ function fn_setea_historial_aseo(){
         
     }
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
+function fn_subir_body(){  //referimos el elemento ( clase o identificador de acción )
+    $('html, body').animate({scrollTop:0}, 'slow'); //seleccionamos etiquetas,clase o identificador destino, creamos animación hacia top de la página.
+    return false;
+};
 
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 function fn_modal_ver()	
 {	
        	
@@ -1360,6 +1470,7 @@ function fn_modal_ver()
    $("#div_abastece").show();	
    $("#div_propietario").hide();
    $("#div_deuda").hide();
+   $("#div_informacion_factura").hide();
    $("#div_suministro").hide();
    $("#div_historico_medidores").hide();
    $("#div_historial_aseo").hide();
@@ -1382,6 +1493,7 @@ function fn_sum_ver()
    $("#div_suministro").show();	
    $("#div_propietario").hide();
    $("#div_deuda").hide();
+   $("#div_informacion_factura").hide();
    $("#div_abastece").hide();
    $("#div_historico_medidores").hide();
    $("#div_historial_aseo").hide();
@@ -1408,6 +1520,7 @@ function fn_prop_ver()
    $("#div_suministro").hide();
    $("#div_deuda").hide();
    $("#div_abastece").hide();
+   $("#div_informacion_factura").hide();
    $("#div_historico_medidores").hide();
    $("#div_historial_aseo").hide();
    $("#div_concepto_facturar").hide();
@@ -1428,6 +1541,7 @@ function fn_fac_cont()
     $("#div_fact_cont").show();	
     $("#div_suministro").hide();
     $("#div_deuda").hide();
+    $("#div_informacion_factura").hide();
     $("#div_abastece").hide();
     $("#div_historico_medidores").hide();
     $("#div_concepto_facturar").hide();
@@ -1452,6 +1566,7 @@ function fn_med_ver()
    $("#div_abastece").hide();
    $("#div_deuda").hide();
    $("#div_medidor").show();
+   $("#div_informacion_factura").hide();
    $("#div_historico_medidores").hide();
    $("#div_historial_aseo").hide();	
    $("#div_concepto_facturar").hide();
@@ -1473,6 +1588,7 @@ function fn_deuda_ver()
    $("#div_propietario").hide();
    $("#div_abastece").hide();
    $("#div_deuda").show();
+   $("#div_informacion_factura").hide();
    $("#div_historico_medidores").hide();
    $("#div_concepto_facturar").hide();
    $("#div_contrato_show").hide();
@@ -1499,6 +1615,7 @@ function fn_historico_medidores_ver()
     $("#div_propietario").hide();
     $("#div_abastece").hide();
     $("#div_deuda").hide();
+    $("#div_informacion_factura").hide();
     $("#div_historico_medidores").show();
     $("#div_concepto_facturar").hide();
     $("#div_contrato_show").hide();
@@ -1520,6 +1637,7 @@ function fn_audi_mod_ver()
    $("#div_propietario").hide();
    $("#div_abastece").hide();
    $("#div_deuda").hide();
+   $("#div_informacion_factura").hide();
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").show();
    $("#div_concepto_facturar").hide();
@@ -1542,6 +1660,7 @@ function fn_contrato_madre()
    $("#div_propietario").hide();
    $("#div_abastece").hide();
    $("#div_deuda").hide();
+   $("#div_informacion_factura").hide();
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").hide();
    $("#div_concepto_facturar").hide();
@@ -1566,6 +1685,7 @@ function fn_historial_subsidio()
    $("#div_deuda").hide();
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").hide();
+   $("#div_informacion_factura").hide();
    $("#div_concepto_facturar").hide();
    $("#div_historial_subsidio").show();
    $("#div_historial_aseo").hide();
@@ -1588,12 +1708,36 @@ function fn_historial_aseo()
    $("#div_deuda").hide();
    $("#div_historico_medidores").hide();
    $("#div_audi_mod").hide();
+   $("#div_informacion_factura").hide();
    $("#div_concepto_facturar").hide();
    $("#div_historial_subsidio").hide();
    $("#div_historial_aseo").show();
    $("#div_contrato_madre").hide();
    fn_setea_historial_aseo();
    $("#co_excel_historial_aseo").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+}
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_informacion_factura()	
+{	
+       	
+   $("#frm_leer").hide();	
+   $("#nav_ul_opc").hide();	
+   $("#div_prin").hide("blind");	
+   $("#frm_volver").show();
+   $("#div_suministro").hide();	
+   $("#div_propietario").hide();
+   $("#div_abastece").hide();
+   $("#div_deuda").hide();
+   $("#div_historico_medidores").hide();
+   $("#div_audi_mod").hide();
+   $("#div_concepto_facturar").hide();
+   $("#div_historial_subsidio").hide();
+   $("#div_historial_aseo").hide();
+   $("#div_contrato_madre").hide();
+   $("#div_informacion_factura").show();
+   fn_setea_contador_agua_if();
+   fn_setea_conceptos_facturados_if();
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
@@ -1613,6 +1757,7 @@ function fn_concepto_facturar()
    $("#div_concepto_facturar").show();
    $("#div_historial_aseo").hide();
    $("#div_contrato_show").hide();
+   $("#div_informacion_factura").hide();
    fn_setea_concepto_facturar();
    $("#co_excel_concepto_facturar").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
