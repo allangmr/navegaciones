@@ -5,7 +5,7 @@ function fn_setea_concepto_facturar(){
         var obj3 = {
             width:'100%',
             height:400,
-            title: "Conceptos Pendientes por Facturar [Cliente: 697588 – TORRE GLOBAL BANK]",
+            title: "Conceptos Pendientes por Facturar",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
