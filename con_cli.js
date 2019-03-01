@@ -568,6 +568,27 @@ function fn_setea_grid_fac()
 function fn_setea_grid_con()
 {
 //HISTORIAL DE CONSUMOS
+    var data = [
+        { C1: '08/08/2018'
+        , C2: '08/08/2018'
+        , C3: 'Ago72018'
+        , C4: 'P'
+        , C5: '08/08/2018'
+        , C6: 'Ago72018'
+        , C7: 'P'
+        , C9: '08/08/2018'
+        , C10: 'Ago72018'
+        , C11: 'P'
+        , C12: '08/08/2018'
+        , C13: 'Ago72018'
+        , C14: 'P'
+        , C15: '08/08/2018'
+        , C16: 'Ago72018'
+    }
+    ];    
+
+
+    
     var obj = {  
             height: "100%",
             showTop: true,
@@ -582,6 +603,13 @@ function fn_setea_grid_con()
             numberCell: { show: true },
             pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
             scrollModel:{theme:true},
+            dataModel: {
+                data: data,
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
             toolbar:
            {
                cls: "pq-toolbar-export",
@@ -593,8 +621,8 @@ function fn_setea_grid_con()
         };
             
         obj.colModel = [            
-            { title: "Lectura", width: 110, dataType: "string", dataIndx: "C1", halign:"center", align:"left"},
-            { title: "Facturación", width: 110, dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
+            { title: "Fecha Lectura", width: 110, dataType: "string", dataIndx: "C1", halign:"center", align:"left"},
+            { title: "Fecha Facturación", width: 110, dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
             { title: "Periodo", width: 110, dataType: "string", dataIndx: "C3", halign:"center", align:"left"},
             { title: "Clave Facturación", width: 110, dataType: "string", dataIndx: "C4", halign:"center", align:"left"},
             { title: "Medidor", width: 120, dataType: "string", dataIndx: "C5", halign:"center", align:"left"},
@@ -612,6 +640,19 @@ function fn_setea_grid_con()
         ];
         
     $grid_con = $("#div_con").pqGrid(obj);
+
+
+    //EVENTO DBL_CLICK DE LA GRILLA
+    $grid_con.pqGrid({
+        rowDblClick: function( event, ui ) {
+            if (ui.rowData)
+            {
+                var dataCell = ui.rowData;
+                $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                $(window).scrollTop(0);
+            }
+        }
+    });
 }
 
 
