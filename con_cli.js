@@ -1265,7 +1265,7 @@ function fn_setea_grilla_historico_medidores(){
         var obj3 = {
             width:'100%',
             height:400,
-            title: "Histórico de medidores del suministro [Cliente: 697588 – TORRE GLOBAL BANK]",
+            title: "Histórico de medidores del suministro",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
