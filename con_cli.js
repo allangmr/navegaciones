@@ -960,7 +960,7 @@ function fn_setea_contador_agua_if()
 
 {  
 
-    var obj0 = {
+    var obj = {
         width:'100%',
         height:250,
         title: "Información del Contador de Agua",
@@ -986,7 +986,7 @@ function fn_setea_contador_agua_if()
         filterModel: { on: true, mode: "OR" }
     };
     
-    $grid_contador_agua =$("#grid_contador_agua").pqGrid(obj0);
+    $grid_contador_agua =$("#grid_contador_agua").pqGrid(obj);
     $grid_contador_agua.pqGrid( "option", "scrollModel", {horizontal: true} );
     $grid_contador_agua.pqGrid("option", "pageModel.type", {checked:false});
     $( "#grid_contador_agua" ).pqGrid( "option", "showBottom", false );
@@ -1000,7 +1000,7 @@ function fn_setea_grill_resumen_deuda(){
         var obj0 = {
             width:'100%',
             height:250,
-            title: "Resumen de la Deuda por Cargo -  Cuenta # - USUARIO",
+            title: "Resumen de la Deuda por Cargo [Cliente: 697588 – TORRE GLOBAL BANK]",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
@@ -1043,7 +1043,7 @@ function fn_setea_grillaaudimod(){
         var obj0 = {
             width:'100%',
             height:250,
-            title: "Auditoria de Modificaciones -  Cuenta # - USUARIO",
+            title: "Auditoria de Modificaciones [Cliente: 697588 – TORRE GLOBAL BANK]",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
@@ -1265,7 +1265,7 @@ function fn_setea_grilla_historico_medidores(){
         var obj3 = {
             width:'100%',
             height:400,
-            title: "Histórico de medidores del suministro Nº 11",
+            title: "Histórico de medidores del suministro [Cliente: 697588 – TORRE GLOBAL BANK]",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
