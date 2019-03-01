@@ -122,6 +122,7 @@ $(document).ready(function() {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm#top",fn_concepto_facturar);
             flag_concepto_facturar = true;
+            fn_importar_script(concepto_facturar.js)
             console.log("Tag Concepto por facturar Cargado");
         }
         else{
@@ -1774,4 +1775,10 @@ function fn_concepto_facturar()
    $("#div_informacion_factura").hide();
    fn_setea_concepto_facturar();
    $("#co_excel_concepto_facturar").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+}
+
+function fn_importar_script(nombre) {
+    var s = document.createElement("script");
+    s.src = nombre;
+    document.querySelector("head").appendChild(s);
 }
