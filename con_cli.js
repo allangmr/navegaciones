@@ -474,6 +474,7 @@ function fn_setea_grid_madre()
             columnBorders: true,
             collapsible:false,
             editable:false,
+            selectionModel: { type: 'row',mode:'single'},
             numberCell: { show: true },
             pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
             scrollModel:{theme:true},   
@@ -510,7 +511,8 @@ function fn_setea_grid_fac()
             columnBorders: true,
             collapsible:false,
 			editable:false,
-            numberCell: { show: true },
+            selectionModel: { type: 'row',mode:'single'},
+            numberCell: { show: false},
 			pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
             scrollModel:{theme:true},
             dataModel: {
