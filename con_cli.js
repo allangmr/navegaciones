@@ -1043,7 +1043,7 @@ function fn_setea_grillaaudimod(){
         var obj0 = {
             width:'100%',
             height:250,
-            title: "Auditoria de Modificaciones [Cliente: 697588 – TORRE GLOBAL BANK]",
+            title: "Auditoria de Modificaciones",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
@@ -1318,7 +1318,7 @@ function fn_setea_contrato_madre(){
         var obj3 = {
             width:'100%',
             height:400,
-            title: "Clientes Asociados a Contrato Madre [Cliente: 697588 – TORRE GLOBAL BANK]",
+            title: "Clientes Asociados a Contrato Madre",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
@@ -1366,7 +1366,7 @@ function fn_setea_contrato_madre(){
         var obj3 = {
             width:'100%',
             height:400,
-            title: "Historial de Subsidio por Caso Social [Cliente: 697588 – TORRE GLOBAL BANK]",
+            title: "Historial de Subsidio por Caso Social",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
@@ -1416,7 +1416,7 @@ function fn_setea_historial_aseo(){
         var obj3 = {
             width:'100%',
             height:400,
-            title: "Historial de Movimientos de Aseo [Cliente: 697588 – TORRE GLOBAL BANK]",
+            title: "Historial de Movimientos de Aseo",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
