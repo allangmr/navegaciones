@@ -19,6 +19,8 @@ var $grid_medidor_reg;
 var grid_historico_medidores;
 var grid_concepto_facturar;
 var grid_contrato_madre;
+var grid_aplicar_pagos;
+var grid_pagos_otros;
 var $gridCorte;
 var opcion;
 var flag_dat_tec =  false;
@@ -286,12 +288,12 @@ $(document).ready(function() {
             if(!flag_pagos_aplicar)
             {
                 // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_audi_mod_ver);
+                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_pagos_aplicar);
                 flag_pagos_aplicar = true;
                 console.log("Deuda Tag Cargado");
             }
             else{
-                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_audi_mod_ver);
+                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_pagos_aplicar);
             }
             
                 
@@ -304,12 +306,12 @@ $(document).ready(function() {
             if(!flag_pagos_otros)
             {
                 // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_audi_mod_ver);
+                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_pagos_otros);
                 flag_pagos_otros = true;
                 console.log("Deuda Tag Cargado");
             }
             else{
-                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_audi_mod_ver);
+                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_pagos_otros);
             }
             
                 
@@ -1026,6 +1028,92 @@ function fn_setea_grilla_deuda_por_cargo(){
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grilla_pagos_aplicar(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            title:"Pagos por Aplicar",
+            width:'100%',
+            height:200,
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Medidor", width: 80, align: "center",dataIndx:"c1", editable: false},
+                { title: "Marca", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Modelo", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Diámetro", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "Medida", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "Factor", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Enteros", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Decimales", width: 80, align: "center" ,dataIndx:"c8", editable: false},
+                { title: "Instalación", width: 140, align: "left" ,dataIndx:"c9", editable: false},
+                { title: "Lec. Instala", width: 80, align: "center" ,dataIndx:"c10", editable: false},
+                { title: "Fec. Actualiza", width: 80, align: "center" ,dataIndx:"c11", editable: false},
+                { title: "Propiedad", width: 80, align: "center" ,dataIndx:"c12", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'}
+        };
+        
+        $grid_aplicar_pagos =$("#grid_pagos_aplicar").pqGrid(obj3);
+        $grid_aplicar_pagos.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_aplicar_pagos.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_pagos_aplicar" ).pqGrid( "option", "showBottom", false );
+                    
+    }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grilla_pagos_otros(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            title:"Pagos por Aplicar",
+            width:'100%',
+            height:200,
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Medidor", width: 80, align: "center",dataIndx:"c1", editable: false},
+                { title: "Marca", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Modelo", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Diámetro", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "Medida", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "Factor", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Enteros", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Decimales", width: 80, align: "center" ,dataIndx:"c8", editable: false},
+                { title: "Instalación", width: 140, align: "left" ,dataIndx:"c9", editable: false},
+                { title: "Lec. Instala", width: 80, align: "center" ,dataIndx:"c10", editable: false},
+                { title: "Fec. Actualiza", width: 80, align: "center" ,dataIndx:"c11", editable: false},
+                { title: "Propiedad", width: 80, align: "center" ,dataIndx:"c12", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'}
+        };
+        
+        $grid_pagos_otros = $("#grid_pagos_otros").pqGrid(obj3);
+        $grid_pagos_otros.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_pagos_otros.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_pagos_otros" ).pqGrid( "option", "showBottom", false );
+                    
+    }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
 function fn_setea_grilla_medidor_reg(){
 	
     /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
@@ -1332,8 +1420,45 @@ function fn_fac_cont()
     fn_setea_grilla_medidor_reg();
     fn_setea_grilla_cargo_fac();
 }
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_pagos_aplicar()	
+{
+    $("#frm_leer").hide();	
+    $("#nav_ul_opc").hide();	
+    $("#div_prin").hide("blind");
+    $("#frm_volver").show();
+    $("#div_propietario").hide();
+    $("#div_fact_cont").hide();	
+    $("#div_fact_cont").show();	
+    $("#div_suministro").hide();
+    $("#div_deuda").hide();
+    $("#div_abastece").hide();
+    $("#div_historico_medidores").hide();
+    $("#div_concepto_facturar").hide();
+    $("#div_contrato_show").hide();
+    fn_setea_grilla_pagos_aplicar();
 
+}
 
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
+function fn_pagos_otros()	
+{
+    $("#frm_leer").hide();	
+    $("#nav_ul_opc").hide();	
+    $("#div_prin").hide("blind");
+    $("#frm_volver").show();
+    $("#div_propietario").hide();
+    $("#div_fact_cont").hide();	
+    $("#div_fact_cont").show();	
+    $("#div_suministro").hide();
+    $("#div_deuda").hide();
+    $("#div_abastece").hide();
+    $("#div_historico_medidores").hide();
+    $("#div_concepto_facturar").hide();
+    $("#div_contrato_show").hide();
+    fn_setea_grilla_pagos_otros();
+
+}
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
 function fn_med_ver()	
 {	
