@@ -1429,7 +1429,8 @@ function fn_pagos_aplicar()
     $("#frm_volver").show();
     $("#div_propietario").hide();
     $("#div_fact_cont").hide();	
-    $("#div_fact_cont").show();	
+    $("#div_pagos_otros").hide();	
+    $("#div_pagos_aplicar").show();	
     $("#div_suministro").hide();
     $("#div_deuda").hide();
     $("#div_abastece").hide();
@@ -1449,7 +1450,8 @@ function fn_pagos_otros()
     $("#frm_volver").show();
     $("#div_propietario").hide();
     $("#div_fact_cont").hide();	
-    $("#div_fact_cont").show();	
+    $("#div_pagos_otros").show();	
+    $("#div_pagos_aplicar").hide();	
     $("#div_suministro").hide();
     $("#div_deuda").hide();
     $("#div_abastece").hide();
