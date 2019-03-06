@@ -38,6 +38,7 @@ var flag_contrato_madre = false;
 var flag_historial_subsidio = false;
 var flag_historial_aseo = false;
 var flag_informacion_factura = false;
+var flag_informacion_consumo = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -678,13 +679,33 @@ function fn_setea_grid_con()
 
 
     //EVENTO DBL_CLICK DE LA GRILLA
+
+    
+
+
+
+
     $grid_con.pqGrid({
         rowDblClick: function( event, ui ) {
             if (ui.rowData)
             {
                 var dataCell = ui.rowData;
-                $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
-                $(window).scrollTop(0);
+               
+                $.getScript('div_dat_informacion_consumo.js', function()
+                {
+                    if(!flag_informacion_consumo)
+                {
+                    // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                    flag_informacion_consumo = true;
+                    console.log("Tag informacion_consumo Cargado");
+                }
+                else{
+                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                }
+                });
+               
+          
             }
         }
     });
