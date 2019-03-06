@@ -119,13 +119,10 @@ $(document).ready(function() {
 
             if(!flag_concepto_facturar)
         {
-            $.getScript('js/concepto_facturar.js', function()
-            {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
             $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
             flag_concepto_facturar = true;
             console.log("Tag Concepto por facturar Cargado");
-            });
         }
         else{
             $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
