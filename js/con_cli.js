@@ -38,6 +38,7 @@ var flag_contrato_madre = false;
 var flag_historial_subsidio = false;
 var flag_historial_aseo = false;
 var flag_informacion_factura = false;
+var flag_informacion_consumo = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -335,6 +336,42 @@ $(document).ready(function() {
             }
                             
         });
+
+        $("#btn_pagos_aplica").click(function(e){
+            e.preventDefault();
+    
+            if(!flag_pagos_aplicar)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_pagos_aplicar);
+                flag_pagos_aplicar = true;
+                console.log("Deuda Tag Cargado");
+            }
+            else{
+                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_pagos_aplicar);
+            }
+            
+                
+        });
+
+
+        $("#btn_pagos_otros").click(function(e){
+            e.preventDefault();
+    
+            if(!flag_pagos_otros)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_pagos_otros);
+                flag_pagos_otros = true;
+                console.log("Deuda Tag Cargado");
+            }
+            else{
+                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_pagos_otros);
+            }
+            
+                
+        });
+
     var colM =
     [
         { title: "Tipo Agrupación", width: 150, align: "left", dataIndx:"c1",editable: false},        
@@ -634,13 +671,33 @@ function fn_setea_grid_con()
 
 
     //EVENTO DBL_CLICK DE LA GRILLA
+
+    
+
+
+
+
     $grid_con.pqGrid({
         rowDblClick: function( event, ui ) {
             if (ui.rowData)
             {
                 var dataCell = ui.rowData;
-                $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
-                $(window).scrollTop(0);
+               
+                $.getScript('div_dat_informacion_consumo.js', function()
+                {
+                    if(!flag_informacion_consumo)
+                {
+                    // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                    flag_informacion_consumo = true;
+                    console.log("Tag informacion_consumo Cargado");
+                }
+                else{
+                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                }
+                });
+               
+          
             }
         }
     });
@@ -1172,6 +1229,87 @@ function fn_setea_grilla_deuda_por_cargo(){
 	
 	$grid_selector_deuda.pqGrid( "option", "scrollModel", {horizontal: true} );
 }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grilla_pagos_aplicar(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            title:"Pagos por Aplicar",
+            width:'100%',
+            height:200,
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Oficina", width: 200, align: "left",dataIndx:"c1", editable: false},
+                { title: "Cajero/Canal", width: 180, align: "left" ,dataIndx:"c2", editable: false},
+                //{ title: "N° Lote", width: 100, align: "right" ,dataIndx:"c3", editable: false},
+                { title: "Fecha", width: 180, align: "center" ,dataIndx:"c3", editable: false, halign:"center"},
+                //{ title: "N° Pago", width: 100, align: "right" ,dataIndx:"c5", editable: false},
+                { title: "Monto", width: 110, align: "right" ,dataIndx:"c6", editable: false},
+                { title: "Concepto", width: 300, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "N° Documento", width: 150, align: "right" ,dataIndx:"c5", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'}
+        };
+        
+        $grid_aplicar_pagos =$("#grid_pagos_aplicar").pqGrid(obj3);
+        $grid_aplicar_pagos.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_aplicar_pagos.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_pagos_aplicar" ).pqGrid( "option", "showBottom", false );
+                    
+    }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grilla_pagos_otros(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            title:"Pagos por Aplicar",
+            width:'100%',
+            height:200,
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Fecha Ingreso", width: 80, align: "center",dataIndx:"c1", editable: false},
+                { title: "Fecha Recauda", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Concepto", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Descripción", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "N° Cliente", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "N° Doc.", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Monto Pago", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Oficina", width: 80, align: "center" ,dataIndx:"c8", editable: false},
+                { title: "Cajero", width: 140, align: "left" ,dataIndx:"c9", editable: false},
+                { title: "Observación", width: 80, align: "center" ,dataIndx:"c10", editable: false},
+                { title: "N° Lote", width: 80, align: "center" ,dataIndx:"c11", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'}
+        };
+        
+        $grid_pagos_otros = $("#grid_pagos_otros").pqGrid(obj3);
+        $grid_pagos_otros.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_pagos_otros.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_pagos_otros" ).pqGrid( "option", "showBottom", false );
+                    
+    }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
 function fn_setea_grilla_medidor_reg(){

@@ -1,0 +1,22 @@
+{
+  "name": "navegaciones",
+  "version": "1.0.0",
+  "description": "Consulta Cliente",
+  "main": "con_cli.htm",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allangmr/navegaciones.git"
+  },
+  "author": "Tivit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allangmr/navegaciones/issues"
+  },
+  "homepage": "https://github.com/allangmr/navegaciones#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
