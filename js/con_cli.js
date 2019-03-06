@@ -116,8 +116,7 @@ $(document).ready(function() {
 
     $("#btn_concepto_facturar").click(function(e){
         e.preventDefault();
-        $.getScript('concepto_facturar.js', function()
-        {
+
             if(!flag_concepto_facturar)
         {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
@@ -128,7 +127,7 @@ $(document).ready(function() {
         else{
             $("#div_concepto_facturar").load("div_dat_concepto_facturar.htm",fn_concepto_facturar);
         }
-        });
+
         
     });
 
@@ -556,7 +555,7 @@ function fn_setea_grid_fac()
     if (ui.rowData)
     {
     var dataCell = ui.rowData;
-    $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura(dataCell.cor));
+    $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura(dataCell.cor), fn_carga_grids);
     $(window).scrollTop(0);
     }
     }
@@ -1183,6 +1182,87 @@ function fn_setea_grilla_deuda_por_cargo(){
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grilla_pagos_aplicar(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            title:"Pagos por Aplicar",
+            width:'100%',
+            height:200,
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Oficina", width: 200, align: "left",dataIndx:"c1", editable: false},
+                { title: "Cajero/Canal", width: 180, align: "left" ,dataIndx:"c2", editable: false},
+                //{ title: "N° Lote", width: 100, align: "right" ,dataIndx:"c3", editable: false},
+                { title: "Fecha", width: 180, align: "center" ,dataIndx:"c3", editable: false, halign:"center"},
+                //{ title: "N° Pago", width: 100, align: "right" ,dataIndx:"c5", editable: false},
+                { title: "Monto", width: 110, align: "right" ,dataIndx:"c6", editable: false},
+                { title: "Concepto", width: 300, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "N° Documento", width: 150, align: "right" ,dataIndx:"c5", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'}
+        };
+        
+        $grid_aplicar_pagos =$("#grid_pagos_aplicar").pqGrid(obj3);
+        $grid_aplicar_pagos.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_aplicar_pagos.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_pagos_aplicar" ).pqGrid( "option", "showBottom", false );
+                    
+    }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
+function fn_setea_grilla_pagos_otros(){
+	
+    /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
+        var obj3 = {
+            title:"Pagos por Aplicar",
+            width:'100%',
+            height:200,
+            rowBorders: true,
+            editable: false,
+            scrollModel:{theme:true},
+            colModel:
+            [
+                { title: "Fecha Ingreso", width: 80, align: "center",dataIndx:"c1", editable: false},
+                { title: "Fecha Recauda", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Concepto", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Descripción", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "N° Cliente", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "N° Doc.", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Monto Pago", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Oficina", width: 80, align: "center" ,dataIndx:"c8", editable: false},
+                { title: "Cajero", width: 140, align: "left" ,dataIndx:"c9", editable: false},
+                { title: "Observación", width: 80, align: "center" ,dataIndx:"c10", editable: false},
+                { title: "N° Lote", width: 80, align: "center" ,dataIndx:"c11", editable: false}
+            ],
+            dataModel: {
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
+            collapsible: false,
+            selectionModel: { type: 'row',mode:'single'}
+        };
+        
+        $grid_pagos_otros = $("#grid_pagos_otros").pqGrid(obj3);
+        $grid_pagos_otros.pqGrid( "option", "scrollModel", {horizontal: true} );
+        $grid_pagos_otros.pqGrid("option", "pageModel.type", {checked:false});
+        $( "#grid_pagos_otros" ).pqGrid( "option", "showBottom", false );
+                    
+    }
+
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
 function fn_setea_grilla_medidor_reg(){
 	
     /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
@@ -1623,7 +1703,10 @@ function fn_informacion_factura(n)
    $("#frm_volver").show();
    $("#div_informacion_factura").show();
    console.log(n);
-   fn_setea_contador_agua_if();
-   fn_setea_conceptos_facturados_if();
+}
+
+function fn_carga_grids(){
+    fn_setea_contador_agua_if();
+    fn_setea_conceptos_facturados_if();  
 }
 
