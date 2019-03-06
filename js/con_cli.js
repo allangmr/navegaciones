@@ -335,6 +335,42 @@ $(document).ready(function() {
             }
                             
         });
+
+        $("#btn_pagos_aplica").click(function(e){
+            e.preventDefault();
+    
+            if(!flag_pagos_aplicar)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_pagos_aplicar);
+                flag_pagos_aplicar = true;
+                console.log("Deuda Tag Cargado");
+            }
+            else{
+                $("#div_pagos_aplicar").load("div_dat_pagos_aplicar.htm",fn_pagos_aplicar);
+            }
+            
+                
+        });
+
+
+        $("#btn_pagos_otros").click(function(e){
+            e.preventDefault();
+    
+            if(!flag_pagos_otros)
+            {
+                // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_pagos_otros);
+                flag_pagos_otros = true;
+                console.log("Deuda Tag Cargado");
+            }
+            else{
+                $("#div_pagos_otros").load("div_dat_pagos_otros.htm",fn_pagos_otros);
+            }
+            
+                
+        });
+
     var colM =
     [
         { title: "Tipo Agrupación", width: 150, align: "left", dataIndx:"c1",editable: false},        
