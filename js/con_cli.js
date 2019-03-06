@@ -201,18 +201,18 @@ $(document).ready(function() {
         
     });
 
-    $("#btn_sum").click(function(e){
+    $("#btn_ubicacion").click(function(e){
         e.preventDefault();
 
         if(!flag_dat_sum)
         {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-            $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
+            $("#div_ubicacion").load("div_dat_ubicacion.htm",fn_ubicacion_ver);
             flag_dat_sum = true;
-            console.log("Tag Datos de Suministro");
+            console.log("Tag Datos de ubicacion");
         }
         else{
-            $("#div_suministro").load("div_dat_sum.htm",fn_sum_ver);
+            $("#div_ubicacion").load("div_dat_ubicacion.htm",fn_ubicacion_ver);
         }
     
         
@@ -424,14 +424,6 @@ function fn_hide_buscar()
 {
     // SE OCULTAN LOS CRITERIOS DE BÚSQUEDA
     
-    $("#frm_busq").hide();
-    $("#div_busq").hide();
-    $("#div_abastece").hide();
-    $("#div_suministro").hide();
-    $("#div_propietario").hide();
-    $("#div_fact_cont").hide();
-    $("#div_deuda").hide();
-    $("#div_medidor").hide();
     $("#frm_leer").show();
     $("#nav_ul_opc").show();
     $("#div_prin").show();
@@ -1473,14 +1465,14 @@ function fn_modal_ver()
 
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
-function fn_sum_ver()	
+function fn_ubicacion_ver()	
 {	
        	
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
    $("#frm_volver").show();
-   $("#div_suministro").show();	
+   $("#div_ubicacion").show();	
 
    if($contrato_madre>=1)
    {
