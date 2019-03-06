@@ -33,8 +33,32 @@
         <script src="./js/syn_util.js"></script>
         <link rel="stylesheet" href="./css/con_cli.css">
 
+
+
+        <!-- Informacion de Factura -->
+        <script src="./js/div_dat_informacion_factura.js"></script>
+
+        <!-- Auditoria de Modificaciones -->
+        <script src="./js/div_dat_auditoria.js"></script>
+
         <!-- Concepto por Facturar -->
         <script src="./js/div_dat_concepto_facturar.js"></script>
+
+        <!-- Contrato Madre-->
+        <script src="./js/div_dat_contrato_madre.js"></script>
+
+        <!-- Deuda-->
+        <script src="./js/div_dat_deuda.js"></script>
+
+        <!-- Facturacion Contingente-->
+        <script src="./js/div_dat_fact.js"></script>
+
+        <!-- Historial Aseo-->
+        <script src="./js/div_dat_historial_aseo.js"></script>
+
+        <!-- Historial Subsidio-->
+        <script src="./js/div_dat_historial_aseo.js"></script>
+       
        
         
         <title>Consulta de Cliente</title>
@@ -44,19 +68,24 @@
     
     <body>
     
-     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-static-top" id="nav_prin">
-        <div class="container">
+  
+    <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#div_menu_coll" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#div_menu_coll" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <div class="navbar-brand">Consulta de Cliente</div>
+                <div class="logo navbar-brand">	
+                    <a  href="https://www.idaan.gob.pa/" target="_blank"><img src="logo_idaan_horizontal.gif" width="100"></a>
+                </div>
+
+                <p class="navbar-brand">Consulta de Cliente</p>
             </div>
-            <div id="div_menu_coll" class="navbar-collapse collapse">
+            <div id="div_menu_coll" class="navbar-collapse collapse" style="padding-top: 20px;">
                 
                 <form class="navbar-form navbar-left" id="frm_leer">
                     <div class="form-group">
@@ -127,9 +156,11 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-
+            <!--/.nav-collapse -->
+          </div>
+          <!--/.container-fluid -->
+        </nav>
+      </div>
     <!-- DIV PRINCIPAL -->
     <div class="container" id="div_prin">
         
