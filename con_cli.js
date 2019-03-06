@@ -116,7 +116,7 @@ $(document).ready(function() {
 
     $("#btn_concepto_facturar").click(function(e){
         e.preventDefault();
-        $.getScript('concepto_facturar.js', function()
+        $.getScript('js/concepto_facturar.js', function()
         {
             if(!flag_concepto_facturar)
         {
@@ -556,7 +556,7 @@ function fn_setea_grid_fac()
     if (ui.rowData)
     {
     var dataCell = ui.rowData;
-    $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura(dataCell.cor));
+    $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura(dataCell.cor), fn_carga_grids);
     $(window).scrollTop(0);
     }
     }
@@ -1623,7 +1623,10 @@ function fn_informacion_factura(n)
    $("#frm_volver").show();
    $("#div_informacion_factura").show();
    console.log(n);
-   fn_setea_contador_agua_if();
-   fn_setea_conceptos_facturados_if();
+}
+
+function fn_carga_grids(){
+    fn_setea_contador_agua_if();
+    fn_setea_conceptos_facturados_if();  
 }
 
