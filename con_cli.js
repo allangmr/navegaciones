@@ -1040,18 +1040,14 @@ function fn_setea_grilla_pagos_aplicar(){
             scrollModel:{theme:true},
             colModel:
             [
-                { title: "Medidor", width: 80, align: "center",dataIndx:"c1", editable: false},
-                { title: "Marca", width: 100, align: "left" ,dataIndx:"c2", editable: false},
-                { title: "Modelo", width: 120, align: "center" ,dataIndx:"c3", editable: false},
-                { title: "Diámetro", width: 150, align: "left" ,dataIndx:"c4", editable: false},
-                { title: "Medida", width: 100, align: "left" ,dataIndx:"c5", editable: false},
-                { title: "Factor", width: 120, align: "left" ,dataIndx:"c6", editable: false},
-                { title: "Enteros", width: 140, align: "left" ,dataIndx:"c7", editable: false},
-                { title: "Decimales", width: 80, align: "center" ,dataIndx:"c8", editable: false},
-                { title: "Instalación", width: 140, align: "left" ,dataIndx:"c9", editable: false},
-                { title: "Lec. Instala", width: 80, align: "center" ,dataIndx:"c10", editable: false},
-                { title: "Fec. Actualiza", width: 80, align: "center" ,dataIndx:"c11", editable: false},
-                { title: "Propiedad", width: 80, align: "center" ,dataIndx:"c12", editable: false}
+                { title: "Oficina", width: 200, align: "left",dataIndx:"c1", editable: false},
+                { title: "Cajero/Canal", width: 180, align: "left" ,dataIndx:"c2", editable: false},
+                //{ title: "N° Lote", width: 100, align: "right" ,dataIndx:"c3", editable: false},
+                { title: "Fecha", width: 180, align: "center" ,dataIndx:"c3", editable: false, halign:"center"},
+                //{ title: "N° Pago", width: 100, align: "right" ,dataIndx:"c5", editable: false},
+                { title: "Monto", width: 110, align: "right" ,dataIndx:"c6", editable: false},
+                { title: "Concepto", width: 300, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "N° Documento", width: 150, align: "right" ,dataIndx:"c5", editable: false}
             ],
             dataModel: {
                 paging: "local",
@@ -1083,18 +1079,17 @@ function fn_setea_grilla_pagos_otros(){
             scrollModel:{theme:true},
             colModel:
             [
-                { title: "Medidor", width: 80, align: "center",dataIndx:"c1", editable: false},
-                { title: "Marca", width: 100, align: "left" ,dataIndx:"c2", editable: false},
-                { title: "Modelo", width: 120, align: "center" ,dataIndx:"c3", editable: false},
-                { title: "Diámetro", width: 150, align: "left" ,dataIndx:"c4", editable: false},
-                { title: "Medida", width: 100, align: "left" ,dataIndx:"c5", editable: false},
-                { title: "Factor", width: 120, align: "left" ,dataIndx:"c6", editable: false},
-                { title: "Enteros", width: 140, align: "left" ,dataIndx:"c7", editable: false},
-                { title: "Decimales", width: 80, align: "center" ,dataIndx:"c8", editable: false},
-                { title: "Instalación", width: 140, align: "left" ,dataIndx:"c9", editable: false},
-                { title: "Lec. Instala", width: 80, align: "center" ,dataIndx:"c10", editable: false},
-                { title: "Fec. Actualiza", width: 80, align: "center" ,dataIndx:"c11", editable: false},
-                { title: "Propiedad", width: 80, align: "center" ,dataIndx:"c12", editable: false}
+                { title: "Fecha Ingreso", width: 80, align: "center",dataIndx:"c1", editable: false},
+                { title: "Fecha Recauda", width: 100, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Concepto", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Descripción", width: 150, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "N° Cliente", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "N° Doc.", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Monto Pago", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Oficina", width: 80, align: "center" ,dataIndx:"c8", editable: false},
+                { title: "Cajero", width: 140, align: "left" ,dataIndx:"c9", editable: false},
+                { title: "Observación", width: 80, align: "center" ,dataIndx:"c10", editable: false},
+                { title: "N° Lote", width: 80, align: "center" ,dataIndx:"c11", editable: false}
             ],
             dataModel: {
                 paging: "local",
