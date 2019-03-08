@@ -646,30 +646,23 @@ function fn_setea_grid_con()
 
     
 
-
-
-
     $grid_con.pqGrid({
         rowDblClick: function( event, ui ) {
             if (ui.rowData)
             {
                 var dataCell = ui.rowData;
                
-                $.getScript('div_dat_informacion_consumo.js', function()
-                {
+          
                     if(!flag_informacion_consumo)
                 {
                     // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo);
                     flag_informacion_consumo = true;
                     console.log("Tag informacion_consumo Cargado");
                 }
                 else{
-                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo);
                 }
-                });
-               
-          
             }
         }
     });
@@ -1714,17 +1707,6 @@ function fn_historial_aseo()
    $("#co_excel_historial_aseo").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
 
-//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
-function fn_informacion_factura(n)	
-{	
-       	
-   $("#frm_leer").hide();	
-   $("#nav_ul_opc").hide();	
-   $("#div_prin").hide("blind");	
-   $("#frm_volver").show();
-   $("#div_informacion_factura").show();
-   console.log(n);
-}
 
 function fn_carga_grids(){
     fn_setea_contador_agua_if();
