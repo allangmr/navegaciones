@@ -39,7 +39,8 @@ var flag_contrato_madre = false;
 var flag_historial_subsidio = false;
 var flag_historial_aseo = false;
 var flag_informacion_factura = false;
-var flag_hist_pago_prop = false;
+var flag_hist_pago_prop = false; 
+var flag_informacion_consumo = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
