@@ -626,30 +626,23 @@ function fn_setea_grid_con()
 
     
 
-
-
-
     $grid_con.pqGrid({
         rowDblClick: function( event, ui ) {
             if (ui.rowData)
             {
                 var dataCell = ui.rowData;
                
-                $.getScript('div_dat_informacion_consumo.js', function()
-                {
+          
                     if(!flag_informacion_consumo)
                 {
                     // SE CARGA EL HTML DE DIV DE BÚSQUEDA
-                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo);
                     flag_informacion_consumo = true;
                     console.log("Tag informacion_consumo Cargado");
                 }
                 else{
-                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo(dataCell.cor));
+                    $("#div_informacion_consumo").load("div_dat_informacion_consumo.htm",fn_informacion_consumo);
                 }
-                });
-               
-          
             }
         }
     });

@@ -12,16 +12,19 @@ function fn_setea_informacion_consumo(){
             colModel:
             [
                 { title: "Nº", width: 80, align: "center",dataIndx:"c1", editable: false},
-                { title: "Concepto", width: 80, align: "left" ,dataIndx:"c2", editable: false},
-                { title: "Ingreso", width: 120, align: "center" ,dataIndx:"c3", editable: false},
-                { title: "Cuotas", width: 80, align: "left" ,dataIndx:"c4", editable: false},
-                { title: "Valor Cuota", width: 100, align: "left" ,dataIndx:"c5", editable: false},
-                { title: "Valor Ult. Cuota", width: 120, align: "left" ,dataIndx:"c6", editable: false},
-                { title: "Pend. Facturar", width: 140, align: "left" ,dataIndx:"c7", editable: false},
-                { title: "Valor Total Inicial", width: 80, align: "center" ,dataIndx:"c8", editable: false},
-                { title: "Tipo Medida", width: 140, align: "left" ,dataIndx:"c9", editable: false},
-                { title: "Origen", width: 80, align: "center" ,dataIndx:"c10", editable: false},
-                { title: "Observacion", width: 120, align: "center" ,dataIndx:"c11", editable: false}
+                { title: "Evento", width: 80, align: "left" ,dataIndx:"c2", editable: false},
+                { title: "Fecha", width: 120, align: "center" ,dataIndx:"c3", editable: false},
+                { title: "Lector", width: 80, align: "left" ,dataIndx:"c4", editable: false},
+                { title: "N° Medidor", width: 100, align: "left" ,dataIndx:"c5", editable: false},
+                { title: "Marca", width: 120, align: "left" ,dataIndx:"c6", editable: false},
+                { title: "Diámetro", width: 140, align: "left" ,dataIndx:"c7", editable: false},
+                { title: "Lectura Terreno", width: 80, align: "center" ,dataIndx:"c8", editable: false},
+                { title: "Lectura Facturación", width: 140, align: "left" ,dataIndx:"c9", editable: false},
+                { title: "Consumo", width: 80, align: "center" ,dataIndx:"c10", editable: false},
+                { title: "Medida", width: 120, align: "center" ,dataIndx:"c11", editable: false},
+                { title: "Clave de Lectura", width: 120, align: "center" ,dataIndx:"c12", editable: false},
+                { title: "Irregularidad", width: 120, align: "center" ,dataIndx:"c13", editable: false},
+                { title: "Observacion", width: 120, align: "center" ,dataIndx:"c14", editable: false}
             ],
             dataModel: {
                 paging: "local",
@@ -33,7 +36,7 @@ function fn_setea_informacion_consumo(){
             selectionModel: { type: 'row',mode:'single'},
             filterModel: { on: true, mode: "OR" },
             toolbar: {
-                cls: 'pq-toolbar-export',
+                cls: 'pq-toolbar-export', 
                 items: [			
                     { type: "button",attr:'id=co_excel_informacion_consumo', cls:"btn btn-primary"}
                 ]
@@ -49,14 +52,14 @@ function fn_setea_informacion_consumo(){
     }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
-function fn_informacion_consumo(n)	
+function fn_informacion_consumo()	
 {	
-       	
+     	
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
    $("#frm_volver").show();
-   $("#div_informacion_consumo").show();
-   console.log(n);
- 
+   $("#div_informacion_consumo").show();   
+   fn_setea_informacion_consumo();
+   $("#co_excel_informacion_consumo").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
