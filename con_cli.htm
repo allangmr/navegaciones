@@ -33,11 +33,51 @@
         <script src="./js/syn_util.js"></script>
         <link rel="stylesheet" href="./css/con_cli.css">
 
+
+        <!-- Auditoria de Modificaciones -->
+        <script src="./js/div_dat_auditoria.js"></script>
+
         <!-- Concepto por Facturar -->
         <script src="./js/concepto_facturar.js"></script>
 
         <!-- informacion de Consumo -->
         <script src="./js/div_dat_informacion_consumo.js"></script>
+
+        <!-- Contrato Madre-->
+        <script src="./js/div_dat_contrato_madre.js"></script>
+
+        <!-- Deuda-->
+        <script src="./js/div_dat_deuda.js"></script>
+
+        <!-- Facturacion Contingente-->
+        <script src="./js/div_dat_fact.js"></script>
+
+        <!-- Historial Aseo-->
+        <script src="./js/div_dat_historial_aseo.js"></script>
+
+        <!-- Historial Subsidio-->
+        <script src="./js/div_dat_historial_subsidio.js"></script>
+
+        <!-- Historico Medidores-->
+        <script src="./js/div_dat_historico_medidores.js"></script>
+       
+        <!-- Historico Pagos-->
+        <script src="./js/div_dat_historico_pagos.js"></script>
+
+        <!-- Informacion de Factura -->
+        <script src="./js/div_dat_informacion_factura.js"></script>
+
+        <!-- Medidores-->
+        <script src="./js/div_dat_med.js"></script>
+
+        <!-- Datos de Propietario-->
+        <script src="./js/div_dat_propietario.js"></script>
+
+        <!-- Datos Tecnicos-->
+        <script src="./js/div_dat_tec.js"></script>
+
+        <!-- Ubicación-->
+        <script src="./js/div_dat_ubicacion.js"></script>
        
         
         <title>Consulta de Cliente</title>
@@ -47,19 +87,24 @@
     
     <body>
     
-     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-static-top" id="nav_prin">
-        <div class="container">
+  
+    <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#div_menu_coll" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#div_menu_coll" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <div class="navbar-brand">Consulta de Cliente</div>
+                <div class="logo navbar-brand">	
+                    <a  href="https://www.idaan.gob.pa/" target="_blank"><img src="logo_idaan_horizontal.gif" width="100"></a>
+                </div>
+
+                <p class="navbar-brand">Consulta de Cliente</p>
             </div>
-            <div id="div_menu_coll" class="navbar-collapse collapse">
+            <div id="div_menu_coll" class="navbar-collapse collapse" style="padding-top: 20px;">
                 
                 <form class="navbar-form navbar-left" id="frm_leer">
                     <div class="form-group">
@@ -81,7 +126,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ver <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="" id="btn_propietario">Datos de Propietario</a></li>
-                            <li><a href=""  id="btn_sum">Ubicación Geográfica</a></li>
+                            <li><a href=""  id="btn_ubicacion">Ubicación Geográfica</a></li>
                             <li><a href="" id="btn_Dat_Tec">Datos Técnicos</a></li>
                             <li><a href="" id="btn_deuda">Deuda</a></li>
                         </ul>
@@ -120,13 +165,21 @@
                                     <li><a href="" id="btn_historial_aseo">Movimientos de Aseo</a></li>
                                 </ul>   
                             </li> <!-- FIN DE COBRANZA-->
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pagos</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="" id="btn_historico_pagos">Histórico de Pagos</a></li>
+                                </ul>
+                            </li> <!-- FIN DE PAGOS-->
                         </ul>
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-
+            <!--/.nav-collapse -->
+          </div>
+          <!--/.container-fluid -->
+        </nav>
+      </div>
     <!-- DIV PRINCIPAL -->
     <div class="container" id="div_prin">
         
@@ -137,7 +190,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="tx_nom">Nombre</label>
-                    <input type=text class="form-control" id="tx_nom"> 
+                    <input type=text class="form-control " id="tx_nom"> 
                 </div>
             </div>
         </div>
@@ -149,7 +202,7 @@
 
                 <div class="form-group">
                     <label for="tx_tipo_id">Tipo de Documento de Identidad</label>
-                    <input type="text" class="form-control" id="tx_tipo_id">
+                    <input type="text" class="form-control " id="tx_tipo_id">
                 </div>  
 
 
@@ -158,7 +211,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="tx_id">Documento de Identidad</label>
-                    <input type="text" class="form-control" id="tx_id">
+                    <input type="text" class="form-control " id="tx_id">
                 </div>
             </div>
             
@@ -170,7 +223,7 @@
 
                 <div class="form-group">
                     <label for="tx_regional">Regional</label>
-                    <input type="text" class="form-control" id="tx_regional">
+                    <input type="text" class="form-control " id="tx_regional">
                 </div>  
 
 
@@ -179,7 +232,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="tx_ruta">Ruta Comercial</label>
-                    <input type="text" class="form-control" id="tx_ruta">
+                    <input type="text" class="form-control " id="tx_ruta">
                 </div>
             </div>
             
@@ -192,7 +245,7 @@
 
                 <div class="form-group">
                     <label for="tx_de_idaan">Deuda Idaan</label>
-                    <input type="text" class="form-control" id="tx_de_idaan">
+                    <input type="text" class="form-control " id="tx_de_idaan">
                 </div>  
 
 
@@ -200,21 +253,21 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="tx_de_aseo">Deuda Aseo</label>
-                    <input type="text" class="form-control" id="tx_de_aseo">
+                    <input type="text" class="form-control " id="tx_de_aseo">
                 </div>
             </div>
             
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="tx_de_total">Deuda Total</label>
-                    <input type="text" class="form-control" id="tx_de_total">
+                    <input type="text" class="form-control " id="tx_de_total">
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="tx_de_conve">En Convenio</label>
-                    <input type="text" class="form-control" id="tx_de_conve">
+                    <input type="text" class="form-control " id="tx_de_conve">
                 </div>
             </div>
 
@@ -227,7 +280,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Provincia</label>
-                    <input type="text" class="form-control" id="tx_provincia">
+                    <input type="text" class="form-control " id="tx_provincia">
                 </div>
 
 
@@ -235,7 +288,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Distrito</label>
-                    <input type="text" class="form-control" id="tx_distrito">
+                    <input type="text" class="form-control " id="tx_distrito">
                 </div>
             </div>
 
@@ -247,7 +300,7 @@
 
                 <div class="form-group">
                     <label for="tx_corr">Corregimiento</label>
-                    <input type="text" class="form-control" id="tx_corr">
+                    <input type="text" class="form-control " id="tx_corr">
                 </div>  
 
 
@@ -256,7 +309,7 @@
 
                 <div class="form-group">
                     <label for="tx_barrio">Barrio</label>
-                    <input type="text" class="form-control" id="tx_barrio">
+                    <input type="text" class="form-control " id="tx_barrio">
                 </div>
 
             </div>
@@ -268,7 +321,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="tx_dir">Dirección</label>
-                    <input type=text class="form-control" id="tx_dir">
+                    <input type=text class="form-control " id="tx_dir">
                 </div>
             </div>
         </div>
@@ -278,7 +331,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="tx_ref">Referencia Adicional</label>
-                        <input type=text class="form-control" id="tx_ref">
+                        <input type=text class="form-control " id="tx_ref">
                     </div>
                 </div>
             </div>
@@ -292,7 +345,7 @@
 
                 <div class="form-group">
                     <label for="tx_est_cliente">Estado Cliente</label>
-                    <input type="text" class="form-control" id="tx_est_cliente">
+                    <input type="text" class="form-control " id="tx_est_cliente">
                 </div>  
 
 
@@ -300,7 +353,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="tx_est_conex">Estado Conexión</label>
-                    <input type="text" class="form-control" id="tx_est_conex">
+                    <input type="text" class="form-control " id="tx_est_conex">
                 </div>
             </div>
             
@@ -312,7 +365,7 @@
 
                 <div class="form-group">
                     <label for="tx_tarifa">Tarifa</label>
-                    <input type="text" class="form-control" id="tx_tarifa">
+                    <input type="text" class="form-control " id="tx_tarifa">
                 </div>  
             </div>
         </div>
@@ -322,7 +375,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="tx_act">Actividad</label>
-                    <input type="text" class="form-control" id="tx_act">  
+                    <input type="text" class="form-control " id="tx_act">  
                 </div>  
             </div>
         </div>
@@ -470,7 +523,7 @@
     <div id="div_abastece" class="container" style="display: none;"></div>
 
     <!-- DIV DATOS SUMINISTRO-->	
-    <div id="div_suministro" class="container" style="display: none;"></div>
+    <div id="div_ubicacion" class="container" style="display: none;"></div>
     
     <!-- DIV DATOS PROPIETARIO-->	
     <div id="div_propietario" class="container" style="display: none;"></div>
@@ -504,9 +557,19 @@
 
     <!-- DIV DATOS HISTORIAL DE MOVIMIENTOS DE ASEO-->	
     <div id="div_historial_aseo" class="container" style="display: none"></div>
-
+    
     <!-- DIV DATOS INFORMACION FACTURA-->	
     <div id="div_informacion_factura" class="container" style="display: none"></div>
+    
+
+    <!-- DIV DATOS INFORMACION OTROS PAGOS-->	
+    <div id="div_pagos_otros" class="container" style="display: none"></div>
+
+    <!-- DIV DATOS INFORMACION PAGOS X APLICAR-->	
+    <div id="div_pagos_aplicar" class="container" style="display: none"></div>
+
+    <!-- DIV DATOS  HISTORICO PAGOS-->	
+    <div id="div_historico_pagos" class="container" style="display: none;"></div>
 
     <!-- PIE DE PÁGINA-->
     <div class="container" id="div_footer"></div>

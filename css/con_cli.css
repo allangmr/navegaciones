@@ -109,14 +109,35 @@ h1, h2{
     color: #000 !important
 }
 
+.form-group {
+    margin-bottom: 10px;
+}
+
+label{
+    margin-bottom: 0px;
+    font-size:12px;
+}
+
+.form-control {
+    height: 30px;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {
     max-width: 1024px;
   }
+  .navbar-brand {
+    float: none;
+    text-align:center;
+    }
 }
 
 @media (max-width: 1250px) {
+
+    .navbar-brand {
+        float: none;
+        text-align:center;
+    }
     .navbar-header {
         float: none;
     }

@@ -1,4 +1,3 @@
-console.log("Concepto_facturar.js");
 function fn_setea_concepto_facturar(){
 	
     /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
