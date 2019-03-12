@@ -149,7 +149,7 @@ label{
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
     color: #000000;
     text-decoration: none;
-    background-color: rgb(147, 211, 255);
+    background-color: rgb(217, 240, 255);
 }
 .well {
     background-color: rgba(214, 235, 255, 0.5607843137254902);
