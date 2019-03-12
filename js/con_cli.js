@@ -41,6 +41,7 @@ var flag_historial_aseo = false;
 var flag_informacion_factura = false;
 var flag_hist_pago_prop = false; 
 var flag_informacion_consumo = false;
+var flag_convenios_pago = false;
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -148,6 +149,23 @@ $(document).ready(function() {
         }
         else{
             $("#div_informacion_factura").load("div_dat_informacion_factura.htm",fn_informacion_factura);
+        }
+        
+        
+    });
+
+    $("#btn_convenios_pago").click(function(e){
+        e.preventDefault();
+
+        if(!flag_convenios_pago)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_convenios_pago").load("div_dat_convenios_pago.htm",fn_convenios_pago);
+            flag_convenios_pago = true;
+            console.log("Tag Convenios de Pago Cargado");
+        }
+        else{
+            $("#div_convenios_pago").load("div_dat_convenios_pago.htm",fn_convenios_pago);
         }
         
         
