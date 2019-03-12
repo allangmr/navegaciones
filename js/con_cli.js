@@ -504,6 +504,7 @@ function fn_hide_buscar()
     $("#nav_ul_opc").show();
     $("#div_prin").show();
     $("#frm_busq").hide();
+    $("#div_busq").hide();
    
 
 }

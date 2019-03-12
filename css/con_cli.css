@@ -116,6 +116,15 @@ label{
     font-size:13px;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #23415e;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #86c3ff00;
+}
+.navbar-default .navbar-toggle {
+    border-color: #36638c;
+}
 .form-control {
     height: 30px;
 }
