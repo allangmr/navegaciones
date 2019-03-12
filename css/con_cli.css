@@ -121,6 +121,7 @@ label{
 }
 .navbar-default {
     background-color: #add8ff8f;
+    border-color: #d0e2ff;
 }
 
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
