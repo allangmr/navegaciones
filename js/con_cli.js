@@ -503,6 +503,7 @@ function fn_hide_buscar()
     $("#frm_leer").show();
     $("#nav_ul_opc").show();
     $("#div_prin").show();
+    $("#frm_busq").hide();
    
 
 }
