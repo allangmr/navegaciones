@@ -30,26 +30,32 @@ function fn_setea_convenios_pago()
                cls: "pq-toolbar-export",
                items:
                [
-                   { type: "button", label: " Excel", attr:"id=co_excel_fac", cls:"btn btn-primary"},
+                   { type: "button", label: " Excel", attr:"id=convenio_excel_fac", cls:"btn btn-primary"},
                ]
            }
         };
 			
 		obj.colModel = [            
-            { title: "Periodo", width: 110, dataType: "string", dataIndx: "Periodo", halign:"center", align:"left"},
-            { title: "Lectura", width: 110, dataType: "string", dataIndx: "Lectura", halign:"center", align:"left"},
-            { title: "Emisión", width: 110, dataType: "string", dataIndx: "Emision", halign:"center", align:"left"},
-            { title: "Vencimiento", width: 110, dataType: "string", dataIndx: "Vencimiento", halign:"center", align:"left"},
-            { title: "Agua", width: 120, dataType: "string", dataIndx: "Agua", halign:"center", align:"right"},
-            { title: "Compensación y Subsidio", width: 120, dataType: "string",  dataIndx: "Compensacion", halign:"center", align:"right"},
-            { title: "Descuento Jubilado", width: 120, dataType: "string", dataIndx: "Descuento", halign:"center", align:"right"},
-            { title: "Alcantarillado", width: 120, dataType: "string", dataIndx: "Alcantarillado", halign:"center", align:"right"},
-            { title: "Recargo", width: 120, dataType: "string", dataIndx: "Recargo", halign:"center", align:"right"},
-            { title: "Saldo Anterior", width: 120, dataType: "string", dataIndx: "Saldo", halign:"center", align:"right"},
-            { title: "Aseo", width: 120, dataType: "string", dataIndx: "Aseo", halign:"center", align:"right"},
+            { title: "Opcion", width: 110, dataType: "string", dataIndx: "Opcion", halign:"center", align:"left"},
+            { title: "Estado", width: 110, dataType: "string", dataIndx: "Estado", halign:"center", align:"left"},
+            { title: "Creacion", width: 110, dataType: "string", dataIndx: "Creacion", halign:"center", align:"left"},
+            { title: "Fecha Fin", width: 110, dataType: "string", dataIndx: "Fecha_Fin", halign:"center", align:"left"},
+            { title: "Deuda Inicial", width: 120, dataType: "string", dataIndx: "Deuda_Inicial", halign:"center", align:"right"},
+            { title: "Antig. Inicial", width: 120, dataType: "string",  dataIndx: "Antig_Inicial", halign:"center", align:"right"},
+            { title: "Abono Inicial", width: 120, dataType: "string", dataIndx: "Abono_Inicial", halign:"center", align:"right"},
+            { title: "Valor Cuota", width: 120, dataType: "string", dataIndx: "Valor_Cuota", halign:"center", align:"right"},
+            { title: "N° de Cuotas", width: 120, dataType: "string", dataIndx: "N_Cuotas", halign:"center", align:"right"},
+            { title: "Cuotas Fact.", width: 120, dataType: "string", dataIndx: "Cuotas_Fact", halign:"center", align:"right"},
+            { title: "Deuda Actual", width: 120, dataType: "string", dataIndx: "Deuda_Actual", halign:"center", align:"right"},
             { title: "cor", width: 120, dataType: "string", dataIndx: "cor", halign:"center",hidden:true, align:"right"},
-            { title: "Total Documento", width: 120, dataType: "string", dataIndx: "Total", halign:"center", align:"right"}  
-        ];
+            { title: "Nom. Contacto", width: 120, dataType: "string", dataIndx: "Nom_Contacto", halign:"center", align:"right"},  
+            { title: "Tipo id", width: 120, dataType: "string", dataIndx: "Tipo_id", halign:"center", align:"right"},
+            { title: "Id. Contacto", width: 120, dataType: "string",  dataIndx: "Id_Contacto", halign:"center", align:"right"},
+            { title: "Tel. Contacto", width: 120, dataType: "string", dataIndx: "Tel_Contacto", halign:"center", align:"right"},
+            { title: "Email Contacto", width: 120, dataType: "string", dataIndx: "Email_Contacto", halign:"center", align:"right"},
+            { title: "N° de Atención", width: 120, dataType: "string", dataIndx: "N_Atencion", halign:"center", align:"right"},
+            { title: "Creado Por", width: 120, dataType: "string", dataIndx: "Creado_Por", halign:"center", align:"right"},
+            { title: "Finalizado por", width: 120, dataType: "string", dataIndx: "Finalizado_Por", halign:"center", align:"right"}        ];
 		
     $grid_convenios_pago = $("#div_convenios_pago").pqGrid(obj);
 
@@ -77,6 +83,6 @@ function fn_convenios_pago()
    $("#div_prin").hide("blind");	
    $("#frm_volver").show();
    $("#div_convenios_pago").show();
-   fn_setea_convenios_pago();
-   $("#co_excel_historial_aseo").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   //fn_setea_convenios_pago();
+   $("#convenio_excel_fac").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
 }
