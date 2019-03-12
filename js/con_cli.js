@@ -4,6 +4,7 @@ var $grid;
 var $grid_selector_deuda;
 var $grid_eve;
 var $grid_fac;
+var $grid_convenios_pago;
 var $grid_madre;
 var $contrato_madre =1;
 var $grid_con;
