@@ -4,7 +4,7 @@ function fn_setea_grilla_medidor_reg(){
 	
     /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
         var obj3 = {
-            title:"Contador de Agua",
+            title:"Contador de Agua ",
             width:'100%',
             height:200,
             rowBorders: true,

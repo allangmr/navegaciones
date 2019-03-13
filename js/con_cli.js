@@ -1,6 +1,7 @@
 var g_modulo="Módulo de Atención al Cliente";
 var g_tit = "Consulta de Clientes";
 var $grid;
+var $grid_pago;
 var $grid_selector_deuda;
 var $grid_eve;
 var $grid_fac;
