@@ -14,6 +14,7 @@ function fn_setea_convenios_pago(){
             title: "Detalles de Convenios ",
             rowBorders: true,
             editable: false,
+            numberCell: { show: false, resizable: true, title: "#" },
             scrollModel:{theme:true},
             colModel:
             [
