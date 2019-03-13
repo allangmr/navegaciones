@@ -83,5 +83,5 @@ function fn_convenios_pago()
    $("#frm_volver").show();
    $("#div_convenios_pago").show();
    fn_setea_convenios_pago();
-   $("#convenio_excel_fac").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   $("#convenio_excel_fac").html("<span class='glyphicon glyphicon-save'></span> Excel");
 }
