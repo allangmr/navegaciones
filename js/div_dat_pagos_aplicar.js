@@ -1,4 +1,4 @@
-
+$grid_aplicar_pagos;
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*   
 function fn_setea_grilla_pagos_aplicar(){
 	
@@ -46,8 +46,6 @@ function fn_pagos_aplicar()
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
    $("#frm_volver").show();
-   fn_setea_grilla_pagos_aplicar();
    $("#div_pagos_aplicar").show();
-
-       	
+   fn_setea_grilla_pagos_aplicar();       	
 }
