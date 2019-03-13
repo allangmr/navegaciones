@@ -1,4 +1,14 @@
+var g_modulo="Cartera Morosa";
+var g_tit="Consulta de Convenio de Pago";
+var g_simb;
+var $grid;
+var $grid_pago;
+var DatoOriginal = [];
+var grilla_prin = [];
+var grilla_pago = [];
+var cuo_ini_cal, nro_cuo_cal, vlr_cuo_cal;
 
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*	
 function fn_setea_grid_principal()
 {   
 	grilla_prin = [
@@ -40,7 +50,6 @@ function fn_setea_grid_principal()
 	var data = [           
                     ];
     $grid = $("#div_grid").pqGrid(obj);
-	$grid.pqGrid( "scrollRow", { rowIndxPage: 21 } );	
 	
 }
 
@@ -86,21 +95,108 @@ function fn_setea_grid_pagos()
 	var data = [           
                     ];
     $grid_pago = $("#div_grid_pago").pqGrid(obj);
-	$grid_pago.pqGrid( "scrollRow", { rowIndxPage: 21 } );	
 	
 }
+
+
 
 function fn_convenios_pago_detalle()	
 {	
        	
    $("#frm_leer").hide();	
+   $("#frm_volver").hide();
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
    $("#div_convenios_pago").hide();
-   $("#frm_volver").show();
+   $("#frm_convenios_pago_detalle").show();
    $("#div_convenios_pago_detalle").show();
    fn_setea_grid_principal();
    fn_setea_grid_pagos();
    $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
    $("#co_excel_pago").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   
+
+   $(".nav-tabs a").on("shown.bs.tab", function(event){
+       var x = $(event.target).prop("href");  // tab activada
+       var dato_original = [];
+       dato_original = x.split("#");
+       x = dato_original[1];
+       if(x == "con_eventos")
+           $grid.pqGrid( "refreshView" );
+       if(x == "con_pagos")
+           $grid_pago.pqGrid( "refreshView" );  
+   });
+   
+   fn_setea_grid_principal();
+   fn_setea_grid_pagos();
+   
+   $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Excel");
+   $("#co_excel_pago").html("<span class='glyphicon glyphicon-save'></span> Excel");
+   
+        
+   $("#co_excel").on("click", function (e) {
+       var col_model=$( "#div_grid" ).pqGrid( "option", "colModel" );
+       var cabecera = "";
+       e.preventDefault();
+       for (i=0; i< col_model.length; i++){
+           if(col_model[i].hidden != true) cabecera += "<th>"+col_model[i].title+ "</th>";
+       }
+       $("#excel_cabecera").val(cabecera);
+       $("#tituloexcel").val(g_tit + " - Eventos");
+       $("#filtro").val("Cliente: "+$("#tx_cliente").val() + " &nbsp;&nbsp;&nbsp;&nbsp;Convenio: " + $("#tx_cor_con").val() );
+       var element =$grid.pqGrid("option","dataModel.data");
+       if (element)
+           a= element.length;
+       else 
+           a= 0;
+       if(a>0){
+           $("#frm_Exel").submit();
+           return;
+       }
+   });
+   
+   $("#co_excel_pago").on("click", function (e) {
+       var col_model=$( "#div_grid_pago" ).pqGrid( "option", "colModel" );
+       var cabecera = "";
+       e.preventDefault();
+       for (i=0; i< col_model.length; i++){
+           if(col_model[i].hidden != true) cabecera += "<th>"+col_model[i].title+ "</th>";
+       }
+       $("#excel_cabecera").val(cabecera);
+       $("#tituloexcel").val(g_tit + " - Pagos");
+       $("#filtro").val("Cliente: "+$("#tx_cliente").val() + " &nbsp;&nbsp;&nbsp;&nbsp;Convenio: " + $("#tx_cor_con").val() );
+       var element =$grid_pago.pqGrid("option","dataModel.data");
+       if (element)
+           a= element.length;
+       else 
+           a= 0;
+       if(a>0){
+           $("#frm_Exel").submit();
+           return;
+       }
+   });
+    
+   $("#co_pdf").on("click", function (e) {
+               var vAncho = 540;
+       var vAlto = 810;
+       var posX = (screen.availWidth-vAncho)/2;
+       var posY = (screen.availHeight-vAlto)/2;
+       
+       var parameters = {
+                   "func":"fn_PDF",
+                   "empresa":$("#tx_empresa").val(),
+                   "rol":$("#tx_rol").val(),
+                   "cliente":$("#tx_cliente").val(),
+                   "corconv":$("#tx_cor_con").val()
+               };
+       
+       window.open("conve_consul_pdf.asp?"+jQuery.param(parameters),"_blank", "width=810,height=540,left='"+posX+"',top='"+posY+"',menubar=no,location=no,resizable=yes,scrollbars=no");
+   });
+   
+   $("#co_cerrar").on("click", function (e) {
+       window.close();
+   });
+   
+   
+   $(window).scrollTop(0);
 }

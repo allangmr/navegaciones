@@ -8,144 +8,162 @@
 	
     <div class="container" id="div_prim1"> <!-- Row 0 -->	
 		<div class="well well-sm"><b>Datos Generales</b></div>
-		
-		<div class="col-sm-6" id="userFormColumn1">
-			<div class="form-group">
-				<label for="tx_cliente">Número de Suministro</label>
-				<input name="tx_cliente" id="tx_cliente" class="form-control  inp_dis " readonly>
-			</div>  
-		</div>
-		<div class="col-sm-6" id="userFormColumn1">
-			<div class="form-group">
-				<label for="tx_cor_con">Correlativo de Convenio</label>
-				<input name="tx_cor_con" id="tx_cor_con" class="form-control  inp_dis " readonly>
-			</div>
-		</div>
+		<div class="row">
+            <div class="col-sm-6" id="userFormColumn1">
+                <div class="form-group">
+                    <label for="tx_cliente">Número de Suministro</label>
+                    <input name="tx_cliente" id="tx_cliente" class="form-control  inp_dis " readonly>
+                </div>  
+            </div>
+            <div class="col-sm-6" id="userFormColumn1">
+                <div class="form-group">
+                    <label for="tx_cor_con">Correlativo de Convenio</label>
+                    <input name="tx_cor_con" id="tx_cor_con" class="form-control  inp_dis " readonly>
+                </div>
+            </div>
+        </div>
 	</div>	
 
 	
-	<div class="container" id="div_prim1"> <!-- Row 1 -->	
-		<div class="col-sm-12" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_cor_con">Nombre</label>
-					<input name="tx_nombre" id="tx_nombre" class="form-control  inp_dis " readonly>
-			</div>
-		</div>
+    <div class="container" id="div_prim1"> <!-- Row 1 -->
+        <div class="row">
+            <div class="col-sm-12" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_cor_con">Nombre</label>
+                        <input name="tx_nombre" id="tx_nombre" class="form-control  inp_dis " readonly>
+                </div>
+            </div>
+        </div>	
 	</div>	
 		
-	<div class="container" id="div_prim1"> <!-- Row 1 -->
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_estado">Estado</label>
-				<input name="tx_estado" id="tx_estado" class="form-control  inp_dis " readonly>
-			</div>
-		</div>
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_motivo">Motivo</label>
-				<input name="tx_motivo" id="tx_motivo" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
+    <div class="container" id="div_prim1"> <!-- Row 1 -->
+        <div class="row">
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_estado">Estado</label>
+                    <input name="tx_estado" id="tx_estado" class="form-control  inp_dis " readonly>
+                </div>
+            </div>
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_motivo">Motivo</label>
+                    <input name="tx_motivo" id="tx_motivo" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+        </div>   
 	</div>
 	
-	<div class="container"><!-- Row 2 -->			
-		<div class="col-sm-12" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_opc_con">Opción de Convenio</label>
-				<input name="tx_opc_con" id="tx_opc_con" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
-
+    <div class="container"><!-- Row 2 -->	
+        <div class="row">	
+            <div class="col-sm-12" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_opc_con">Opción de Convenio</label>
+                    <input name="tx_opc_con" id="tx_opc_con" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+        </div>	
 	</div>	
-	<div class="container"><!-- Row 3 -->			
-		<div class="col-sm-12" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_opc_con">Observación</label>
-				<textarea id="tx_obs_con" name="tx_obs_con" rows="3" cols="60" style="text-transform: uppercase;" class="form-control texto2 inp_dis" readonly></textarea>  
-			</div>
-		</div>
+    <div class="container"><!-- Row 3 -->	
+        <div class="row">
+            <div class="col-sm-12" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_opc_con">Observación</label>
+                    <textarea id="tx_obs_con" name="tx_obs_con" rows="3" cols="60" style="text-transform: uppercase;" class="form-control texto2 inp_dis" readonly></textarea>  
+                </div>
+            </div>
+        </div>		
 	</div>
 		
 	<div class="container"><!-- Row 4 -->			
-		<div class="well well-sm"><b>Condiciones del Acuerdo</b></div>
-		<div class="col-sm-4" id="userFormColumn1">
-			<div class="form-group">
-				<label for="tx_deu_ini">Deuda Inicial</label>
-				<input name="tx_deu_ini" id="tx_deu_ini" class="form-control  inp_dis " readonly>
-			</div>  
-		</div>
-		<div class="col-sm-4" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_deu_con">Deuda A Convenir Pactada</label>
-				<input name="tx_deu_con" id="tx_deu_con" class="form-control  inp_dis " readonly>
-			</div>
-		</div>
-		<div class="col-sm-4" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_deu_con_real">Deuda A Convenir Real</label>
-				<input name="tx_deu_con_real" id="tx_deu_con_real" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
+        <div class="well well-sm"><b>Condiciones del Acuerdo</b></div>
+        <div class="row">
+            <div class="col-sm-4" id="userFormColumn1">
+                <div class="form-group">
+                    <label for="tx_deu_ini">Deuda Inicial</label>
+                    <input name="tx_deu_ini" id="tx_deu_ini" class="form-control  inp_dis " readonly>
+                </div>  
+            </div>
+            <div class="col-sm-4" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_deu_con">Deuda A Convenir Pactada</label>
+                    <input name="tx_deu_con" id="tx_deu_con" class="form-control  inp_dis " readonly>
+                </div>
+            </div>
+            <div class="col-sm-4" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_deu_con_real">Deuda A Convenir Real</label>
+                    <input name="tx_deu_con_real" id="tx_deu_con_real" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+        </div>
 	</div>			
 		
-	<div class="container"><!-- Row 5 -->			
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_cuo_ini">Abono Inicial</label>
-				<input name="tx_cuo_ini" id="tx_cuo_ini" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_ant_ini">Antiguedad Inicial</label>
-				<input name="tx_ant_ini" id="tx_ant_ini" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
+    <div class="container"><!-- Row 5 -->	
+        <div class="row">
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_cuo_ini">Abono Inicial</label>
+                    <input name="tx_cuo_ini" id="tx_cuo_ini" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_ant_ini">Antiguedad Inicial</label>
+                    <input name="tx_ant_ini" id="tx_ant_ini" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+        </div>	
 	</div>	
 
-	<div class="container"><!-- Row 6 -->			
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_nro_cuo">Número de Cuotas</label>
-				<input name="tx_nro_cuo" id="tx_nro_cuo" class="form-control  inp_dis " readonly>
-			</div>
-		</div>
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_vlr_cuo">Valor Cuota</label>
-				<input name="tx_vlr_cuo" id="tx_vlr_cuo" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
+    <div class="container"><!-- Row 6 -->	
+        <div class="row">
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_nro_cuo">Número de Cuotas</label>
+                    <input name="tx_nro_cuo" id="tx_nro_cuo" class="form-control  inp_dis " readonly>
+                </div>
+            </div>
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_vlr_cuo">Valor Cuota</label>
+                    <input name="tx_vlr_cuo" id="tx_vlr_cuo" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+        </div>		
 	</div>
 	
-	<div class="container"><!-- Row 7 -->			
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_cuo_fac">Cantidad de Cuotas Facturadas</label>
-				<input name="tx_cuo_fac" id="tx_cuo_fac" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_atrasos">Cantidad de Atrasos</label>
-				<input name="tx_atrasos" id="tx_atrasos" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
+    <div class="container"><!-- Row 7 -->
+        <div class="row">			
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_cuo_fac">Cantidad de Cuotas Facturadas</label>
+                    <input name="tx_cuo_fac" id="tx_cuo_fac" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_atrasos">Cantidad de Atrasos</label>
+                    <input name="tx_atrasos" id="tx_atrasos" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+        </div>
 	</div>
 	
-	<div class="container"><!-- Row 8 -->			
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_deu_act">Deuda Convenida Pendiente</label>
-				<input name="tx_deu_act" id="tx_deu_act" class="form-control inp_dis" readonly>
-			</div>
-		</div>
-		<div class="col-sm-6" id="userFormColumn2">
-			<div class="form-group">
-				<label for="tx_ant_act">Antiguedad Actual</label>
-				<input name="tx_ant_act" id="tx_ant_act" class="form-control  inp_dis" readonly>
-			</div>
-		</div>
+    <div class="container"><!-- Row 8 -->
+        <div class="row">
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_deu_act">Deuda Convenida Pendiente</label>
+                    <input name="tx_deu_act" id="tx_deu_act" class="form-control inp_dis" readonly>
+                </div>
+            </div>
+            <div class="col-sm-6" id="userFormColumn2">
+                <div class="form-group">
+                    <label for="tx_ant_act">Antiguedad Actual</label>
+                    <input name="tx_ant_act" id="tx_ant_act" class="form-control  inp_dis" readonly>
+                </div>
+            </div>
+        </div>			
 	</div>		 
 	
 	<div class="container">
@@ -153,7 +171,9 @@
 		<ul class="nav nav-tabs">
 			<li class="active"><a data-toggle="tab"  href="#con_eventos">Eventos</a></li>
 			<li><a data-toggle="tab" href="#con_pagos">Pagos</a></li>
-		 </ul>
+         </ul>
+         
+        <!-- Tab panes -->
 
 		<div class="tab-content">
 			<div id="con_eventos" class="tab-pane fade in active">

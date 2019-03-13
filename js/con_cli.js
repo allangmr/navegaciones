@@ -102,7 +102,17 @@ $(document).ready(function() {
 
     // SE CARGA EL HTML DE DIV DE BÚSQUEDA
     $("#div_busq").load("div_busq.htm",fn_setea_grid_busq);
-
+    
+    $(".nav-tabs a").on("shown.bs.tab", function(event){
+        var x = $(event.target).prop("href");  // tab activada
+        var dato_original = [];
+		dato_original = x.split("#");
+		x = dato_original[1];
+        if(x == "con_eventos")
+            $grid.pqGrid( "refreshView" );
+		if(x == "con_pagos")
+            $grid_pago.pqGrid( "refreshView" );  
+    });
     
 
     // SE CARGA EL PIE DE PÁGINA
@@ -119,6 +129,23 @@ $(document).ready(function() {
     // OCULTA LA BUSQUEDA Y VUELVE A LA VENTANA PRINCIPAL
      $("#co_volver_bus").click(function(e){
         e.preventDefault();
+        fn_hide_buscar();
+    });
+
+    // OCULTA LA BUSQUEDA Y VUELVE A LA VENTANA PRINCIPAL
+    $("#co_volver_convenios").click(function(e){
+        e.preventDefault();
+        $("#div_convenios_pago_detalle").hide();
+        if(!flag_convenios_pago)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_convenios_pago").load("div_dat_convenios_pago.htm",fn_convenios_pago);
+            flag_convenios_pago = true;
+            console.log("Tag Convenios de Pago Cargado");
+        }
+        else{
+            $("#div_convenios_pago").load("div_dat_convenios_pago.htm",fn_convenios_pago);
+        }
         fn_hide_buscar();
     });
 

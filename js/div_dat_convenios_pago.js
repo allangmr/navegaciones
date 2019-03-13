@@ -4,8 +4,8 @@ function fn_setea_convenios_pago(){
 	
     /**- Cuenta N&#176;: <%=Request("Suministro")%> **/
     var data = [
-        { Opcion:'1',Estado:'Activo',Creacion:'Hoy',Fecha_Fin:'Mañana',Deuda_Inicial:'20.00',Antig_Inicial:'40.00',Abono_Inicial:'60.00',Valor_Cuota:'50.00',N_Cuotas:'10',
-        Cuotas_Fact:'20',Deuda_Actual:'250.00',cor:'20',Nom_Contacto:'Allan',Tipo_id:'2',Id_Contacto:'11',Tel_Contacto:'266589',Email_Contacto:'amontilla@tivit.com',N_Atencion:'20',Creado_Por:'Allan',Finalizado_Por:'Allan'
+        { c1:'1',c2:'Activo',c3:'Hoy',c4:'Mañana',c5:'20.00',c6:'40.00',c7:'60.00',c8:'50.00',c9:'10',
+        c10:'20',c11:'250.00',c12:'20',c13:'Allan',c14:'2',c15:'11',c16:'266589',c17:'amontilla@tivit.com',c18:'Allan',c19:'Allan'
 }
     ];
         var obj3 = {
@@ -17,26 +17,25 @@ function fn_setea_convenios_pago(){
             scrollModel:{theme:true},
             colModel:
             [
-                { title: "Opción", width: 110, dataType: "string", dataIndx: "Opcion", halign:"center", align:"left"},
-                { title: "Estado", width: 110, dataType: "string", dataIndx: "Estado", halign:"center", align:"left"},
-                { title: "Creacion", width: 110, dataType: "string", dataIndx: "Creacion", halign:"center", align:"left"},
-                { title: "Fecha Fin", width: 110, dataType: "string", dataIndx: "Fecha_Fin", halign:"center", align:"left"},
-                { title: "Deuda Inicial", width: 120, dataType: "string", dataIndx: "Deuda_Inicial", halign:"center", align:"right"},
-                { title: "Antig. Inicial", width: 120, dataType: "string",  dataIndx: "Antig_Inicial", halign:"center", align:"right"},
-                { title: "Abono Inicial", width: 120, dataType: "string", dataIndx: "Abono_Inicial", halign:"center", align:"right"},
-                { title: "Valor Cuota", width: 120, dataType: "string", dataIndx: "Valor_Cuota", halign:"center", align:"right"},
-                { title: "N° de Cuotas", width: 120, dataType: "string", dataIndx: "N_Cuotas", halign:"center", align:"right"},
-                { title: "Cuotas Fact.", width: 120, dataType: "string", dataIndx: "Cuotas_Fact", halign:"center", align:"right"},
-                { title: "Deuda Actual", width: 120, dataType: "string", dataIndx: "Deuda_Actual", halign:"center", align:"right"},
-                { title: "cor", width: 120, dataType: "string", dataIndx: "cor", halign:"center",hidden:true, align:"right"},
-                { title: "Nom. Contacto", width: 120, dataType: "string", dataIndx: "Nom_Contacto", halign:"center", align:"right"},  
-                { title: "Tipo id", width: 120, dataType: "string", dataIndx: "Tipo_id", halign:"center", align:"right"},
-                { title: "Id. Contacto", width: 120, dataType: "string",  dataIndx: "Id_Contacto", halign:"center", align:"right"},
-                { title: "Tel. Contacto", width: 120, dataType: "string", dataIndx: "Tel_Contacto", halign:"center", align:"right"},
-                { title: "Email Contacto", width: 120, dataType: "string", dataIndx: "Email_Contacto", halign:"center", align:"right"},
-                { title: "N° de Atención", width: 120, dataType: "string", dataIndx: "N_Atencion", halign:"center", align:"right"},
-                { title: "Creado Por", width: 120, dataType: "string", dataIndx: "Creado_Por", halign:"center", align:"right"},
-                { title: "Finalizado por", width: 120, dataType: "string", dataIndx: "Finalizado_Por", halign:"center", align:"right"}  
+                { title: "Opción", width: 110, dataType: "string", dataIndx: "c1", halign:"center", align:"left"},
+                { title: "Estado", width: 110, dataType: "string", dataIndx: "c2", halign:"center", align:"left"},
+                { title: "Creacion", width: 110, dataType: "string", dataIndx: "c3", halign:"center", align:"left"},
+                { title: "Fecha Fin", width: 110, dataType: "string", dataIndx: "c4", halign:"center", align:"left"},
+                { title: "Deuda Inicial", width: 120, dataType: "string", dataIndx: "c5", halign:"center", align:"right"},
+                { title: "Antig. Inicial", width: 120, dataType: "string",  dataIndx: "c6", halign:"center", align:"right"},
+                { title: "Abono Inicial", width: 120, dataType: "string", dataIndx: "c7", halign:"center", align:"right"},
+                { title: "Valor Cuota", width: 120, dataType: "string", dataIndx: "c8", halign:"center", align:"right"},
+                { title: "N° de Cuotas", width: 120, dataType: "string", dataIndx: "c9", halign:"center", align:"right"},
+                { title: "Cuotas Fact.", width: 120, dataType: "string", dataIndx: "c10", halign:"center", align:"right"},
+                { title: "Deuda Actual", width: 120, dataType: "string", dataIndx: "c11", halign:"center", align:"right"},
+                { title: "Nom. Contacto", width: 120, dataType: "string", dataIndx: "c12", halign:"center", align:"right"},  
+                { title: "Tipo id", width: 120, dataType: "string", dataIndx: "c13", halign:"center", align:"right"},
+                { title: "Id. Contacto", width: 120, dataType: "string",  dataIndx: "c14", halign:"center", align:"right"},
+                { title: "Tel. Contacto", width: 120, dataType: "string", dataIndx: "c15", halign:"center", align:"right"},
+                { title: "Email Contacto", width: 120, dataType: "string", dataIndx: "c16", halign:"center", align:"right"},
+                { title: "N° de Atención", width: 120, dataType: "string", dataIndx: "c17", halign:"center", align:"right"},
+                { title: "Creado Por", width: 120, dataType: "string", dataIndx: "c18", halign:"center", align:"right"},
+                { title: "Finalizado por", width: 120, dataType: "string", dataIndx: "c19", halign:"center", align:"right"}  
             ],
             dataModel: {
                 data: data,
@@ -80,6 +79,7 @@ function fn_convenios_pago()
    $("#frm_leer").hide();	
    $("#nav_ul_opc").hide();	
    $("#div_prin").hide("blind");	
+   $("#frm_convenios_pago_detalle").hide();
    $("#frm_volver").show();
    $("#div_convenios_pago").show();
    fn_setea_convenios_pago();
