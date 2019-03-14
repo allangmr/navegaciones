@@ -46,6 +46,10 @@ var flag_informacion_consumo = false;
 var flag_convenios_pago = false;
 var flag_pagos_aplicar = false;
 var flag_pagos_otros = false;
+var flag_historial_eventos_terminados = false;
+var $grid_historial_eventos_terminados;
+
+
 $(document).ready(function() {
 
     // SE INICIALIZAN LOS GRIDS
@@ -149,6 +153,23 @@ $(document).ready(function() {
         fn_hide_buscar();
     });
 
+    $("#btn_historial_eventos_terminados").click(function(e){
+        e.preventDefault();
+    
+        if(!flag_historial_eventos_terminados)
+        {
+            // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+            $("#div_historial_eventos_terminados").load("div_dat_historial_eventos_terminados.htm",fn_historial_eventos_terminados);
+            flag_historial_eventos_terminados= true;
+            console.log("Historial Aseo Tag Cargado");
+        }
+        else{
+            $("#div_historial_eventos_terminados").load("div_dat_historial_eventos_terminados.htm",fn_historial_eventos_terminados);
+        }
+        
+            
+    });
+    
     $("#btn_concepto_facturar").click(function(e){
         e.preventDefault();
 
@@ -356,6 +377,8 @@ $(document).ready(function() {
         
             
     });
+
+
 
     $("#btn_deuda").click(function(e){
         e.preventDefault();
