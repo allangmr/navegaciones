@@ -169,7 +169,7 @@ $(document).ready(function() {
         
             
     });
-    
+
     $("#btn_concepto_facturar").click(function(e){
         e.preventDefault();
 
@@ -870,6 +870,23 @@ function fn_setea_grid_eve()
 // EVENTOS
 
 {  
+
+    //HISTORIAL DE CONSUMOS
+    var data = [
+        { C1: 'INSP'
+        , C2: 'FACTURACION'
+        , C3: '211576'
+        , C4: '01/03/2019 9:47:53'
+        , C5: ''
+        , C6: 'SYNERGIA4J'
+        , C7: 'BT GT CORTE Y REPOSICION'
+        , C8: 'CREADA'
+        , C9: ''
+        , C10: ''
+        , C11: ''
+        , C12: ''
+    }
+    ];    
     var obj = {  
             height: "100%",
             showTop: true,
@@ -881,9 +898,16 @@ function fn_setea_grid_eve()
             collapsible:false,
             editable:false,
             selectionModel: { type: 'row',mode:'single'},
-            numberCell: { show: true },
+            numberCell: { show: false },
             pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
             scrollModel:{theme:true},
+            dataModel: {
+                data: data,
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
             toolbar:
            {
                cls: "pq-toolbar-export",
@@ -895,21 +919,42 @@ function fn_setea_grid_eve()
         };
             
         obj.colModel = [            
-            { title: "Tipo", width: 140, dataType: "string", dataIndx: "C1", halign:"center", align:"left"},
-            { title: "SubTipo", width: 140, dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
-            { title: "No. Orden", width: 110, dataType: "string", dataIndx: "C3", halign:"center", align:"left"},
-            { title: "Inicio", width: 120, dataType: "string", dataIndx: "C4", halign:"center", align:"left"},
-            { title: "Referencia", width: 180, dataType: "string", dataIndx: "C5", halign:"center", align:"left"},
-            { title: "Creador", width: 240, dataType: "string", dataIndx: "C6", halign:"center", align:"left"},
-            { title: "Área", width: 200, dataType: "string",  dataIndx: "C7", halign:"center", align:"left"},
-            { title: "Etapa", width: 200, dataType: "string", dataIndx: "C8", halign:"center", align:"left"},
-            { title: "Receptor", width: 180, dataType: "string", dataIndx: "C9", halign:"center", align:"left"},
-            { title: "Atención", width: 110, dataType: "string", dataIndx: "C10", halign:"center", align:"right"},
-            { title: "Contratista", width: 200, dataType: "string", dataIndx: "C11", halign:"center", align:"left"},
-            { title: "Ejecutor", width: 200, dataType: "string", dataIndx: "C12", halign:"center", align:"left"}
+            { title: "Tipo", width: 140, dataType: "string", dataIndx: "C1", halign:"center", align:"center"},
+            { title: "SubTipo", width: 140, dataType: "string", dataIndx: "C2", halign:"center", align:"center"},
+            { title: "No. Orden", width: 110, dataType: "string", dataIndx: "C3", halign:"center", align:"center"},
+            { title: "Inicio", width: 120, dataType: "string", dataIndx: "C4", halign:"center", align:"center"},
+            { title: "Referencia", width: 180, dataType: "string", dataIndx: "C5", halign:"center", align:"center"},
+            { title: "Creador", width: 240, dataType: "string", dataIndx: "C6", halign:"center", align:"center"},
+            { title: "Área", width: 200, dataType: "string",  dataIndx: "C7", halign:"center", align:"center"},
+            { title: "Etapa", width: 200, dataType: "string", dataIndx: "C8", halign:"center", align:"center"},
+            { title: "Receptor", width: 180, dataType: "string", dataIndx: "C9", halign:"center", align:"center"},
+            { title: "Atención", width: 110, dataType: "string", dataIndx: "C10", halign:"center", align:"center"},
+            { title: "Contratista", width: 200, dataType: "string", dataIndx: "C11", halign:"center", align:"center"},
+            { title: "Ejecutor", width: 200, dataType: "string", dataIndx: "C12", halign:"center", align:"center"}
         ];
         
     $grid_eve = $("#div_eve").pqGrid(obj);
+
+    $grid_eve.pqGrid({
+        rowDblClick: function( event, ui ) {
+            if (ui.rowData)
+            {
+                var dataCell = ui.rowData;
+               
+          
+                    if(!flag_informacion_consumo)
+                {
+                    // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                    $("#div_eve").load("div_dat_eventos.htm",fn_eventos);
+                    flag_eventos = true;
+                    console.log("Tag eventos Cargado");
+                }
+                else{
+                    $("#div_eve").load("div_dat_eventos.htm",fn_eventos);
+                }
+            }
+        }
+    });
 }
 
 
