@@ -155,6 +155,10 @@ label{
     background-color: rgba(214, 235, 255, 0.5607843137254902);
         border: 1px solid rgba(173, 216, 255, 0.5607843137254902);
     }
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #fff;
+    opacity: 1;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {
