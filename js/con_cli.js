@@ -957,7 +957,6 @@ function fn_setea_grid_eve()
     });
 }
 
-
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
 function fn_setea_grid_busq()
 // BÚSQUEDA DE CLIENTES
@@ -1026,6 +1025,8 @@ function fn_setea_grid_busq()
     
 
 }
+
+
 
 
 
