@@ -825,7 +825,20 @@ function fn_setea_grid_cor()
 function fn_setea_grid_aju()
 // AJUSTES
 
-{  
+{
+    var data = [
+        { C1: 123
+        , C2: '08/08/2018'
+        , C3: 'Ago72018'
+        , C4: 'SOPORTE'
+        , C5: 25
+        , C6: 'FACTURA'
+        , C7: 'CORRECTIVO'
+        , C8: 32
+        , C9: 3324
+    }
+    ];  
+
     var obj = {  
             height: "100%",
             showTop: true,
@@ -834,10 +847,17 @@ function fn_setea_grid_aju()
             roundCorners: true,
             rowBorders: true,
             columnBorders: true,
+            numberCell: { show: false },
             collapsible:false,
             editable:false,
+            dataModel: {
+                data: data,
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
             selectionModel: { type: 'row',mode:'single'},
-            numberCell: { show: true },
             pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
             scrollModel:{theme:true},
             toolbar:
@@ -859,10 +879,23 @@ function fn_setea_grid_aju()
             { title: "Tipo Ajuste", width: 240, dataType: "string", dataIndx: "C6", halign:"center", align:"left"},
             { title: "Motivo", width: 240, dataType: "string",  dataIndx: "C7", halign:"center", align:"left"},
             { title: "Factura Original", width: 110, dataType: "string", dataIndx: "C8", halign:"center", align:"left"},
-            { title: "Documento Original", width: 110, dataType: "string", dataIndx: "C9", halign:"center", align:"right"}
+            { title: "Documento Original", width: 110, dataType: "string", dataIndx: "C9", halign:"center", align:"left"}
         ];
         
     $grid_aju = $("#div_aju").pqGrid(obj);
+
+    $grid_aju.pqGrid({
+        rowDblClick: function( event, ui ) {
+            if (ui.rowData)
+            {
+                var dataCell = ui.rowData;
+                    // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                    $("#div_ajustes").load("div_dat_ajustes.htm",fn_ajustes);
+                    console.log("Tag ajustes Cargado");
+                    $(window).scrollTop(0);
+            }
+        }
+    });
 }
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
