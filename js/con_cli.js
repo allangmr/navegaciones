@@ -726,8 +726,18 @@ function fn_setea_grid_con()
 
 //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
 function fn_setea_grid_pag()
-{ 
-// HISTORIAL DE PAGOS
+{
+    // HISTORIAL DE PAGOS
+    var data = [
+        { C1: '08/08/2018'
+        , C2: '08/08/2018'
+        , C3: '30'
+        , C4: 'BOL'
+        , C5: 'VIA BRASIL'
+        , C6: 'VIA BRASIL'
+    }
+    ];
+
     var obj = {  
             height: "100%",
             showTop: true,
@@ -742,6 +752,13 @@ function fn_setea_grid_pag()
             numberCell: { show: true },
             pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
             scrollModel:{theme:true},
+            dataModel: {
+                data: data,
+                paging: "local",
+                location: "local",
+                sorting: "local",
+                sortDir: "up"
+            },
             toolbar:
            {
                cls: "pq-toolbar-export",
@@ -753,20 +770,36 @@ function fn_setea_grid_pag()
         };
             
         obj.colModel = [            
-            { title: "Fecha Pago", width: 110, dataType: "string", dataIndx: "C1", halign:"center", align:"left"},
-            { title: "Fecha Proceso", width: 110, dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
+            { title: "Fecha Pago", width: 110, dataType: "string", dataIndx: "C1", halign:"center", align:"center"},
+            { title: "Fecha Proceso", width: 110, dataType: "string", dataIndx: "C2", halign:"center", align:"center"},
             { title: "Valor", width: 120, dataType: "string", dataIndx: "C3", halign:"center", align:"right"},
             { title: "Tipo Comprobante", width: 240, dataType: "string", dataIndx: "C4", halign:"center", align:"left"},
-            { title: "Agencia de Pago", width: 240, dataType: "string", dataIndx: "C5", halign:"center", align:"right"},
+            { title: "Agencia de Pago", width: 240, dataType: "string", dataIndx: "C5", halign:"center", align:"left"},
             { title: "Cajero", width: 240, dataType: "string",  dataIndx: "C6", halign:"center", align:"left"}
         ];
-    
-
 
     $grid_pag = $("#div_pag").pqGrid(obj);
 
-
-    
+    $grid_pag.pqGrid({
+        rowDblClick: function( event, ui ) {
+            if (ui.rowData)
+            {
+                var dataCell = ui.rowData;
+               
+          
+                    if(!flag_hist_pago_prop)
+                {
+                    // SE CARGA EL HTML DE DIV DE BÚSQUEDA
+                    $("#div_historico_pagos").load("div_dat_historico_pagos.htm",fn_historico_pagos_ver);
+                    flag_hist_pago_prop = true;
+                    console.log("Historico Pagos Tag Cargado");
+                }
+                else{
+                    $("#div_historico_pagos").load("div_dat_historico_pagos.htm",fn_historico_pagos_ver);
+                }
+            }
+        }
+    });
 }
 
 
