@@ -3,24 +3,45 @@
     <h2>Deuda <small>[CLIENTE: 697588 – TORRE GLOBAL BANK]</small></h2>
 </div>
 
-<div class="row">
-    <div class="col-lg-12">
-            <div id="grid_deudatotal"></div>
-    </div>
-</div>
-<br>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div id="grid_selection_checkbox"></div>
-    </div>
+
+<div class="form-group">
+    <button type="button" class="btn-left btn btn-primary" id="co_pdf" ><span class="glyphicon glyphicon-file"></span> Últ. Deuda H2O</button>
+    <button type="button" class="btn-left btn btn-primary" id="co_pdf" ><span class="glyphicon glyphicon-duplicate"></span> Estado de Cuenta</button>
 </div>
 
-<br>
+    <!-- OJO Si cambia el href del tab, tambien cambiarlo en el js -->
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab"  href="#resumen_deuda">Resumen de la Deuda</a></li>
+        <li><a data-toggle="tab" href="#detalle_deuda">Detalle de la Deuda por Cargo</a></li>
+        <li><a data-toggle="tab" href="#corte">Corte y Reposición</a></li>
+     </ul>
+     
+    <!-- Tab panes -->
 
-
-<div class="row">
-    <div class="col-lg-12">
-        <div id="grid_corte"></div>
+    <div class="tab-content">
+        <div id="resumen_deuda" class="tab-pane fade in active">
+          <div  id="bd_acc">
+                <!-- PARAMQUERY EVENTOS -->
+                <div id="grid_deudatotal"> 
+                </div>
+            </div>
+        </div>  
+        <div id="detalle_deuda" class="tab-pane fade">
+            <div  id="bd_acc">
+                <!-- PARAMQUERY PAGOS -->
+                <div id="grid_selection_checkbox"> 
+                </div>
+            </div>
+        </div>
+        <div id="corte" class="tab-pane fade">
+            <div  id="bd_acc">
+                <!-- PARAMQUERY PAGOS -->
+                <div id="grid_corte"> 
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+
+

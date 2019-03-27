@@ -59,6 +59,7 @@ $(document).ready(function() {
     fn_setea_grid_pag();
     fn_setea_grid_cor();
     fn_setea_grid_aju();
+    $("#ing_nic").focus();
     // SE RECARGAN LOS GRIDS AL SELECCIONAR EL TAB CORRESPONDIENTE         
     $(".nav-tabs a").on("shown.bs.tab", function(event){
 

@@ -6,7 +6,7 @@ function fn_setea_grill_resumen_deuda(){
         var obj0 = {
             width:'100%',
             height:250,
-            title: "Resumen de la Deuda por Cargo [Cliente: 697588 – TORRE GLOBAL BANK]",
+            title: "Resumen de la Deuda por Cargo",
             rowBorders: true,
             editable: false,
             scrollModel:{theme:true},
@@ -27,9 +27,7 @@ function fn_setea_grill_resumen_deuda(){
             filterModel: { on: true, mode: "OR" },
             toolbar: {
                 cls: 'pq-toolbar-export',
-                items: [
-                    { type: 'button', attr:'id=co_deuda', cls:"btn btn-primary" },
-                    { type: 'button', attr:'id=co_estado', cls:"btn btn-primary" },				
+                items: [			
                     { type: "button",attr:'id=co_excel', cls:"btn btn-primary"}
                 ]
             }
@@ -47,7 +45,7 @@ function fn_setea_grilla_corte_y_reposicion(){
 	
     var obj = {
         width:'100%',
-		height:200,
+		height:270,
         rowBorders:true,
         title:"Corte y Reposición",
         editable: false,
@@ -78,6 +76,12 @@ function fn_setea_grilla_corte_y_reposicion(){
         },
         collapsible: false,
         selectionModel: { type: 'row',mode:'single'},
+        toolbar: {
+            cls: 'pq-toolbar-export',
+            items: [			
+                { type: "button",attr:'id=co_excel_corte', cls:"btn btn-primary"}
+            ]
+        }
     };
 	
     $gridCorte =$("#grid_corte").pqGrid(obj);
@@ -117,14 +121,15 @@ function fn_setea_grilla_deuda_por_cargo(){
 		toolbar: {
             cls: 'pq-toolbar-export',
             items: [
-				{ type: "<span style='margin:5px;'>Buscar   :</span>" },
+                { type: "<span style='margin:5px;'>Buscar   :</span>" },
                 { type: "select", style: "margin:0px 5px;", cls: "filterCondition",
                     options: [
 						{"*** TODOS ***":"*** TODOS ***"},
 						{"1":"IDAAN"},
 						{"2":"ASEO"}						
                     ]
-                }
+                },
+                { type: "button",attr:'id=co_excel_detalle', cls:"btn btn-primary"}
             ]
         }
     };
@@ -145,11 +150,24 @@ function fn_deuda_ver()
    $("#div_prin").hide("blind");	
    $("#frm_volver").show();
    $("#div_deuda").show();
+   $(".nav-tabs a").on("shown.bs.tab", function(event){
+    var x = $(event.target).prop("href");  // tab activada
+    var dato_original = [];
+    dato_original = x.split("#");
+    x = dato_original[1];
+    if(x == "resumen_deuda")
+        $grid_deudatotal.pqGrid( "refreshView" );
+    if(x == "detalle_deuda")
+        $grid_selector_deuda.pqGrid( "refreshView" );  
+     if(x == "corte")
+     $gridCorte.pqGrid( "refreshView" ); 
+    });
    fn_setea_grill_resumen_deuda();
    fn_setea_grilla_corte_y_reposicion();
    fn_setea_grilla_deuda_por_cargo();
-   $("#co_deuda").html("<span class='glyphicon glyphicon-file'></span>&#218;lt. Deuda H2O ");
-   $("#co_estado").html("<span class='glyphicon glyphicon-duplicate'></span> Estado de Cuenta"); 
+
    $("#co_excel").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   $("#co_excel_corte").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
+   $("#co_excel_detalle").html("<span class='glyphicon glyphicon-save'></span> Exportar Excel");
  	
 }
