@@ -11,26 +11,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Jquery -->
-        <script src="jquery/jquery-3.1.1.min.js"></script>
-        <script src="jquery/jquery-ui/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-        <link rel="stylesheet" href="jquery/jquery-ui/jquery-ui-1.12.1/jquery-ui.min.css">
-        <link rel="stylesheet" href="jquery/jquery-ui/jquery-ui-themes-1.12.1/themes/base/jquery-ui.min.css">
+        <script src="./jquery/jquery-3.1.1.min.js"></script>
+        <script src="./jquery/jquery-ui/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="./jquery/jquery-ui/jquery-ui-1.12.1/jquery-ui.min.css">
+        <link rel="stylesheet" href="./jquery/jquery-ui/jquery-ui-themes-1.12.1/themes/base/jquery-ui.min.css">
         
         <!-- Boostrap -->
-        <script src="bootstrap/v3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="bootstrap/v3.3.7/css/bootstrap.min.css"> 
+        <script src="./bootstrap/v3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./bootstrap/v3.3.7/css/bootstrap.min.css"> 
+
         <!-- Paramquery -->
-        <script src="pqgrid/v5.6/pqgrid.min.js"></script>
-        <link rel="stylesheet" href="pqgrid/v5.6/pqgrid.min.css">
-        <link rel="stylesheet" href="pqgrid/v5.6/themes/bootstrap/pqgrid.css">
-        <script src="pqgrid/v5.6/localize/pq-localize-es.js"></script>
+        <script src="./pqgrid/v5.6/pqgrid.min.js"></script>
+        <link rel="stylesheet" href="./pqgrid/v5.6/pqgrid.min.css">
+        <link rel="stylesheet" href="./pqgrid/v5.6/themes/bootstrap/pqgrid.css">
+        <script src="./pqgrid/v5.6/localize/pq-localize-es.js"></script>
 
         
-        <script src="js/div_dat_informacion_consumo.js"></script>
+        <script src="./js/div_dat_informacion_consumo.js"></script>
         <!-- Principales -->
-        <script src="js/con_cli.js"></script>
+        <script src="./js/con_cli.js"></script>
         <!--<script src="./js/syn_util.js"></script>-->
-        <link rel="stylesheet" href="css/con_cli.css">
+        <link rel="stylesheet" href="./css/con_cli.css">
 
 
         <!-- Auditoria de Modificaciones -->
@@ -128,7 +129,7 @@
                 
                 <form class="navbar-form navbar-left" id="frm_leer">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="ing_nic" placeholder="Ingrese Nic">
+                        <input type="text" class="form-control" placeholder="Ingrese Nic">
                     </div>
                     <button type="submit" class="btn btn-default" id="co_leer"><span class="glyphicon glyphicon-file"></span> Leer</button>
                     <button type="submit" class="btn btn-default" id="co_buscar"><span class="glyphicon glyphicon-search"></span> Búsqueda</button>
@@ -540,77 +541,77 @@
         </div> 
     </div> <!-- FIN DEL DIV PRINCIPAL-->
 
-    <div class="ventanas_auxiliares">
-        <!-- DIV BÚSQUEDA DE CLIENTE-->
-        <div class="container" id="div_busq" style="display: none;"></div>
 
-        <!-- DIV DATOS ABASTECIMIENTO-->	
-        <div id="div_abastece" class="container" style="display: none;"></div>
+    <!-- DIV BÚSQUEDA DE CLIENTE-->
+    <div class="container" id="div_busq" style="display: none;"></div>
 
-        <!-- DIV DATOS SUMINISTRO-->	
-        <div id="div_ubicacion" class="container" style="display: none;"></div>
-        
-        <!-- DIV DATOS PROPIETARIO-->	
-        <div id="div_propietario" class="container" style="display: none;"></div>
+    <!-- DIV DATOS ABASTECIMIENTO-->	
+    <div id="div_abastece" class="container" style="display: none;"></div>
 
-        <!-- DIV DATOS FACTURACION CONTINGENTE-->	
-        <div id="div_fact_cont" class="container" style="display: none;"></div>
+    <!-- DIV DATOS SUMINISTRO-->	
+    <div id="div_ubicacion" class="container" style="display: none;"></div>
+    
+    <!-- DIV DATOS PROPIETARIO-->	
+    <div id="div_propietario" class="container" style="display: none;"></div>
 
-        <!-- DIV DATOS DEUDA-->	
-        <div id="div_deuda" class="container" style="display: none;"></div>
+    <!-- DIV DATOS FACTURACION CONTINGENTE-->	
+    <div id="div_fact_cont" class="container" style="display: none;"></div>
 
-        <!-- DIV DATOS MEDIDOR-->	
-        <div id="div_medidor" class="container" style="display: none;"></div>
+    <!-- DIV DATOS DEUDA-->	
+    <div id="div_deuda" class="container" style="display: none;"></div>
 
-        <!-- DIV DATOS  HISTORICO MEDIDORES-->	
-        <div id="div_historico_medidores" class="container" style="display: none;"></div>
+    <!-- DIV DATOS MEDIDOR-->	
+    <div id="div_medidor" class="container" style="display: none;"></div>
 
-        <!-- DIV DATOS  HISTORICO AUDITORIA-->	
-        <div id="div_audi_mod" class="container" style="display: none"></div>
+    <!-- DIV DATOS  HISTORICO MEDIDORES-->	
+    <div id="div_historico_medidores" class="container" style="display: none;"></div>
 
-        <!-- DIV DATOS  HISTORICO AUDITORIA-->	
-        <div id="div_concepto_facturar" class="container" style="display: none"></div>
+    <!-- DIV DATOS  HISTORICO AUDITORIA-->	
+    <div id="div_audi_mod" class="container" style="display: none"></div>
 
-        <!-- DIV DATOS INFORMACION CONSUMO-->	
-        <div id="div_informacion_consumo" class="container" style="display: none"></div>
+    <!-- DIV DATOS  HISTORICO AUDITORIA-->	
+    <div id="div_concepto_facturar" class="container" style="display: none"></div>
 
-        <!-- DIV DATOS  HISTORICO AUDITORIA-->	
-        <div id="div_contrato_madre" class="container" style="display: none"></div>
+    <!-- DIV DATOS INFORMACION CONSUMO-->	
+    <div id="div_informacion_consumo" class="container" style="display: none"></div>
 
-        <!-- DIV DATOS  HISTORIAL DE SUBSIDIO-->	
-        <div id="div_historial_subsidio" class="container" style="display: none"></div>
+    <!-- DIV DATOS  HISTORICO AUDITORIA-->	
+    <div id="div_contrato_madre" class="container" style="display: none"></div>
 
-        <!-- DIV DATOS HISTORIAL DE MOVIMIENTOS DE ASEO-->	
-        <div id="div_historial_aseo" class="container" style="display: none"></div>
-        
-        <!-- DIV DATOS INFORMACION FACTURA-->	
-        <div id="div_informacion_factura" class="container" style="display: none"></div>
-        
+    <!-- DIV DATOS  HISTORIAL DE SUBSIDIO-->	
+    <div id="div_historial_subsidio" class="container" style="display: none"></div>
 
-        <!-- DIV DATOS INFORMACION OTROS PAGOS-->	
-        <div id="div_pagos_otros" class="container" style="display: none"></div>
+    <!-- DIV DATOS HISTORIAL DE MOVIMIENTOS DE ASEO-->	
+    <div id="div_historial_aseo" class="container" style="display: none"></div>
+    
+    <!-- DIV DATOS INFORMACION FACTURA-->	
+    <div id="div_informacion_factura" class="container" style="display: none"></div>
+    
 
-        <!-- DIV DATOS INFORMACION PAGOS X APLICAR-->	
-        <div id="div_pagos_aplicar" class="container" style="display: none"></div>
+    <!-- DIV DATOS INFORMACION OTROS PAGOS-->	
+    <div id="div_pagos_otros" class="container" style="display: none"></div>
 
-        <!-- DIV DATOS  HISTORICO PAGOS-->	
-        <div id="div_historico_pagos" class="container" style="display: none;"></div>
+    <!-- DIV DATOS INFORMACION PAGOS X APLICAR-->	
+    <div id="div_pagos_aplicar" class="container" style="display: none"></div>
 
-        <!-- DIV DATOS  CONVENIOS PAGOS-->	
-        <div id="div_convenios_pago" class="container" style="display: none;"></div>
+    <!-- DIV DATOS  HISTORICO PAGOS-->	
+    <div id="div_historico_pagos" class="container" style="display: none;"></div>
 
-        <!-- DIV CONVENIOS PAGO DETALLE-->	
-        <div id="div_convenios_pago_detalle" class="container" style="display: none;"></div>
+    <!-- DIV DATOS  CONVENIOS PAGOS-->	
+    <div id="div_convenios_pago" class="container" style="display: none;"></div>
 
-        <!-- DIV CONVENIOS PAGO DETALLE-->	
-        <div id="div_historial_eventos_terminados" class="container" style="display: none;"></div>
+    <!-- DIV CONVENIOS PAGO DETALLE-->	
+    <div id="div_convenios_pago_detalle" class="container" style="display: none;"></div>
 
-        <!-- DIV EVENTOS-->	
-        <div id="div_eventos" class="container" style="display: none;"></div>
+    <!-- DIV CONVENIOS PAGO DETALLE-->	
+    <div id="div_historial_eventos_terminados" class="container" style="display: none;"></div>
 
-        <!-- DIV AJUSTES-->	
-        <div id="div_ajustes" class="container" style="display: none;"></div>
-    </div>
+    <!-- DIV EVENTOS-->	
+    <div id="div_eventos" class="container" style="display: none;"></div>
+
+    <!-- DIV AJUSTES-->	
+    <div id="div_ajustes" class="container" style="display: none;"></div>
+
 
     <!-- PIE DE PÁGINA-->
     <div class="container" id="div_footer"></div>
