@@ -170,12 +170,6 @@
               <li><a href="#">Page 3</a></li>
             </ul>
           </li>
-          <li>
-            <a href="#">Portfolio</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
         </ul>
 
         <ul class="list-unstyled CTAs">
@@ -198,16 +192,16 @@
 
       <!-- DIV PRINCIPAL -->
       <div id="content" class="container-full">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" id="sidebarCollapse" class="navbar-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-            </div>
-
+        <div style="background:#97c7ff">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
 
               <ul class="nav navbar-nav navbar-left">
                 <form class="navbar-form navbar-left" id="frm_leer">
@@ -288,118 +282,119 @@
                 <div class=""></div>
               </div>
             </div>
+          </nav>
+          <div id="div_principal">
+            <div class="row" style="padding: 20px">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_nom"
+                    readonly
+                    placeholder="Nombre"
+                  />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_tipo_id"
+                    readonly
+                    placeholder="Tipo de Documento de Identidad"
+                  />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_id"
+                    readonly
+                    placeholder="Documento de Identidad"
+                  />
+                </div>
+              </div>
 
-        </nav>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_regional"
+                    readonly
+                    placeholder="Regional"
+                  />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_ruta"
+                    readonly
+                    placeholder="Ruta Comercial"
+                  />
+                </div>
+              </div>
 
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_de_idaan"
+                    readonly
+                    placeholder="Deuda Idaan"
+                  />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_de_aseo"
+                    readonly
+                    placeholder="Deuda Aseo"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_de_total"
+                    readonly
+                    placeholder="Deuda Total"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control "
+                    id="tx_de_conve"
+                    readonly
+                    placeholder="En Convenio"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="div_prin">
           <!-- NOMBRE DE LA CUENTA -->
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="tx_nom">Nombre</label>
-                <input type="text" class="form-control " id="tx_nom" readonly />
-              </div>
-            </div>
-          </div>
 
-          <!-- TIPO Y NÚMERO DE IDENTIDAD -->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="tx_tipo_id">Tipo de Documento de Identidad</label>
-                <input
-                  type="text"
-                  class="form-control "
-                  id="tx_tipo_id"
-                  readonly
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="tx_id">Documento de Identidad</label>
-                <input type="text" class="form-control " id="tx_id" readonly />
-              </div>
-            </div>
-          </div>
-
-          <!-- REGIONAL Y RUTA COMERCIAL -->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="tx_regional">Regional</label>
-                <input
-                  type="text"
-                  class="form-control "
-                  id="tx_regional"
-                  readonly
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="tx_ruta">Ruta Comercial</label>
-                <input
-                  type="text"
-                  class="form-control "
-                  id="tx_ruta"
-                  readonly
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- DEUDA -->
-          <div class="row">
-            <div class="col-md-3">
-              <div class="form-group">
-                <label for="tx_de_idaan">Deuda Idaan</label>
-                <input
-                  type="text"
-                  class="form-control "
-                  id="tx_de_idaan"
-                  readonly
-                />
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                <label for="tx_de_aseo">Deuda Aseo</label>
-                <input
-                  type="text"
-                  class="form-control "
-                  id="tx_de_aseo"
-                  readonly
-                />
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="form-group">
-                <label for="tx_de_total">Deuda Total</label>
-                <input
-                  type="text"
-                  class="form-control "
-                  id="tx_de_total"
-                  readonly
-                />
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="form-group">
-                <label for="tx_de_conve">En Convenio</label>
-                <input
-                  type="text"
-                  class="form-control "
-                  id="tx_de_conve"
-                  readonly
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="well well-sm">Dirección</div>
+          <div class="well well-sm" style="margin-top: 10px">Dirección</div>
 
           <!-- PROVINCIA Y DISTRITO -->
           <div class="row">
