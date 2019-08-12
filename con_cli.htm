@@ -115,13 +115,88 @@
         <div class="sidebar-header">
           <div class="logo navbar-brand">
             <a href="https://www.idaan.gob.pa/" target="_blank"
-              ><img src="logo_idaan_horizontal.gif" width="100"
+              ><img src="idaan.png" width="100"
             /></a>
           </div>
-          <p class="navbar-brand">Consulta de Cliente</p>
         </div>
+        <div class="row" style="margin-left:0px">
+                <form class="navbar-form navbar-left" id="frm_leer">
+                        <div class="form-group" style="margin-bottom: 0px;margin-top:20px">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Ingrese Nic"
+                          />
+                        <button type="submit" class="btn btn-default" id="co_leer">
+                          <span class="glyphicon glyphicon-sunglasses"></span>
+                        </button>
+                        <button type="submit" class="btn btn-default" id="co_buscar">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                      </form>
+      
+                      <form
+                        class="navbar-form navbar-left"
+                        style="display: none;"
+                        id="frm_busq"
+                      >
+                        <button
+                          type="submit"
+                          class="btn btn-default"
+                          id="co_leer_bus"
+                        >
+                          <span class="glyphicon glyphicon-search"></span> Buscar
+                        </button>
+                        <button
+                          type="submit"
+                          class="btn btn-default"
+                          id="co_volver_bus"
+                        >
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          Volver
+                        </button>
+                      </form>
+                      <form
+                        class="navbar-form navbar-left"
+                        style="display: none;"
+                        id="frm_volver"
+                      >
+                        <button
+                          type="submit"
+                          class="btn btn-default"
+                          id="co_volver_bus"
+                        >
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          Volver
+                        </button>
+                      </form>
+                      <form
+                        class="navbar-form navbar-left"
+                        style="display: none;"
+                        id="frm_convenios_pago_detalle"
+                      >
+                        <button
+                          type="submit"
+                          class="btn btn-default"
+                          id="co_volver_convenios"
+                        >
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          Historial de Convenios
+                        </button>
+                        <button
+                          type="submit"
+                          class="btn btn-default"
+                          id="co_volver_bus"
+                        >
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          Consultas de Clientes
+                        </button>
+                      </form>
 
+        </div>
         <ul class="list-unstyled components">
+
           <li>
             <a href="#homeSubmenu"  aria-expanded="true"
               >Ver</a
@@ -205,84 +280,7 @@
                 </button>
               </div>
 
-              <ul class="nav navbar-nav navbar-left">
-                <form class="navbar-form navbar-left" id="frm_leer">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Ingrese Nic"
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-default" id="co_leer">
-                    <span class="glyphicon glyphicon-file"></span> Leer
-                  </button>
-                  <button type="submit" class="btn btn-default" id="co_buscar">
-                    <span class="glyphicon glyphicon-search"></span> Búsqueda
-                  </button>
-                </form>
 
-                <form
-                  class="navbar-form navbar-left"
-                  style="display: none;"
-                  id="frm_busq"
-                >
-                  <button
-                    type="submit"
-                    class="btn btn-default"
-                    id="co_leer_bus"
-                  >
-                    <span class="glyphicon glyphicon-search"></span> Buscar
-                  </button>
-                  <button
-                    type="submit"
-                    class="btn btn-default"
-                    id="co_volver_bus"
-                  >
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    Volver
-                  </button>
-                </form>
-                <form
-                  class="navbar-form navbar-left"
-                  style="display: none;"
-                  id="frm_volver"
-                >
-                  <button
-                    type="submit"
-                    class="btn btn-default"
-                    id="co_volver_bus"
-                  >
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    Volver
-                  </button>
-                </form>
-                <form
-                  class="navbar-form navbar-left"
-                  style="display: none;"
-                  id="frm_convenios_pago_detalle"
-                >
-                  <button
-                    type="submit"
-                    class="btn btn-default"
-                    id="co_volver_convenios"
-                  >
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    Historial de Convenios
-                  </button>
-                  <button
-                    type="submit"
-                    class="btn btn-default"
-                    id="co_volver_bus"
-                  >
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    Consultas de Clientes
-                  </button>
-                </form>
-              </ul>
-              <div class="nav navbar-nav navbar-right">
-                <div class=""></div>
-              </div>
             </div>
           </nav>
           <div id="div_principal">

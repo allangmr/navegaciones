@@ -67,15 +67,15 @@ a:active {
 
 
 #sidebar {
-  min-width: 18%;
-  max-width: 18%;
+  min-width: 320px;
+  max-width: 320px;
   background: #ffffff;
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   transform-origin: bottom left;
 }
 
 #sidebar.active {
-  margin-left: -20%;
+  margin-left: 320px;
   transform: rotateY(100deg);
 }
 
@@ -86,7 +86,6 @@ a:active {
 #sidebar ul.components {
   padding: 20px 0;
   border-bottom: 1px solid #daebff;
-  border-top: 1px solid #daebff;
 }
 
 .sidebarsub {
@@ -198,7 +197,7 @@ a.article:hover {
     ----------------------------------------------------- */
 @media (max-width: 768px) {
   #sidebar {
-    margin-left: -20%;
+    margin-left: -320px;
     transform: rotateY(90deg);
   }
   #sidebarCollapse{
@@ -386,7 +385,7 @@ label {
   border-color: #36638c;
 }
 .form-control {
-  height: 30px;
+  height: 34px;
 }
 .navbar-default {
   background: linear-gradient(to right, #4099ff, #73b4ff);
@@ -432,6 +431,7 @@ fieldset[disabled] .form-control {
   }
   .navbar-brand {
     float: none;
+    display: block;
     text-align: center;
   }
 }
