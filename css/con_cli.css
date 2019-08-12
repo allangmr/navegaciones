@@ -36,6 +36,11 @@ a:focus {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+a:active {
+    color: white;
+    background-color: #1977d6;
+  }
+
 .navbar-btn {
   box-shadow: none;
   outline: none !important;
@@ -53,21 +58,24 @@ a:focus {
         SIDEBAR STYLE
     ----------------------------------------------------- */
 .wrapper {
+  display: -ms-flexbox;
   display: flex;
   align-items: stretch;
+  -ms-flex-align: stretch;
   perspective: 1500px;
 }
 
+
 #sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 18%;
+  max-width: 18%;
   background: #ffffff;
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   transform-origin: bottom left;
 }
 
 #sidebar.active {
-  margin-left: -250px;
+  margin-left: -20%;
   transform: rotateY(100deg);
 }
 
@@ -82,7 +90,7 @@ a:focus {
 }
 
 .sidebarsub {
-  background: #298dff;
+  background: #ffffff;
 }
 
 #sidebar ul p {
@@ -96,38 +104,29 @@ a:focus {
   display: block;
 }
 #sidebar ul li a:hover {
-  color: #ffffff;
-  background: #1977d6;
+  color: #000;
+  background: #ffffff;
+}
+
+#sidebarCollapse{
+    display: none;
 }
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #71b3ff;
+  color: #000;
+  background: #ffffff;
 }
 
 a[data-toggle="collapse"] {
-  position: relative;
-}
-
-a[aria-expanded="false"]::before,
-a[aria-expanded="true"]::before {
-  content: "\e259";
-  display: block;
-  position: absolute;
-  right: 20px;
-  font-family: "Glyphicons Halflings";
-  font-size: 0.6em;
-}
-a[aria-expanded="true"]::before {
-  content: "\e260";
+  display: none;
 }
 
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #55a4ff;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000;
 }
 
 ul.CTAs {
@@ -199,9 +198,12 @@ a.article:hover {
     ----------------------------------------------------- */
 @media (max-width: 768px) {
   #sidebar {
-    margin-left: -250px;
+    margin-left: -20%;
     transform: rotateY(90deg);
   }
+  #sidebarCollapse{
+    display: block;
+}
   #sidebar.active {
     margin-left: 0;
     transform: none;
@@ -235,7 +237,7 @@ html {
 
 .container-full {
   margin: 0 auto;
-  width: 85%;
+  width: 80%;
 }
 body {
   background: #fbfbff;
@@ -500,7 +502,4 @@ fieldset[disabled] .form-control {
     box-shadow: none;
   }
 }
-a:active {
-  color: white;
-  background-color: #1977d6;
-}
+

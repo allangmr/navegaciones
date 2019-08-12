@@ -39,6 +39,7 @@
     <!--<script src="./js/syn_util.js"></script>-->
     <link rel="stylesheet" href="./css/con_cli.css" />
 
+
     <!-- Auditoria de Modificaciones -->
     <script src="./js/div_dat_auditoria.js"></script>
 
@@ -109,7 +110,7 @@
   </head>
 
   <body>
-    <div class="wrapper">
+    <div class="wrapper" >
       <nav id="sidebar">
         <div class="sidebar-header">
           <div class="logo navbar-brand">
@@ -122,11 +123,11 @@
 
         <ul class="list-unstyled components">
           <li>
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+            <a href="#homeSubmenu"  aria-expanded="true"
               >Ver</a
             >
 
-            <ul class="collapse list-unstyled" id="homeSubmenu">
+            <ul class=" list-unstyled" id="homeSubmenu">
               <li><a href="" id="btn_propietario">Datos de Propietario</a></li>
               <li><a href="" id="btn_ubicacion">Ubicación Geográfica</a></li>
               <li><a href="" id="btn_Dat_Tec">Datos Técnicos</a></li>
@@ -134,20 +135,20 @@
             </ul>
           </li>
           <li>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+            <a href="#pageSubmenu" aria-expanded="true"
               >Consultas</a
             >
-            <ul class="collapse list-unstyled" id="pageSubmenu">
+            <ul class=" list-unstyled" id="pageSubmenu">
               <li>
                 <a href="" id="btn_historial_eventos_terminados"
                   >Eventos Terminados</a
                 >
               </li>
               <li>
-                <a href="#Submenu2" data-toggle="collapse" aria-expanded="false"
+                <a href="#Submenu2"  aria-expanded="true"
                   >Facturación</a
                 >
-                <ul class="collapse list-unstyled" id="Submenu2">
+                <ul class="list-unstyled" id="Submenu2">
                   <li>
                     <a href="" id="btn_fact_cont" class="sidebarsub"
                       >Factura Contigente</a
@@ -189,6 +190,7 @@
           </li>
         </ul>
       </nav>
+      
 
       <!-- DIV PRINCIPAL -->
       <div id="content" class="container-full">
@@ -795,13 +797,6 @@
         <div id="div_footer"></div>
       </div>
     </div>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("#sidebarCollapse").on("click", function() {
-          $("#sidebar").toggleClass("active");
-          $(this).toggleClass("active");
-        });
-      });
-    </script>
+
   </body>
 </html>
