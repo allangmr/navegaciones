@@ -35,10 +35,10 @@
     <script src="./js/div_dat_informacion_consumo.js"></script>
     <!-- Principales -->
     <script src="./js/con_cli.js"></script>
+
     <!--<script src="./js/syn_util.js"></script>-->
     <link rel="stylesheet" href="./css/style.css" />
-    <!--<script src="./js/syn_util.js"></script>-->
-    <link rel="stylesheet" href="./css/con_cli.css" />
+
 
     <!-- Auditoria de Modificaciones -->
     <script src="./js/div_dat_auditoria.js"></script>
@@ -108,541 +108,581 @@
 
     <title>Consulta de Cliente</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <!-- Sidebar Holder -->
-      <nav id="sidebar">
-        <div class="sidebar-header">
-          <h3>Bootstrap Sidebar</h3>
-        </div>
+      <div class="navbar navbar-inverse navbar-fixed-left">
+          <nav id="sidebar" class="navbar navbar-inverse navbar-fixed-left" >
+              <div class="row" >
+                <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12"> 
+                    <div style="text-align: center;margin-bottom: 20px;">
+                        <a href="https://www.idaan.gob.pa/" target="_blank"
+                        ><img src="idaan.png" width="100"
+                        /></a>
+                    </div>
+                </div>
+              </div>
 
-        <ul class="list-unstyled components">
-          <li>
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-              >Ver</a
-            >
 
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-              <li><a href="" id="btn_propietario">Datos de Propietario</a></li>
-              <li><a href="" id="btn_ubicacion">Ubicación Geográfica</a></li>
-              <li><a href="" id="btn_Dat_Tec">Datos Técnicos</a></li>
-              <li><a href="" id="btn_deuda">Deuda</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-              >Consultas</a
-            >
-            <ul class="collapse list-unstyled" id="pageSubmenu">
+
+
+              <ul class="list-unstyled components">
+
               <li>
-                <a href="" id="btn_historial_eventos_terminados"
-                  >Eventos Terminados</a
-                >
+                  <a href="#homeSubmenu"  aria-expanded="true"
+                  >Ver</a>
+
+                  <ul class=" list-unstyled" id="homeSubmenu">
+                  <li><a href="" id="btn_propietario">Datos de Propietario</a></li>
+                  <li><a href="" id="btn_ubicacion">Ubicación Geográfica</a></li>
+                  <li><a href="" id="btn_Dat_Tec">Datos Técnicos</a></li>
+                  <li><a href="" id="btn_deuda">Deuda</a></li>
+                  </ul>
               </li>
               <li>
-                <a href="#Submenu2" data-toggle="collapse" aria-expanded="false"
-                  >Facturación</a
-                >
-                <ul class="collapse list-unstyled" id="Submenu2">
+                  <a href="#pageSubmenu" aria-expanded="true"
+                  >Consultas</a
+                  >
+                  <ul class=" list-unstyled" id="pageSubmenu">
                   <li>
-                    <a href="" id="btn_fact_cont" class="sidebarsub"
-                      >Factura Contigente</a
-                    >
+                      <a href="" id="btn_historial_eventos_terminados"
+                      >Eventos Terminados</a
+                      >
                   </li>
                   <li>
-                    <a href="" id="btn_concepto_facturar" class="sidebarsub"
-                      >Conceptos por Facturar</a
-                    >
+                      <a href="#Submenu2"  aria-expanded="true"
+                      >Facturación</a
+                      >
+                      <ul class="list-unstyled" id="Submenu2">
+                      <li>
+                          <a href="" id="btn_fact_cont" class="sidebarsub"
+                          >Factura Contigente</a
+                          >
+                      </li>
+                      <li>
+                          <a href="" id="btn_concepto_facturar" class="sidebarsub"
+                          >Conceptos por Facturar</a
+                          >
+                      </li>
+                      <li>
+                          <a href="" id="btn_contrato_madre" class="sidebarsub"
+                          >Clientes Asociados a Contrato Madre</a
+                          >
+                      </li>
+                      </ul>
                   </li>
-                  <li>
-                    <a href="" id="btn_contrato_madre" class="sidebarsub"
-                      >Clientes Asociados a Contrato Madre</a
-                    >
-                  </li>
-                </ul>
+                  <!-- FIN DE FACTURACIÓN-->
+                  <li><a href="#">Page 2</a></li>
+                  <li><a href="#">Page 3</a></li>
+                  </ul>
               </li>
-              <!-- FIN DE FACTURACIÓN-->
-              <li><a href="#">Page 2</a></li>
-              <li><a href="#">Page 3</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Portfolio</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-
-        <ul class="list-unstyled CTAs">
-          <li>
-            <a
-              href="https://bootstrapious.com/tutorial/files/sidebar.zip"
-              class="download"
-              >Download source</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://bootstrapious.com/p/bootstrap-sidebar"
-              class="article"
-              >Back to article</a
-            >
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Page Content Holder -->
-      <div id="content" class="container-full">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" id="sidebarCollapse" class="navbar-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-            </div>
-
-            <div
-              class="collapse navbar-collapse"
-              id="bs-example-navbar-collapse-1"
-            >
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
               </ul>
-            </div>
-          </div>
-        </nav>
-        <div  id="div_prin">
-        
 
+              <ul class="list-unstyled CTAs">
+              <li>
+                  <a
+                  href="https://bootstrapious.com/tutorial/files/sidebar.zip"
+                  class="download"
+                  >Download source</a
+                  >
+              </li>
+              <li>
+                  <a
+                  href="https://bootstrapious.com/p/bootstrap-sidebar"
+                  class="article"
+                  >Back to article</a
+                  >
+              </li>
+              </ul>
+              </nav>
+        </div>
+        <div class="container-fluid" style="  overflow-x: hidden; /* Disable horizontal scroll */">
+         <div class="row">
+            <div id="content">
+                <div style="background-color:#97c7ff">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <form  id="frm_leer" >
+                                <div class="row" style="margin-right: 0px;margin-left: 0px;padding-bottom: 20px;padding-top: 20px;padding-left: 0px;padding-right: 0px;">
+                                <div class="col-xs-6 col-md-3 col-sm-4 col-lg-2" >
+    
+                                  <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Ingrese Nic"
+                                  />
+                                </div>
+                                <div class="col-xs-6 col-md-3 col-sm-6 col-lg-4" style="padding-left: 5px;">
+                                      <button type="submit" class="btn btn-default" id="co_leer">
+                                          <span class="glyphicon glyphicon-sunglasses"> Leer</span>
+                                          </button>
+                                          <button type="submit" class="btn btn-default" id="co_buscar">
+                                          <span class="glyphicon glyphicon-search"></span>
+                                          </button>
+                              </form>
+                              <form
+                                  class="navbar-form navbar-left"
+                                  style="display: none;"
+                                  id="frm_busq"
+                              >
+                                  <button
+                                  type="submit"
+                                  class="btn btn-default"
+                                  id="co_leer_bus"
+                                  >
+                                  <span class="glyphicon glyphicon-search"></span> Buscar
+                                  </button>
+                                  <button
+                                  type="submit"
+                                  class="btn btn-default"
+                                  id="co_volver_bus"
+                                  >
+                                  <span class="glyphicon glyphicon-chevron-left"></span>
+                                  Volver
+                                  </button>
+                              </form>
+                              <form
+                                  class="navbar-form navbar-left"
+                                  style="display: none;"
+                                  id="frm_volver"
+                              >
+                                  <button
+                                  type="submit"
+                                  class="btn btn-default"
+                                  id="co_volver_bus"
+                                  >
+                                  <span class="glyphicon glyphicon-chevron-left"></span>
+                                  Volver
+                                  </button>
+                              </form>
+                              <form
+                                  class="navbar-form navbar-left"
+                                  style="display: none;"
+                                  id="frm_convenios_pago_detalle"
+                              >
+                                  <button
+                                  type="submit"
+                                  class="btn btn-default"
+                                  id="co_volver_convenios"
+                                  >
+                                  <span class="glyphicon glyphicon-chevron-left"></span>
+                                  Historial de Convenios
+                                  </button>
+                                  <button
+                                  type="submit"
+                                  class="btn btn-default"
+                                  id="co_volver_bus"
+                                  >
+                                  <span class="glyphicon glyphicon-chevron-left"></span>
+                                  Consultas de Clientes
+                                  </button>
+                              </form>
+                        </div>
+                    </nav>
+                </div>
+                <div id="div_prin">
+                <!-- NOMBRE DE LA CUENTA -->
 
-            <!-- NOMBRE DE LA CUENTA -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="tx_nom">Nombre</label>
-                        <input type=text class="form-control " id="tx_nom" readonly> 
-                    </div>
-                </div>
-            </div>
-           
-    
-            <!-- TIPO Y NÚMERO DE IDENTIDAD -->
-            <div class="row">
-                <div class="col-md-6">
-    
-                    <div class="form-group">
-                        <label for="tx_tipo_id">Tipo de Documento de Identidad</label>
-                        <input type="text" class="form-control " id="tx_tipo_id" readonly>
-                    </div>  
-    
-    
-    
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="tx_id">Documento de Identidad</label>
-                        <input type="text" class="form-control " id="tx_id" readonly>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <!-- REGIONAL Y RUTA COMERCIAL -->
-            <div class="row">
-                <div class="col-md-6">
-    
-                    <div class="form-group">
-                        <label for="tx_regional">Regional</label>
-                        <input type="text" class="form-control " id="tx_regional" readonly>
-                    </div>  
-    
-    
-    
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="tx_ruta">Ruta Comercial</label>
-                        <input type="text" class="form-control " id="tx_ruta" readonly>
-                    </div>
-                </div>
-                
-            </div>
-    
-            
-            <!-- DEUDA -->
-            <div class="row">
-                <div class="col-md-3">
-    
-                    <div class="form-group">
-                        <label for="tx_de_idaan">Deuda Idaan</label>
-                        <input type="text" class="form-control " id="tx_de_idaan" readonly>
-                    </div>  
-    
-    
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="tx_de_aseo">Deuda Aseo</label>
-                        <input type="text" class="form-control " id="tx_de_aseo" readonly>
-                    </div>
-                </div>
-                
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="tx_de_total">Deuda Total</label>
-                        <input type="text" class="form-control " id="tx_de_total" readonly>
-                    </div>
-                </div>
-    
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="tx_de_conve">En Convenio</label>
-                        <input type="text" class="form-control " id="tx_de_conve" readonly>
-                    </div>
-                </div>
-    
-            </div>
-            
-            <div class="well well-sm">Dirección</div>
-            
-            <!-- PROVINCIA Y DISTRITO -->
-            <div class="row">
-                <div class="col-md-6">
+                <div class="well well-sm" style="margin-top: 10px">Dirección</div>
+
+                <!-- PROVINCIA Y DISTRITO -->
+                <div class="row">
+                    <div class="col-md-6">
                     <div class="form-group">
                         <label for="">Provincia</label>
-                        <input type="text" class="form-control " id="tx_provincia" readonly>
+                        <input
+                        type="text"
+                        class="form-control "
+                        id="tx_provincia"
+                        readonly
+                        />
                     </div>
-    
-    
-                </div>
-                <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                     <div class="form-group">
                         <label for="">Distrito</label>
-                        <input type="text" class="form-control " id="tx_distrito" readonly>
+                        <input
+                        type="text"
+                        class="form-control "
+                        id="tx_distrito"
+                        readonly
+                        />
+                    </div>
                     </div>
                 </div>
-    
-            </div>
-    
-            <!-- CORREGIMIENTO Y BARRIO -->
-            <div class="row">
-                <div class="col-md-6">
-    
+
+                <!-- CORREGIMIENTO Y BARRIO -->
+                <div class="row">
+                    <div class="col-md-6">
                     <div class="form-group">
                         <label for="tx_corr">Corregimiento</label>
-                        <input type="text" class="form-control " id="tx_corr" readonly>
-                    </div>  
-    
-    
-                </div>
-                <div class="col-md-6">
-    
+                        <input
+                        type="text"
+                        class="form-control "
+                        id="tx_corr"
+                        readonly
+                        />
+                    </div>
+                    </div>
+                    <div class="col-md-6">
                     <div class="form-group">
                         <label for="tx_barrio">Barrio</label>
-                        <input type="text" class="form-control " id="tx_barrio" readonly>
+                        <input
+                        type="text"
+                        class="form-control "
+                        id="tx_barrio"
+                        readonly
+                        />
                     </div>
-    
+                    </div>
                 </div>
-                
-            </div>
-    
-            <!-- DIRECCIÓN -->
-            <div class="row">
-                <div class="col-md-12">
+
+                <!-- DIRECCIÓN -->
+                <div class="row">
+                    <div class="col-md-12">
                     <div class="form-group">
                         <label for="tx_dir">Dirección</label>
-                        <input type=text class="form-control " id="tx_dir" readonly>
+                        <input type="text" class="form-control " id="tx_dir" readonly />
+                    </div>
                     </div>
                 </div>
-            </div>
-    
-             <!-- REFERNCIA ADICIONAL -->
-             <div class="row">
+
+                <!-- REFERNCIA ADICIONAL -->
+                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="tx_ref">Referencia Adicional</label>
-                            <input type=text class="form-control " id="tx_ref" readonly>
-                        </div>
+                    <div class="form-group">
+                        <label for="tx_ref">Referencia Adicional</label>
+                        <input type="text" class="form-control " id="tx_ref" readonly />
+                    </div>
                     </div>
                 </div>
-    
-            <div class="well well-sm">Facturación de Servicios</div>
-    
-            <!-- ESTADO CLIENTE Y ESTADO CONEXIÓN -->
-    
-            <div class="row">
-                <div class="col-md-6">
-    
+
+                <div class="well well-sm">Facturación de Servicios</div>
+
+                <!-- ESTADO CLIENTE Y ESTADO CONEXIÓN -->
+
+                <div class="row">
+                    <div class="col-md-6">
                     <div class="form-group">
                         <label for="tx_est_cliente">Estado Cliente</label>
-                        <input type="text" class="form-control " id="tx_est_cliente" readonly>
-                    </div>  
-    
-    
-                </div>
-                <div class="col-md-6">
+                        <input
+                        type="text"
+                        class="form-control "
+                        id="tx_est_cliente"
+                        readonly
+                        />
+                    </div>
+                    </div>
+                    <div class="col-md-6">
                     <div class="form-group">
                         <label for="tx_est_conex">Estado Conexión</label>
-                        <input type="text" class="form-control " id="tx_est_conex" readonly>
+                        <input
+                        type="text"
+                        class="form-control "
+                        id="tx_est_conex"
+                        readonly
+                        />
+                    </div>
                     </div>
                 </div>
-                
-            </div>
-    
-            <!-- TARIFA -->
-            <div class="row">
-                <div class="col-md-12">
-    
+
+                <!-- TARIFA -->
+                <div class="row">
+                    <div class="col-md-12">
                     <div class="form-group">
                         <label for="tx_tarifa">Tarifa</label>
-                        <input type="text" class="form-control " id="tx_tarifa" readonly>
-                    </div>  
+                        <input
+                        type="text"
+                        class="form-control "
+                        id="tx_tarifa"
+                        readonly
+                        />
+                    </div>
+                    </div>
                 </div>
-            </div>
-    
-            <!-- ACTIVIDAD -->
-            <div class="row">
-                <div class="col-md-12">
+
+                <!-- ACTIVIDAD -->
+                <div class="row">
+                    <div class="col-md-12">
                     <div class="form-group">
                         <label for="tx_act">Actividad</label>
-                        <input type="text" class="form-control " id="tx_act" readonly>  
-                    </div>  
+                        <input type="text" class="form-control " id="tx_act" readonly />
+                    </div>
+                    </div>
                 </div>
-            </div>
-    
-            
-            <!-- ESTADO CLIENTE Y ESTADO CONEXIÓN -->
-    
-            <div class="row">
-                <div class="col-md-4" id="margen-bajo">
+
+                <!-- ESTADO CLIENTE Y ESTADO CONEXIÓN -->
+
+                <div class="row">
+                    <div class="col-md-4" id="margen-bajo">
                     <div class="input-group">
                         <div class="checkbox">
-                            <label><input type="checkbox" disabled="disabled" id="check_cobro_recargo" disabled="disabled">Cobro de Recargo</label>
+                        <label
+                            ><input
+                            type="checkbox"
+                            disabled="disabled"
+                            id="check_cobro_recargo"
+                            disabled="disabled"
+                            />Cobro de Recargo</label
+                        >
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4" id="margen-bajo">
+                    </div>
+                    <div class="col-md-4" id="margen-bajo">
                     <div class="input-group">
                         <div class="checkbox">
-                            <label><input type="checkbox" disabled="disabled" id="check_conve_restringido" readonly>Convenio Restringido</label>
+                        <label
+                            ><input
+                            type="checkbox"
+                            disabled="disabled"
+                            id="check_conve_restringido"
+                            readonly
+                            />Convenio Restringido</label
+                        >
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4" id="margen-bajo">
+                    </div>
+                    <div class="col-md-4" id="margen-bajo">
                     <div class="input-group">
                         <div class="checkbox">
-                            <label><input type="checkbox" disabled="disabled" id="check_exento_corte" readonly>Exento de Corte</label>
+                        <label
+                            ><input
+                            type="checkbox"
+                            disabled="disabled"
+                            id="check_exento_corte"
+                            readonly
+                            />Exento de Corte</label
+                        >
                         </div>
                     </div>
-                </div>
-            </div>
-    
-            <div class="well well-sm">Descuentos</div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="input-group">
-                    <span class="input-group-addon">
-                        <input type="checkbox" disabled="disabled">
-                    </span>
-                    <span class="input-group-addon" id="estandar">
-                        <label for="tx_social" class="lbl_check">Caso Social</label>
-                    </span>
-                    <input type="text" id="tx_social" class="form-control" value="0%" readonly>
                     </div>
                 </div>
-                
-                <div class="col-md-4">
+
+                <div class="well well-sm">Descuentos</div>
+                <div class="row">
+                    <div class="col-md-4">
                     <div class="input-group">
-                    <span class="input-group-addon">
-                        <input type="checkbox" disabled="disabled">
-                    </span>
-                    <span class="input-group-addon"  id="estandar">
-                        <label for="tx_jubilado" class="lbl_check">Jubilado</label>
-                    </span>
-                    <input type="text" id="tx_jubilado" class="form-control" value="0%" readonly>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="input-group">
-                    <span class="input-group-addon">
-                        <input type="checkbox" disabled="disabled">
-                    </span>
-                    <span class="input-group-addon"  id="estandar">
-                        <label for="tx_discapacidad" class="lbl_check">Discapacidad</label>
-                    </span>
-                    <input type="text" id="tx_discapacidad" class="form-control" value="0%" readonly>
-                    </div>
-                </div>
-            </div>
-            <br>  
-            <div class="row">
-               
-                <div class="col-md-4">
-                    <div class="input-group">
-                    <span class="input-group-addon">
-                        <input type="checkbox" disabled="disabled">
-                    </span>
-                    <span class="input-group-addon"  id="estandar">
-                        <label for="tx_empleado" class="lbl_check">Empleado</label>
-                    </span>
-                    <input type="text" id="tx_empleado" class="form-control" value="0%" readonly>
-                    </div>
-                </div>
-    
-                <div class="col-md-4">
-                        <div class="input-group">
                         <span class="input-group-addon">
-                            <input type="checkbox" disabled="disabled">
+                        <input type="checkbox" disabled="disabled" />
                         </span>
-                        <span class="input-group-addon"  id="estandar">
-                            <label for="tx_falla_sum" class="lbl_check">Falla Suministro</label>
+                        <span class="input-group-addon" id="estandar">
+                        <label for="tx_social" class="lbl_check">Caso Social</label>
                         </span>
-                        <input type="text" id="tx_falla_sum" class="form-control" value="0%" readonly>
-                        </div>
+                        <input
+                        type="text"
+                        id="tx_social"
+                        class="form-control"
+                        value="0%"
+                        readonly
+                        />
                     </div>
-    
-            </div>
-            <br>
-    
-            <div id="grid1" style="margin-top:8px;"></div>
-            <br>
-            <div class="well well-sm"  id="btn_info_factura">Información Histórica</div>
-            <div class="row">
-                <div class="col-md-12">
-                
+                    </div>
+
+                    <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <input type="checkbox" disabled="disabled" />
+                        </span>
+                        <span class="input-group-addon" id="estandar">
+                        <label for="tx_jubilado" class="lbl_check">Jubilado</label>
+                        </span>
+                        <input
+                        type="text"
+                        id="tx_jubilado"
+                        class="form-control"
+                        value="0%"
+                        readonly
+                        />
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <input type="checkbox" disabled="disabled" />
+                        </span>
+                        <span class="input-group-addon" id="estandar">
+                        <label for="tx_discapacidad" class="lbl_check"
+                            >Discapacidad</label
+                        >
+                        </span>
+                        <input
+                        type="text"
+                        id="tx_discapacidad"
+                        class="form-control"
+                        value="0%"
+                        readonly
+                        />
+                    </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <input type="checkbox" disabled="disabled" />
+                        </span>
+                        <span class="input-group-addon" id="estandar">
+                        <label for="tx_empleado" class="lbl_check">Empleado</label>
+                        </span>
+                        <input
+                        type="text"
+                        id="tx_empleado"
+                        class="form-control"
+                        value="0%"
+                        readonly
+                        />
+                    </div>
+                    </div>
+
+                    <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <input type="checkbox" disabled="disabled" />
+                        </span>
+                        <span class="input-group-addon" id="estandar">
+                        <label for="tx_falla_sum" class="lbl_check"
+                            >Falla Suministro</label
+                        >
+                        </span>
+                        <input
+                        type="text"
+                        id="tx_falla_sum"
+                        class="form-control"
+                        value="0%"
+                        readonly
+                        />
+                    </div>
+                    </div>
+                </div>
+                <br />
+
+                <div id="grid1" style="margin-top:8px;"></div>
+                <br />
+                <div class="well well-sm" id="btn_info_factura">
+                    Información Histórica
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
                     <ul class="nav nav-tabs nav-justified" role="tablist">
-                        <li role="presentation" class="active"><a data-toggle="tab" href="#tab_eve">Eventos</a></li>
-                        <li role="presentation"><a data-toggle="tab" href="#tab_fac">Facturación</a></li>
-                        <li role="presentation"><a data-toggle="tab" href="#tab_con">Consumos</a></li>
-                        <li role="presentation"><a data-toggle="tab" href="#tab_pag">Pagos</a></li>
-                        <li role="presentation"><a data-toggle="tab" href="#tab_cor">Corte y Repo</a></li>
-                        <li role="presentation"><a data-toggle="tab" href="#tab_aju">Ajustes</a></li>
+                        <li role="presentation" class="active">
+                        <a data-toggle="tab" href="#tab_eve">Eventos</a>
+                        </li>
+                        <li role="presentation">
+                        <a data-toggle="tab" href="#tab_fac">Facturación</a>
+                        </li>
+                        <li role="presentation">
+                        <a data-toggle="tab" href="#tab_con">Consumos</a>
+                        </li>
+                        <li role="presentation">
+                        <a data-toggle="tab" href="#tab_pag">Pagos</a>
+                        </li>
+                        <li role="presentation">
+                        <a data-toggle="tab" href="#tab_cor">Corte y Repo</a>
+                        </li>
+                        <li role="presentation">
+                        <a data-toggle="tab" href="#tab_aju">Ajustes</a>
+                        </li>
                     </ul>
-    
-    
+
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="tab_eve">
-                            <div id="div_eve" class="gr-con"></div>
+                        <div id="div_eve" class="gr-con"></div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_fac">
-                            <div id="div_fac" class="gr-con"></div>
+                        <div id="div_fac" class="gr-con"></div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_con">
-                            <div id="div_con" class="gr-con"></div>
+                        <div id="div_con" class="gr-con"></div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_pag">
-                            <div id="div_pag" class="gr-con"></div>
+                        <div id="div_pag" class="gr-con"></div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_cor">
-                            <div id="div_cor" class="gr-con"></div> 
+                        <div id="div_cor" class="gr-con"></div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab_aju">
-                            <div id="div_aju" class="gr-con"></div>
+                        <div id="div_aju" class="gr-con"></div>
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div> 
-        </div> <!-- FIN DEL DIV PRINCIPAL-->
+                </div>
+                <!-- FIN DEL DIV PRINCIPAL-->
 
+                <!-- DIV BÚSQUEDA DE CLIENTE-->
+                <div id="div_busq" style="display: none;"></div>
 
-    <!-- DIV BÚSQUEDA DE CLIENTE-->
-    <div  id="div_busq" style="display: none;"></div>
+                <!-- DIV DATOS ABASTECIMIENTO-->
+                <div id="div_abastece" style="display: none;"></div>
 
-    <!-- DIV DATOS ABASTECIMIENTO-->	
-    <div id="div_abastece"  style="display: none;"></div>
+                <!-- DIV DATOS SUMINISTRO-->
+                <div id="div_ubicacion" style="display: none;"></div>
 
-    <!-- DIV DATOS SUMINISTRO-->	
-    <div id="div_ubicacion"  style="display: none;"></div>
-    
-    <!-- DIV DATOS PROPIETARIO-->	
-    <div id="div_propietario"  style="display: none;"></div>
+                <!-- DIV DATOS PROPIETARIO-->
+                <div id="div_propietario" style="display: none;"></div>
 
-    <!-- DIV DATOS FACTURACION CONTINGENTE-->	
-    <div id="div_fact_cont"  style="display: none;"></div>
+                <!-- DIV DATOS FACTURACION CONTINGENTE-->
+                <div id="div_fact_cont" style="display: none;"></div>
 
-    <!-- DIV DATOS DEUDA-->	
-    <div id="div_deuda"  style="display: none;"></div>
+                <!-- DIV DATOS DEUDA-->
+                <div id="div_deuda" style="display: none;"></div>
 
-    <!-- DIV DATOS MEDIDOR-->	
-    <div id="div_medidor"  style="display: none;"></div>
+                <!-- DIV DATOS MEDIDOR-->
+                <div id="div_medidor" style="display: none;"></div>
 
-    <!-- DIV DATOS  HISTORICO MEDIDORES-->	
-    <div id="div_historico_medidores"  style="display: none;"></div>
+                <!-- DIV DATOS  HISTORICO MEDIDORES-->
+                <div id="div_historico_medidores" style="display: none;"></div>
 
-    <!-- DIV DATOS  HISTORICO AUDITORIA-->	
-    <div id="div_audi_mod"  style="display: none"></div>
+                <!-- DIV DATOS  HISTORICO AUDITORIA-->
+                <div id="div_audi_mod" style="display: none"></div>
 
-    <!-- DIV DATOS  HISTORICO AUDITORIA-->	
-    <div id="div_concepto_facturar"  style="display: none"></div>
+                <!-- DIV DATOS  HISTORICO AUDITORIA-->
+                <div id="div_concepto_facturar" style="display: none"></div>
 
-    <!-- DIV DATOS INFORMACION CONSUMO-->	
-    <div id="div_informacion_consumo"  style="display: none"></div>
+                <!-- DIV DATOS INFORMACION CONSUMO-->
+                <div id="div_informacion_consumo" style="display: none"></div>
 
-    <!-- DIV DATOS  HISTORICO AUDITORIA-->	
-    <div id="div_contrato_madre"  style="display: none"></div>
+                <!-- DIV DATOS  HISTORICO AUDITORIA-->
+                <div id="div_contrato_madre" style="display: none"></div>
 
-    <!-- DIV DATOS  HISTORIAL DE SUBSIDIO-->	
-    <div id="div_historial_subsidio"  style="display: none"></div>
+                <!-- DIV DATOS  HISTORIAL DE SUBSIDIO-->
+                <div id="div_historial_subsidio" style="display: none"></div>
 
-    <!-- DIV DATOS HISTORIAL DE MOVIMIENTOS DE ASEO-->	
-    <div id="div_historial_aseo"  style="display: none"></div>
-    
-    <!-- DIV DATOS INFORMACION FACTURA-->	
-    <div id="div_informacion_factura"  style="display: none"></div>
-    
+                <!-- DIV DATOS HISTORIAL DE MOVIMIENTOS DE ASEO-->
+                <div id="div_historial_aseo" style="display: none"></div>
 
-    <!-- DIV DATOS INFORMACION OTROS PAGOS-->	
-    <div id="div_pagos_otros"  style="display: none"></div>
+                <!-- DIV DATOS INFORMACION FACTURA-->
+                <div id="div_informacion_factura" style="display: none"></div>
 
-    <!-- DIV DATOS INFORMACION PAGOS X APLICAR-->	
-    <div id="div_pagos_aplicar"  style="display: none"></div>
+                <!-- DIV DATOS INFORMACION OTROS PAGOS-->
+                <div id="div_pagos_otros" style="display: none"></div>
 
-    <!-- DIV DATOS  HISTORICO PAGOS-->	
-    <div id="div_historico_pagos"  style="display: none;"></div>
+                <!-- DIV DATOS INFORMACION PAGOS X APLICAR-->
+                <div id="div_pagos_aplicar" style="display: none"></div>
 
-    <!-- DIV DATOS  CONVENIOS PAGOS-->	
-    <div id="div_convenios_pago"  style="display: none;"></div>
+                <!-- DIV DATOS  HISTORICO PAGOS-->
+                <div id="div_historico_pagos" style="display: none;"></div>
 
-    <!-- DIV CONVENIOS PAGO DETALLE-->	
-    <div id="div_convenios_pago_detalle"  style="display: none;"></div>
+                <!-- DIV DATOS  CONVENIOS PAGOS-->
+                <div id="div_convenios_pago" style="display: none;"></div>
 
-    <!-- DIV CONVENIOS PAGO DETALLE-->	
-    <div id="div_historial_eventos_terminados"  style="display: none;"></div>
+                <!-- DIV CONVENIOS PAGO DETALLE-->
+                <div id="div_convenios_pago_detalle" style="display: none;"></div>
 
-    <!-- DIV EVENTOS-->	
-    <div id="div_eventos"  style="display: none;"></div>
+                <!-- DIV CONVENIOS PAGO DETALLE-->
+                <div id="div_historial_eventos_terminados" style="display: none;"></div>
 
-    <!-- DIV AJUSTES-->	
-    <div id="div_ajustes"  style="display: none;"></div>
+                <!-- DIV EVENTOS-->
+                <div id="div_eventos" style="display: none;"></div>
 
-    <!-- PIE DE PÁGINA-->
-    <p style="display: none;">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    <p>© 2019 - TIVIT - Todos los derechos reservados</p>
-    </div>
-    
-    
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("#sidebarCollapse").on("click", function() {
-          $("#sidebar").toggleClass("active");
-          $(this).toggleClass("active");
-        });
-      });
-    </script>
+                <!-- DIV AJUSTES-->
+                <div id="div_ajustes" style="display: none;"></div>
+
+                <!-- PIE DE PÁGINA-->
+                <div id="div_footer"></div>
+            </div>
+         </div>
+        </div>
   </body>
 </html>
