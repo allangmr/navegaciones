@@ -39,18 +39,18 @@
 
     <!--<script src="./js/syn_util.js"></script>-->
     <link rel="stylesheet" href="./css/style.css" />
-    
-
-
     <title>Consulta de Cliente</title>
 
 </head>
 
 <body id="bd_concli">
+        <div class="scrollbar" id="style-7">
+                <div class="force-overflow"></div>
+              </div>
         <div class="navbar navbar-inverse navbar-fixed-left">
                 <nav id="sidebar" class="navbar navbar-inverse navbar-fixed-left" >
-                    <div class="row" >
-                      <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12"> 
+                    <div class="row" style="padding-top:10px;">
+                      <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
                           <div style="text-align: center;margin-bottom: 20px;">
                               <a href="https://www.idaan.gob.pa/" target="_blank"
                               ><img src="idaan.png" width="100"
@@ -58,59 +58,67 @@
                           </div>
                       </div>
                     </div>
+                    <div class="row" style="    margin-right: 0px;
+                    background: #1e5078; padding-top:8px;text-align: center; margin-bottom: 10px;">
+                        <p style="font-size:14px;color: #fff;"><b>Consulta de Cliente</b></p>
+                    </div>
+                    <div class="row" style="    margin-right: 0px;
+                    margin-left: 10px;">
+                            <div class="span3">
+                              <div class="">
+                                  <div>
+                                      <ul class="nav nav-list" >
+                                          <li ><label class="tree-toggle nav-header v-menu" style="font-size:12px;"><b><span class="glyphicon glyphicon-triangle-bottom"  flag="1" style="font-size: 10px;"></span> Ver</b></label>
+                                              <ul class="nav nav-list tree submenu1" >
+                                                  <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Datos de Propietario</a></li>
+                                                  <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Ubicación Geográfica</a></li>
+                                                  <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Datos Técnicos</a></li>
+                                                  <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Deuda</a></li>
 
-                    <ul class="list-unstyled components">
-      
-                    <li>
-                        <a href="#homeSubmenu"  aria-expanded="true"
-                        >Ver</a>
-      
-                        <ul class=" list-unstyled" id="homeSubmenu">
-                        <li><a href="" id="btn_propietario">Datos de Propietario</a></li>
-                        <li><a href="" id="btn_ubicacion">Ubicación Geográfica</a></li>
-                        <li><a href="" id="btn_Dat_Tec">Datos Técnicos</a></li>
-                        <li><a href="" id="btn_deuda">Deuda</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" aria-expanded="true"
-                        >Consultas</a
-                        >
-                        <ul class=" list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="" id="btn_historial_eventos_terminados"
-                            >Eventos Terminados</a
-                            >
-                        </li>
-                        <li>
-                            <a href="#Submenu2"  aria-expanded="true"
-                            >Facturación</a
-                            >
-                            <ul class="list-unstyled" id="Submenu2">
-                            <li>
-                                <a href="" id="btn_fact_cont" class="sidebarsub"
-                                >Factura Contigente</a
-                                >
-                            </li>
-                            <li>
-                                <a href="" id="btn_concepto_facturar" class="sidebarsub"
-                                >Conceptos por Facturar</a
-                                >
-                            </li>
-                            <li>
-                                <a href="" id="btn_contrato_madre" class="sidebarsub"
-                                >Clientes Asociados a Contrato Madre</a
-                                >
-                            </li>
-                            </ul>
-                        </li>
-                        <!-- FIN DE FACTURACIÓN-->
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
-                        </ul>
-                    </li>
-                    </ul>
-      
+                                              </ul>
+                                          </li>
+                                          <li class="divider"></li>
+                                          <li ><label class="tree-toggle nav-header v-menu" style="font-size:12px;padding-top:10px;padding-bottom:10px;"><b><span class="glyphicon glyphicon-triangle-bottom"  flag="1" style="font-size: 10px;"></span> Consultas</b></label>
+                                              <ul class="nav nav-list tree submenu1">
+                                                  <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Historial de Atenciones</a></li>
+                                                  <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Eventos Terminados</a></li>
+                                                  <li ><label class="tree-toggle nav-header submenu2 v-menu" style="padding-top:5px; padding-bottom:5px;color:#000000;"><b><span class="glyphicon glyphicon-triangle-bottom "  flag="1" style="font-size: 10px;"></span> Facturación</b></label>
+                                                      <ul class="nav nav-list tree submenu21">
+                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Factura Contingente</a></li>
+                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Conceptos por Facturar</a></li>
+                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Clientes Asociados a Contrato Madre</a></li>
+                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Factura Enviadas por Correo</a></li>
+                                                      </ul>
+                                                  </li>
+                                                  <li><label class="tree-toggle nav-header submenu2 v-menu" style="padding-top:5px; padding-bottom:5px;color:#000000;"><b><span class="glyphicon glyphicon-triangle-bottom"  flag="1" style="font-size: 10px;"></span> Medidores</b></label>
+                                                      <ul class="nav nav-list tree submenu21">
+                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Medidores</a></li>
+                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Histórico de Medidores</a></li>
+                                                      </ul>
+                                                  </li>
+                                                  <li><label class="tree-toggle nav-header submenu2 v-menu" style="padding-top:5px; padding-bottom:5px;color:#000000;"><b><span class="glyphicon glyphicon-triangle-bottom "  flag="1" style="font-size: 10px;"></span> Cobranza</b></label>
+                                                        <ul class="nav nav-list tree submenu21">
+                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Pagos por Aplicar</a></li>
+                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Pagos por Otros Conceptos</a></li>
+                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Convenios de Pago</a></li>
+                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Consulta de Comprobantes Emitidos</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><label class="tree-toggle nav-header submenu2 v-menu" style="padding-top:5px; padding-bottom:5px;color:#000000;"><b><span class="glyphicon glyphicon-triangle-bottom"  flag="1" style="font-size: 10px;"></span> Consultas Generales</b></label>
+                                                        <ul class="nav nav-list tree submenu21">
+                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Auditoria de Modificaciones</a></li>
+                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Historial de Subsidio por Caso Social</a></li>
+                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Movimientos de Aseo</a></li>
+                                                        </ul>
+                                                    </li>
+                                              </ul>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              </div>
+                    </div>
+
                     <ul class="list-unstyled CTAs">
                     <li>
                         <a
@@ -254,7 +262,7 @@
                     </div>
 
                 </div>
-                
+
                 <!-- ESTADO CLIENTE Y ESTADO CONEXIÓN -->
 
                 <div class="row">
@@ -275,7 +283,7 @@
                     </div>
 
                 </div>
-                
+
                 <!-- DEUDA -->
                 <div class="row">
                     <div class="col-md-3">
@@ -852,7 +860,12 @@
 	<input type="hidden" id="excel_historico_correo" name="excel_historico_medidores">
 	<input type="hidden" id="tx_tie_conve2" name="tx_tie_conve2">
 	<input type="hidden" id="tx_cor_doc_fac" name="tx_cor_doc_fac">
-	<input type="hidden" id="tx_comp_grafico" name="tx_comp_grafico">
+    <input type="hidden" id="tx_comp_grafico" name="tx_comp_grafico">
+    <script>$('.tree-toggle').click(function () {
+            $(this).parent().children('ul.tree').toggle(200);
+        });
+        
+    </script>
 </body>
 
 </html>

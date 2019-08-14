@@ -1,0 +1,146 @@
+
+body{
+    background: white;
+    
+}
+
+.ui-widget-content {
+    border: 1px solid #dddddd;
+    background: #f2f5f7;
+    color: #362b36;
+}
+
+.itemMenu {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+  /*  background-color: #e6ecff;*/
+.itemMenu:hover {
+  background-color:#bed1f3; 
+}
+
+.containerTableStyle {
+    height: auto;
+}
+
+* {box-sizing: border-box;}
+
+.wrapper{
+    
+    background: rgb(71,72,75);
+    padding: 2px;
+    font-family: arial;
+    font-size: 14px;
+}
+
+.wrapper:after{
+    content: "";
+    display: block;
+    clear: both;
+    
+}
+
+.wrapper div div a{
+    text-decoration: none;
+    color: white;
+}
+
+.wrapper div img{
+    width:100px;
+    
+}
+
+img
+{
+  border:0px;
+}
+
+.logo{
+    
+    background: white;
+    padding: 7px;
+    color: white;
+    text-align: center;
+    line-height: 0;
+   
+}
+
+.user{
+    margin-top: 2px;
+    padding: 10px;
+    background: #f1f1f1;
+    color: black;
+    text-align: center;
+    
+}
+
+.pass{
+    margin-top: 2px;
+    background:  dodgerblue;
+    padding: 10px;
+    color: white;
+    text-align: center;
+   
+}
+
+.info2 {
+    border-left: 6px solid rgb(71,72,75);
+    border-right: 6px solid rgb(71,72,75);
+    padding: 20px 10px;
+    text-align:center;
+    width:70%;
+    max-width:450px;
+    color: rgb(71,72,75);
+    background-color: #f1f1f1;
+    font-family:Arial;
+    font-size:16px;
+    letter-spacing: 1px;
+    margin: 80px auto;
+}
+
+@media only screen and (min-width: 40em)
+{
+    
+    
+    .wrapper{
+        border-radius: 5px;
+    }
+    
+    .logo{
+        
+        float: left;
+        background: white;
+        border-radius: 5px;
+    }
+    
+    .info{
+        float: right;
+        background: none;
+        margin-top: 7px
+    }
+    
+    .info:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .user{
+        float: left;
+        margin:5px 10px 5px 10px;
+        border-radius: 5px;
+        background: #f1f1f1;
+        color: black;
+    }
+    
+     .pass{
+        float:left;
+        margin: 5px 10px 5px 0px;
+        border-radius: 5px;   
+    }
+    
+}

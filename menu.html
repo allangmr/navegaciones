@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema Comercial Synergia 4i</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Jquery -->
+	<script src="/jquery/jquery-3.1.1.min.js"></script>
+	<script src="/jquery/jquery-ui/jquery-ui-1.12.1/jquery-ui.min.js"></script>				
+	<link rel="stylesheet" href="/jquery/jquery-ui/jquery-ui-1.12.1/jquery-ui.min.css">
+ 	<link rel="stylesheet" href="/jquery/jquery-ui/jquery-ui-themes-1.12.1/themes/base/jquery-ui.min.css">
+	
+    <!-- Boostrap -->
+    <script src="./bootstrap/v3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap/v3.3.7/css/bootstrap.min.css" />
+	
+    <!-- dhtmlxTree Archivos-->
+    <script src="./dhtmlxTree_v51_pro_eval/codebase/dhtmlxtree.js"></script>
+    <link rel="stylesheet" type="text/css" href="./dhtmlxTree_v51_pro_eval/skins/terrace/dhtmlxtree.css"/>
+<!--
+	<script language="JavaScript" src="/raiz/syn_menu/Syn_Globales/hs_cookies.js"></script>
+	<script language="JavaScript" src="/raiz/syn_menu/SYN_Dinamicos/hsyn_file.js"></script>
+	<script language="JavaScript" src="/raiz/syn_menu/Syn_Conexion/hsyn_conexion.js"></script>
+	<script language="JavaScript" src="/raiz/syn_menu/Syn_Globales/hsyn_Seguridad.js"></script>
+	<script language="JavaScript" src="/raiz/syn_menu/Syn_Globales/hsyn_SynTitulo.js"></script>
+	<script language="JavaScript" src="/raiz/syn_menu/Syn_Globales/hs_teclas.js"></script>
+	<script language="JavaScript" src="/raiz/syn_menu/Syn_Globales/synmsg.js"></script>
+	<script language="JavaScript" src="/raiz/syn_menu/Syn_Globales/Validacion.js"></script>
+	-->
+	<script src="/raiz/syn_globales/syn_util.js"></script>
+	<script language="JavaScript" src="menu.js"></script>
+	<link rel="stylesheet" href="menu.css">
+	
+</head>
+<body >
+
+	<br>
+	
+	<div id="frame1" style="width:100%;height:100%;">
+		<div id="div_tree" style="width:100%; height:100%;border :0px solid Silver;"></div>
+	</div>
+	
+	<div id="dv_cargando" class="info2">
+        <strong>Cargando menu...</strong>
+    </div>
+
+	<div id="div_rol">
+		<div id="perfiles">
+		</div>
+	</div>
+	
+	<input type="hidden" id="tx_empresa" name="tx_empresa">
+	<input type="hidden" id="sql" name="sql" value="">
+	<input type="hidden" id="tx_rol" name="tx_rol">
+	<input type="hidden" id="tx_ip" name="tx_ip">
+</body>
+</html>

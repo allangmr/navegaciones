@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<tree id="0" radio="1">
+	<item   text="MENU" id="idaan" open="1"><userdata name="tip_nodo">0</userdata>
+			<item text='CONSULTAS' id='OPE_ADMINISTRADOR'><userdata name='tip_nodo'>0</userdata>
+				<item text='HISTORIAL DE ATENCIONES' id='OADMCEN_0041'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/OPERACION/OPE_ADMINISTRADOR/ADM_CENTRAL/OADMCEN_0041.HTM</userdata><userdata name='roles'>OPERA_ADMIN_SIST;</userdata></item>
+				<item text='EVENTOS TERMINADOS' id='OADMCEN_0043'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/OPERACION/OPE_ADMINISTRADOR/ADM_CENTRAL/OADMCEN_0041.HTM</userdata><userdata name='roles'>OPERA_ADMIN_SIST;</userdata></item>
+				<item text='MEDIDORES' id='ADM_CENTRAL'><userdata name='tip_nodo'>0</userdata>
+					<item text='MEDIDORES' id='OADMCEN_0041'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/OPERACION/OPE_ADMINISTRADOR/ADM_CENTRAL/OADMCEN_0041.HTM</userdata><userdata name='roles'>OPERA_ADMIN_SIST;</userdata></item>
+					<item text='HISTORICO DE MEDIDORES' id='OADMCEN_0039'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/OPERACION/OPE_ADMINISTRADOR/ADM_CENTRAL/OADMCEN_0039.htm</userdata><userdata name='roles'>OPERA_ADMIN_SIST;ROLFUNCAUX;</userdata></item>			
+				</item>
+				<item text='CONSULTAS GENERALES' id='ADM_TARIFARIO'><userdata name='tip_nodo'>0</userdata>
+					<item text='AUDITORIA DE MODIFICACIONES' id='OADMTAR_0017'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/OPERACION/OPE_ADMINISTRADOR/ADM_TARIFARIO/OADMTAR_0017.htm</userdata><userdata name='roles'></userdata></item>
+					<item text='HISTORIAL DE SUBSIDIO CASO SOCIAL' id='OADMTAR_0026'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/OPERACION/OPE_ADMINISTRADOR/ADM_TARIFARIO/OADMTAR_0026.htm</userdata><userdata name='roles'></userdata></item>
+					<item text='MOVIMIENTO DE ASEO' id='FFACVAL_0004'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/FACTURACION/FAC_FACTURACION/FAC_VALORIZACION/FFACVAL_0004.htm</userdata><userdata name='roles'></userdata></item>				
+				</item>
+			</item>
+			<item text='VER' id='FAC_ASEO'><userdata name='tip_nodo'>0</userdata>				
+				<item text='DATOS PROPIETARIOS' id='FFACASE_0007'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/FACTURACION/FAC_ASEO/FFACASE_0007.HTM</userdata><userdata name='roles'>CARGOFAC_ASEO;</userdata></item>
+				<item text='UBICACION GEOGRAFICA' id='FFACASE_0012'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/FACTURACION/FAC_ASEO/FFACASE_0012.HTM</userdata><userdata name='roles'>ADMASEO;</userdata></item>
+				<item text='DATOS TECNICOS' id='FFACASE_0013'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/FACTURACION/FAC_ASEO/FFACASE_0013.HTM</userdata><userdata name='roles'>ADMASEO;</userdata></item>
+				<item text='DEUDA' id='FFACASE_0005'><userdata name='tip_nodo'>1</userdata><userdata name='ruta'>RAIZ/FACTURACION/FAC_ASEO/FFACASE_0005.HTM</userdata><userdata name='roles'>CARGOFAC_ASEO;</userdata></item>
+			</item>
+	</item>
+</tree>

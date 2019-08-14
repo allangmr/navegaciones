@@ -52,6 +52,23 @@ var $grid_historial_eventos_terminados;
 
 $(document).ready(function() {
 
+    // OCULTA LA BUSQUEDA Y VUELVE A LA VENTANA PRINCIPAL
+    $(".v-menu").click(function(e){
+        e.preventDefault();
+       if( $.trim($(this).find("span").attr("flag")) == "1"){
+        $(this).find("span").removeClass("glyphicon-triangle-bottom");
+        $(this).find("span").addClass("glyphicon-triangle-right");
+        $(this).find("span").attr("flag","0");
+       }
+       else{
+        $(this).find("span").removeClass("glyphicon-triangle-right");
+        $(this).find("span").addClass("glyphicon-triangle-bottom");
+        $(this).find("span").attr("flag","1");
+       }
+
+    });
+    
+
     // SE INICIALIZAN LOS GRIDS
     fn_setea_grid_eve();
     fn_setea_grid_fac();
