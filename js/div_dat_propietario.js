@@ -1,84 +1,74 @@
-//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
-function fn_setea_grid_datos_propietarios()
-// BÚSQUEDA DE CLIENTES
+var url_propietario = "asp/div_dat_propietario.asp";
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+function fn_prop_ver() {
+    fn_hide_menu();
+    $("#frm_leer").hide();
+    $("#div_prin").hide();
+    $("#div_ventanas_auxiliares > div.grilla").hide();
+    $("#div_ventanas_auxiliares > div.texto").hide();
+    $("#frm_volver_pdf").show();
+    $("#div_propietario").show();
+    $("#h_cliente").html("[CLIENTE: " + $("#tx_ing_nic").val() + " – " + $("#tx_nom").val() + "]");
 
-{  
+    if (!flag_dat_prop) {
 
-    $("#div_datos_propietarios").addClass("gr-con");
-
-    var obj = {  
-            height: "100%",
-            showTop: true,
-            showBottom:true,
-            showTitle : true,
-            title: "Datos de Propietarios",
-            roundCorners: true,
-            rowBorders: true,
-            columnBorders: true,
-            collapsible:false,
-            editable:false,
-            selectionModel: { type: 'row',mode:'single'},
-            numberCell: { show: true },
-            pageModel: { rPP: 20, type: "local", rPPOptions: [100, 200, 300]},
-            scrollModel:{theme:true},
-            toolbar:
-           {
-               cls: "pq-toolbar-export",
-               items:
-               [
-                   { type: "button", label: " Excel", attr:"id=co_excel_busq", cls:"btn btn-primary"},
-               ]
-           }
+        //~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+        var parames = {
+            "func": "fn_generales",
+            "p_empresa": $("#tx_empresa").val(),
+            "p_cliente": $("#tx_ing_nic").val(),
+            "rol": $("#tx_rol").val(),
+            "Ip": $("#tx_ip").val()
         };
-            
-        obj.colModel = [            
-            { title: "Ruta", width: 140, dataType: "string", dataIndx: "C1", halign:"center", align:"left"},
-            { title: "Nombre", width: 140, dataType: "string", dataIndx: "C2", halign:"center", align:"left"},
-            { title: "No. Cliente", width: 110, dataType: "string", dataIndx: "C3", halign:"center", align:"left"},
-            { title: "Provincia", width: 120, dataType: "string", dataIndx: "C4", halign:"center", align:"left"},
-            { title: "Distrito", width: 180, dataType: "string", dataIndx: "C5", halign:"center", align:"left"},
-            { title: "Corregimiento", width: 240, dataType: "string", dataIndx: "C6", halign:"center", align:"left"},
-            { title: "Barrio", width: 200, dataType: "string",  dataIndx: "C7", halign:"center", align:"left"},
-            { title: "Dirección", width: 200, dataType: "string", dataIndx: "C8", halign:"center", align:"left"},
-            { title: "Finca", width: 180, dataType: "string", dataIndx: "C9", halign:"center", align:"left"},
-            { title: "Tomo", width: 110, dataType: "string", dataIndx: "C10", halign:"center", align:"right"},
-            { title: "Folio", width: 200, dataType: "string", dataIndx: "C11", halign:"center", align:"left"},
-            { title: "Teléfono Fijo", width: 200, dataType: "string", dataIndx: "C12", halign:"center", align:"left"},
-            { title: "Teléfono Celular", width: 200, dataType: "string", dataIndx: "C13", halign:"center", align:"left"},
-            { title: "Correo", width: 200, dataType: "string", dataIndx: "C14", halign:"center", align:"left"},
-            { title: "Unidades", width: 200, dataType: "string", dataIndx: "C15", halign:"center", align:"left"},
-            { title: "Estado Cliente", width: 200, dataType: "string", dataIndx: "C16", halign:"center", align:"left"},
-            { title: "Estado Conexión", width: 200, dataType: "string", dataIndx: "C17", halign:"center", align:"left"},
-            { title: "Medidor", width: 200, dataType: "string", dataIndx: "C18", halign:"center", align:"left"},
-            { title: "Marca", width: 200, dataType: "string", dataIndx: "C19", halign:"center", align:"left"},
-            { title: "Fecha Instalación", width: 200, dataType: "string", dataIndx: "C20", halign:"center", align:"left"},
-            { title: "Tarifa", width: 200, dataType: "string", dataIndx: "C21", halign:"center", align:"left"},
-            { title: "Actividad Económica", width: 200, dataType: "string", dataIndx: "C22", halign:"center", align:"left"}
-        ];
-        
-    $grid_datos_propietario = $("#div_datos_propietarios").pqGrid(obj);
+        HablaServidor(url_propietario, parames, "text", function (text) {
 
-     // SELECCIÓN DEL TIPO DE DOCUMENTO
-     $("#cb_id_busq").click(function(e){
-        e.preventDefault();
-        fn_valida_doc();
-    });  
-    
+            fn_setea_propietario(text);
+
+        });
+        flag_dat_prop = true;
+    }
+	$("#co_pdf_print").attr("rel", "pdf_datos_propietario");
+	$("#frm_div_dat_propietario").attr("action", "asp/div_dat_propietario_pdf.asp?Empresa="+$("#tx_empresa").val()+"&Suministro="+$("#tx_ing_nic").val()+ "&Rol=" + $("#tx_rol").val());
+}
+
+function fn_hide_menu() {
+    // SE OCULTAN LOS CRITERIOS DE BÚSQUEDA
+    $("#frm_busq").hide();
+    $("#div_busq").hide();
+    $("#div_ventanas_auxiliares > div.container").hide();
+    $("#frm_volver").hide();
+    $("#frm_volver_pdf").hide();
+    $("#frm_volver_pdf_med").hide();
+    $("#frm_informacion_factura").hide();
+    $("#frm_informacion_ajustes").hide();
+    $("#frm_leer").hide();
+    $("#nav_ul_opc").show();
+    $("#div_prin").hide();
+    $("#frm_convenios_pago_detalle").hide();
+
 
 }
 
+//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+/*function fn_setea_propietario(ColeccionDatos) {
+    DatoOriginal = ColeccionDatos.split("|");
+    $("#tx_persona_propietario").val(DatoOriginal[0]);
+    $("#tx_identidad_propietario").val(DatoOriginal[1]);
+    $("#tx_documento_propietario").val(DatoOriginal[2]);
+    $("#tx_nombre_propietario").val(DatoOriginal[3]);
+    $("#tx_apellidop_propietario").val(DatoOriginal[4]);
+    $("#tx_apellidom_propietario").val(DatoOriginal[5]);
+    $("#tx_fnac_propietario").val(DatoOriginal[6]);
+    $("#tx_sexo_propietario").val(DatoOriginal[7]);
+    $("#tx_telefono_propietario").val(DatoOriginal[8]);
+    $("#tx_celular_propietario").val(DatoOriginal[9]);
+    $("#tx_email_propietario").val(DatoOriginal[10]);
+    $("#tx_recibemail_propietario").val(DatoOriginal[11]);
+    $("#tx_datprop_propietario").val(DatoOriginal[12]);
+    $("#tx_finca_propietario").val(DatoOriginal[13]);
+    $("#tx_tomo_propietario").val(DatoOriginal[14]);
+    $("#tx_folio_propietario").val(DatoOriginal[15]);
 
-
-
-//~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*        	
-function fn_prop_ver()	
-{	
-       	
-   $("#frm_leer").hide();	
-   $("#nav_ul_opc").hide();	
-   $("#div_prin").hide("blind");	
-   $("#frm_volver").show();	
-   $("#div_propietario").show();	
-   fn_setea_grid_datos_propietarios();
-       	
 }
+*/
+

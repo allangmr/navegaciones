@@ -1,167 +1,133 @@
-
 <div class="page-header">
-    <h2>Datos de Propietario <small>[CLIENTE: 697588 – TORRE GLOBAL BANK]</small></h2>
-</div>
-
-<div class="well well-sm">Datos Personales</div>
-
-<!-- TIPO DE PERSONA -->
-
-<div class="row">
-    <div class="col-lg-12">
-        <div class="form-group">
-            <label for="tx_nom_busq">Tipo Persona</label>
-             <input type="text" readonly   class="form-control" id="tx_nom_busq">
-        </div>
-         
+        <h2>Datos de Propietario <small id="h_cliente"></small></h2>
     </div>
-</div>
-
-<!-- TIPO Y NÚMERO DE IDENTIDAD -->
-<div class="row">
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="cb_id_busq">Tipo de Identidad</label>
-            <input type="text" readonly   class="form-control" id="tx_nom_busq"> 
-        </div>  
-    </div>
-
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_id_prov">Documento de Identidad</label>
-            <input type="text" readonly   class="form-control" id="tx_id_busq">
-                
+    <div class="well well-sm">Datos Personales</div>
+    <!-- TIPO DE PERSONA -->
+    <form id="frm_div_dat_propietario" name="frm_div_dat_propietario" method="post" action="" target="_blank">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label for="tx_nom_busq">Tipo Persona</label>
+                <input type="text" readonly class="form-control" id="tx_persona_propietario" name="tx_persona_propietario">
+            </div>
         </div>
     </div>
-</div>
-
-
-<!-- NONBRE-->
-<div class="row">
-    <div class="col-lg-12">
-        <div class="form-group">
-            <label for="tx_fijo_busq">Nombre</label>
-            <input type="text" readonly   class="form-control" id="tx_fijo_busq">
+    <!-- TIPO Y NÚMERO DE IDENTIDAD -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="cb_id_busq">Tipo de Identidad</label>
+                <input type="text" readonly class="form-control" id="tx_identidad_propietario" name="tx_identidad_propietario">
+            </div>
         </div>
-        
-    </div>
-</div>
-
-<!-- APELLIDOS -->
-<div class="row">
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_cel_busq">Apellido Paterno</label>
-             <input type="text" readonly   class="form-control" id="tx_cel_busq">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_id_prov">Documento de Identidad</label>
+                <input type="text" readonly class="form-control" id="tx_documento_propietario" name="tx_documento_propietario">
+            </div>
         </div>
     </div>
     
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_fijo_busq">Apellido Materno</label>
-             <input type="text" readonly   class="form-control" id="tx_fijo_busq">
+    <!-- NONBRE-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label for="tx_fijo_busq">Nombre</label>
+                <input type="text" readonly class="form-control" id="tx_nombre_propietario" name="tx_nombre_propietario">
+            </div>
         </div>
-         
     </div>
-</div>
-
-<!-- FECHA NACIMIENTO Y SEXO -->
-<div class="row">
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_cel_busq">Fecha de Nacimiento</label>
-             <input type="text" readonly   class="form-control" id="tx_cel_busq">
+    <!-- APELLIDOS -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_cel_busq">Apellido Paterno</label>
+                <input type="text" readonly class="form-control" id="tx_apellidop_propietario" name="tx_apellidop_propietario">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_fijo_busq">Apellido Materno</label>
+                <input type="text" readonly class="form-control" id="tx_apellidom_propietario" name="tx_apellidom_propietario">
+            </div>
+        </div>
+    </div>
+    <!-- FECHA NACIMIENTO Y SEXO -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_cel_busq">Fecha de Nacimiento</label>
+                <input type="text" readonly class="form-control" id="tx_fnac_propietario" name="tx_fnac_propietario">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_fijo_busq">Sexo</label>
+                <input type="text" readonly class="form-control" id="tx_sexo_propietario" name="tx_sexo_propietario">
+            </div>
+        </div>
+    </div>
+    <div class="well well-sm">Datos de Contacto</div>
+    <!-- TELÉFONO FIJO y CELULAR -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_fijo_busq">Teléfono Fijo</label>
+                <input type="text" readonly class="form-control" id="tx_telefono_propietario" name="tx_telefono_propietario">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_cel_busq">Teléfono Celular</label>
+                <input type="text" readonly class="form-control" id="tx_celular_propietario" name="tx_celular_propietario">
+            </div>
+        </div>
+    </div>
+    <!-- CORREO ELECTRÓNICO -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_fin_busq">Email</label>
+                <input type="text" readonly class="form-control" id="tx_email_propietario" name="tx_email_propietario">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="tx_tom_busq">Recibe Email</label>
+                <input type="text" readonly class="form-control" id="tx_recibemail_propietario" name="tx_recibemail_propietario">
+            </div>
+        </div>
+    </div>
+    <div class="well well-sm">Datos de la Propiedad</div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label for="tx_nom_busq">Tipo Relación</label>
+                <input type="text" readonly class="form-control" id="tx_datprop_propietario" name="tx_datprop_propietario">
+            </div>
+        </div>
+    </div>
+    <!-- No. FINCA DEL PREDIO -->
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="tx_fin_busq">Finca</label>
+                <input type="text" readonly class="form-control" id="tx_finca_propietario" name="tx_finca_propietario">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="tx_fin_busq">Tomo</label>
+                <input type="text" readonly class="form-control" id="tx_tomo_propietario" name="tx_tomo_propietario">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="tx_fin_busq">Folio</label>
+                <input type="text" readonly class="form-control" id="tx_folio_propietario" name="tx_folio_propietario">
+            </div>
         </div>
     </div>
     
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_fijo_busq">Sexo</label>
-            <input type="text" readonly   class="form-control" id="tx_cel_busq">
-        </div>
-         
-    </div>
-</div>
-
-<div class="well well-sm">Datos de Contacto</div>
-<!-- TELÉFONO FIJO y CELULAR -->
-<div class="row">
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_fijo_busq">Teléfono Fijo</label>
-             <input type="text" readonly   class="form-control" id="tx_fijo_busq">
-        </div>
-         
-    </div>
-
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_cel_busq">Teléfono Celular</label>
-             <input type="text" readonly   class="form-control" id="tx_cel_busq">
-        </div>
-         
-    </div>
-</div>
-
-<!-- CORREO ELECTRÓNICO -->
-<div class="row">
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_fin_busq">Email</label>
-             <input type="text" readonly   class="form-control" id="tx_fin_busq">
-        </div>
-         
-    </div>
-
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="tx_tom_busq">Recibe Email</label>
-            <input type="text" readonly   class="form-control" id="tx_cel_busq">
-        </div>
-         
-    </div>
-
-</div>
-
-<div class="well well-sm">Datos de la Propiedad</div>
-<div class="row">
-    <div class="col-lg-12">
-        <div class="form-group">
-            <label for="tx_nom_busq">Tipo Relación</label>
-            <input type="text" readonly   class="form-control" id="tx_cel_busq">
-        </div>
-         
-    </div>
-</div>
-
-<!-- No. FINCA DEL PREDIO -->
-<div class="row">
-    <div class="col-lg-4">
-        <div class="form-group">
-            <label for="tx_fin_busq">Finca</label>
-             <input type="text" readonly   class="form-control" id="tx_fin_busq">
-        </div>
-         
-    </div>
-    <div class="col-lg-4">
-        <div class="form-group">
-            <label for="tx_fin_busq">Tomo</label>
-             <input type="text" readonly   class="form-control" id="tx_fin_busq">
-        </div>
-         
-    </div>
-    <div class="col-lg-4">
-        <div class="form-group">
-            <label for="tx_fin_busq">Folio</label>
-             <input type="text" readonly   class="form-control" id="tx_fin_busq">
-        </div>
-         
-    </div>
-</div>
-
-<br>
-<div class="row">
-    <div class="col-md-12">
-        <div id="div_datos_propietarios"></div>
-    </div>
-</div>
+    </form>
+    

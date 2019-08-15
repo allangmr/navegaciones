@@ -70,12 +70,12 @@ $(document).ready(function() {
     
 
     // SE INICIALIZAN LOS GRIDS
-    fn_setea_grid_eve();
+    /*fn_setea_grid_eve();
     fn_setea_grid_fac();
     fn_setea_grid_con();
     fn_setea_grid_pag();
     fn_setea_grid_cor();
-    fn_setea_grid_aju();
+    fn_setea_grid_aju();*/
     // SE RECARGAN LOS GRIDS AL SELECCIONAR EL TAB CORRESPONDIENTE         
     $(".nav-tabs a").on("shown.bs.tab", function(event){
 
@@ -311,7 +311,6 @@ $(document).ready(function() {
     });
     $("#btn_propietario").click(function(e){
         e.preventDefault();
-
         if(!flag_dat_prop)
         {
             // SE CARGA EL HTML DE DIV DE BÚSQUEDA
@@ -322,8 +321,7 @@ $(document).ready(function() {
         else{
             $("#div_propietario").load("div_dat_propietario.htm",fn_prop_ver);
         }
-        
-            
+
     });
 
 
