@@ -115,9 +115,12 @@ a[aria-expanded="true"] {
 a[data-toggle="collapse"] {
   display: none;
 }
+#hoverini:hover {
+  color: #fff;
+  background: #1e5078;
+}
 
 ul ul a {
-  font-size: 0.9em !important;
   padding-left: 30px !important;
   background: #ffffff;
   color: #000;

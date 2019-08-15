@@ -309,6 +309,58 @@ $(document).ready(function() {
     
         
     });
+    //~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  
+function fn_hide_buscar() {
+    // SE OCULTAN LOS CRITERIOS DE BÚSQUEDA
+    $("#frm_busq").hide();
+    $("#div_busq").hide();
+    $("#div_ventanas_auxiliares > div.container").hide();
+    $("#frm_volver").hide();
+	$("#frm_volver_pdf").hide();
+	$("#frm_volver_pdf_med").hide();
+    $("#frm_informacion_factura").hide();
+    $("#frm_informacion_ajustes").hide();
+	$("#frm_informacion_consumo").hide();
+    $("#frm_leer").show();
+    $("#nav_ul_opc").show();
+    $("#div_prin").show();
+    $("#frm_convenios_pago_detalle").hide();
+
+
+}
+    $("#co_volver_bus_1, #co_volver_bus_2, #co_volver_bus_3, #co_volver_bus_4, #co_volver_bus_5, #co_volver_bus_6, #co_volver_bus_7, #co_volver_bus_8").click(function (e) {
+        e.preventDefault();
+
+        fn_hide_buscar();
+        if (this.id == "co_volver_bus_4") {
+
+			if((indicador=="min") && (activa_expand)) {
+				$( "#div_fac" ).pqGrid( "toggle" );
+			}
+			
+            $("#div_footer").focus();
+            $("html, body").scrollTop($(document).height());
+			if(flag_informacion_factura) $grid_fac.pqGrid("refreshView");
+        };
+        if (this.id == "co_volver_bus_5") {
+			
+			if((indicador=="min") && (activa_expand)) {
+				$( "#div_aju" ).pqGrid( "toggle" );
+			}
+			
+            $("#div_footer").focus();
+            $("html, body").scrollTop($(document).height());
+        };
+		if (this.id == "co_volver_bus_6") {
+			
+			if((indicador=="min") && (activa_expand)) {
+				$( "#div_con" ).pqGrid( "toggle" );
+			}
+            $("#div_footer").focus();
+            $("html, body").scrollTop($(document).height());
+        };
+    });
+	
     $("#btn_propietario").click(function(e){
         e.preventDefault();
         if(!flag_dat_prop)
