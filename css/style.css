@@ -111,7 +111,7 @@ a[aria-expanded="true"] {
   color: #000;
   background: #ffffff;
 }
-
+.pointer {cursor: pointer;}
 a[data-toggle="collapse"] {
   display: none;
 }
@@ -452,7 +452,6 @@ border-radius: 4px;
 margin: 50px auto;
 width: 60%;
 }
-
 
 .navbar-fixed-left {
   width: 280px;
