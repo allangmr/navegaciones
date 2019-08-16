@@ -89,8 +89,9 @@ a:active {
 }
 
 #sidebar ul li a {
-  padding: 10px;
-  font-size: 1.1em;
+  font-size:12px;
+  padding-top:5px ;
+  padding-bottom:5px;
   display: block;
 }
 
@@ -487,7 +488,95 @@ width: 60%;
 .sinleft{
   padding-left:0;
 }
-
+.margintop-diez{
+  margin-top:10px;
+}
+.deuda-idaan{
+  text-align:right;
+  color: #a94442;
+  font-family:sans-serif;
+  font-size:16px;
+  font-weight:bold;
+}
+.boton-pdf{
+  width:90px;
+}
+.navbar-principal{
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+.row-navbar{
+  padding-top:10px;
+}
+.logo{
+  text-align: center;margin-bottom: 20px;
+}
+.titulo-navbar{
+  margin-right: 0px;
+  background: #1e5078; 
+  padding-top:8px;
+  text-align: center;
+}
+.p-titulo{
+  font-size:14px;
+  color: #fff;
+}
+.div-inicio{
+  margin-right: 0px;
+  background: rgb(212, 212, 212);
+  padding-top:8px;
+  padding-bottom:0px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+#co_volver_bus_1{
+  font-size:14px;
+  color: #000000;
+}
+.row-menu-horizontal{
+  margin-right: 0px;
+  margin-left: 10px;
+}
+.ver-horizontal{
+  font-size:12px;
+  padding-top:5px;
+  padding-bottom:10px;
+}
+.resto-horizontal{
+  font-size:12px;
+  padding-top:10px;
+  padding-bottom:10px; 
+}
+.letra-doce{
+  font-size: 12px;
+}
+.letra-prin{
+  font-size: 10px;
+}
+.no-display{
+  display: none;
+}
+.margin-five{
+  margin-top:5px;
+}
+.modal-deuda-dos{
+  padding-right:20px;width: 400px;
+}
+.alinea-izquierda{
+  text-align:right;
+}
+.padding-bottom-diez{
+  padding-bottom: 10px;
+}
+.deuda-format{
+  font-weight: normal;
+  width: 120px;
+  padding-bottom: 10px;
+}
+.contenido{
+  overflow-y: scroll; 
+  height:100vh;
+  width:100%;
+}
 /* Customize container */
 @media (min-width: 1501px) {
     .container-fluid {
@@ -601,6 +690,9 @@ width: 60%;
 }
 .submenu2{
   padding-left: 30px;
+  padding-top:5px; 
+  padding-bottom:5px;
+  color:#000000;
 }
 .submenu3{
   padding-left: 30px;

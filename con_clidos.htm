@@ -110,84 +110,81 @@
 </head>
 
 <body id="bd_concli">
-        <div class="navbar navbar-inverse navbar-fixed-left" style="overflow-x: hidden; /* Disable horizontal scroll */">
+        <div class="navbar navbar-inverse navbar-fixed-left navbar-principal">
                 <nav id="sidebar" class="navbar navbar-inverse navbar-fixed-left" >
-                    <div class="row" style="padding-top:10px;">
+                    <div class="row row-navbar">
                       <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
-                          <div style="text-align: center;margin-bottom: 20px;">
+                          <div class="logo">
                               <a href="https://www.idaan.gob.pa/" target="_blank"
                               ><img src="idaan.png" width="100"
                               /></a>
                           </div>
                       </div>
                     </div>
-                    <div class="row" style="    margin-right: 0px;
-                    background: #1e5078; padding-top:8px;text-align: center; ">
-                        <p style="font-size:14px;color: #fff;"><b>Consulta de Cliente</b></p>
+                    <div class="row titulo-navbar">
+                        <p class="p-titulo"><b>Consulta de Cliente</b></p>
                     </div>
-                    <div class="row pointer" style="    margin-right: 0px;
-                    background: rgb(212, 212, 212); padding-top:8px;padding-bottom:0px;text-align: center; margin-bottom: 5px;">
-                        <p  style="font-size:14px;color: #000000;" id="co_volver_bus_1"><b><span class="glyphicon glyphicon-home" ></span> Inicio</b></p>
+                    <div class="row pointer div-inicio">
+                        <p id="co_volver_bus_1"><b><span class="glyphicon glyphicon-home" ></span> Inicio</b></p>
                     </div>
-                    <div class="row" style="    margin-right: 0px;
-                    margin-left: 10px;">
+                    <div class="row row-menu-horizontal">
                             <div class="span3">
                               <div class="">
                                   <div>
                                       <ul class="nav nav-list" >
-                                            <li ><label class="tree-toggle nav-header v-menu pointer" style="font-size:12px;padding-top:5px;padding-bottom:10px;"><b><span class="glyphicon glyphicon-triangle-bottom"  flag="1" style="font-size: 10px;"></span> Ver</b></label>
+                                            <li ><label class="tree-toggle nav-header v-menu pointer ver-horizontal" ><b><span class="glyphicon glyphicon-triangle-bottom letra-prin"  flag="1"></span> Ver</b></label>
                                               <ul class="nav nav-list tree submenu1" >
-                                                  <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;" id="btn_propietario">Datos de Propietario</a></li>
-                                                  <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Ubicación Geográfica</a></li>
-                                                  <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Datos Técnicos</a></li>
-                                                  <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Deuda</a></li>
+                                                  <li ><a href="#"  id="btn_propietario">Datos de Propietario</a></li>
+                                                  <li ><a href="#" >Ubicación Geográfica</a></li>
+                                                  <li ><a href="#" >Datos Técnicos</a></li>
+                                                  <li ><a href="#" >Deuda</a></li>
 
                                               </ul>
                                           </li>
                                           <li class="divider"></li>
-                                          <li ><label class="tree-toggle nav-header v-menu pointer" style="font-size:12px;padding-top:10px;padding-bottom:10px;"><b><span class="glyphicon glyphicon-triangle-bottom"  flag="1" style="font-size: 10px;"></span> Información Histórica</b></label>
+                                          <li ><label class="tree-toggle nav-header v-menu pointer resto-horizontal"><b><span class="glyphicon glyphicon-triangle-bottom letra-prin"  flag="1"></span> Información Histórica</b></label>
                                             <ul class="nav nav-list tree submenu1" >
-                                                <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Eventos</a></li>
-                                                <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Facturación</a></li>
-                                                <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Consumos</a></li>
-                                                <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Pagos</a></li>
-                                                <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Corte y Repo</a></li>
-                                                <li ><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Ajustes</a></li>
+                                                <li ><a href="#" >Eventos</a></li>
+                                                <li ><a href="#" >Facturación</a></li>
+                                                <li ><a href="#" >Consumos</a></li>
+                                                <li ><a href="#" >Pagos</a></li>
+                                                <li ><a href="#" >Corte y Repo</a></li>
+                                                <li ><a href="#" >Ajustes</a></li>
 
                                             </ul>
                                         </li>
                                         <li class="divider"></li>
-                                          <li ><label class="tree-toggle nav-header v-menu pointer" style="font-size:12px;padding-top:10px;padding-bottom:10px;"><b><span class="glyphicon glyphicon-triangle-right"  flag="0" style="font-size: 10px;"></span> Consultas</b></label>
-                                              <ul class="nav nav-list tree submenu1" style="display: none;">
-                                                  <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Historial de Atenciones</a></li>
-                                                  <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Eventos Terminados</a></li>
-                                                  <li ><label class="tree-toggle nav-header submenu2 v-menu pointer" style="padding-top:5px; padding-bottom:5px;color:#000000;"><b style="font-size: 12px;"><span class="glyphicon glyphicon-triangle-right "  flag="0"></span> Facturación</b></label>
-                                                      <ul class="nav nav-list tree submenu21" style="display: none;">
-                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Factura Contingente</a></li>
-                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Conceptos por Facturar</a></li>
-                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Clientes Asociados a Contrato Madre</a></li>
-                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Factura Enviadas por Correo</a></li>
+                                          <li ><label class="tree-toggle nav-header v-menu pointer resto-horizontal"><b><span class="glyphicon glyphicon-triangle-right letra-prin"  flag="0"></span> Consultas</b></label>
+                                              <ul class="nav nav-list tree submenu1 no-display" >
+                                                  <li><a href="#" >Historial de Atenciones</a></li>
+                                                  <li><a href="#" >Eventos Terminados</a></li>
+                                                  <li ><label class="tree-toggle nav-header submenu2 v-menu pointer"><b class="letra-doce"><span class="glyphicon glyphicon-triangle-right "  flag="0"></span> Facturación</b></label>
+                                                      <ul class="nav nav-list tree submenu21 no-display">
+                                                          <li><a href="#" >Factura Contingente</a></li>
+                                                          <li><a href="#" >Conceptos por Facturar</a></li>
+                                                          <li><a href="#" >Clientes Asociados a Contrato Madre</a></li>
+                                                          <li><a href="#" >Factura Enviadas por Correo</a></li>
                                                       </ul>
                                                   </li>
-                                                  <li><label class="tree-toggle nav-header submenu2 v-menu pointer" style="padding-top:5px; padding-bottom:5px;color:#000000;"><b style="font-size: 12px;"><span class="glyphicon glyphicon-triangle-right"  flag="0"></span> Medidores</b></label>
-                                                      <ul class="nav nav-list tree submenu21" style="display: none;">
-                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Medidores</a></li>
-                                                          <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Histórico de Medidores</a></li>
+                                                  <li><label class="tree-toggle nav-header submenu2 v-menu pointer"><b class="letra-doce"><span class="glyphicon glyphicon-triangle-right"  flag="0"></span> Medidores</b></label>
+                                                      <ul class="nav nav-list tree submenu21 no-display">
+                                                          <li><a href="#" >Medidores</a></li>
+                                                          <li><a href="#" >Histórico de Medidores</a></li>
                                                       </ul>
                                                   </li>
-                                                  <li><label class="tree-toggle nav-header submenu2 v-menu pointer" style="padding-top:5px; padding-bottom:5px;color:#000000;"><b style="font-size: 12px;"><span class="glyphicon glyphicon-triangle-right "  flag="0" ></span> Cobranza</b></label>
-                                                        <ul class="nav nav-list tree submenu21" style="display: none;">
-                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Pagos por Aplicar</a></li>
-                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Pagos por Otros Conceptos</a></li>
-                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Convenios de Pago</a></li>
-                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Consulta de Comprobantes Emitidos</a></li>
+                                                  <li><label class="tree-toggle nav-header submenu2 v-menu pointer"><b class="letra-doce"><span class="glyphicon glyphicon-triangle-right "  flag="0" ></span> Cobranza</b></label>
+                                                        <ul class="nav nav-list tree submenu21 no-display">
+                                                            <li><a href="#" >Pagos por Aplicar</a></li>
+                                                            <li><a href="#" >Pagos por Otros Conceptos</a></li>
+                                                            <li><a href="#" >Convenios de Pago</a></li>
+                                                            <li><a href="#" >Consulta de Comprobantes Emitidos</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><label class="tree-toggle nav-header submenu2 v-menu pointer" style="padding-top:5px; padding-bottom:5px;color:#000000;"><b style="font-size: 12px;"><span class="glyphicon glyphicon-triangle-right"  flag="0" ></span> Consultas Generales</b></label>
-                                                        <ul class="nav nav-list tree submenu21" style="display: none;">
-                                                            <li><a href="#" id="btn_audi_mod" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Auditoria de Modificaciones</a></li>
-                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Historial de Subsidio por Caso Social</a></li>
-                                                            <li><a href="#" style="font-size:12px;padding-top:5px; padding-bottom:5px;">Movimientos de Aseo</a></li>
+                                                    <li><label class="tree-toggle nav-header submenu2 v-menu pointer"><b class="letra-doce"><span class="glyphicon glyphicon-triangle-right"  flag="0" ></span> Consultas Generales</b></label>
+                                                        <ul class="nav nav-list tree submenu21 no-display">
+                                                            <li><a href="#" id="btn_audi_mod" >Auditoria de Modificaciones</a></li>
+                                                            <li><a href="#" >Historial de Subsidio por Caso Social</a></li>
+                                                            <li><a href="#" >Movimientos de Aseo</a></li>
                                                         </ul>
                                                     </li>
                                               </ul>
@@ -201,10 +198,10 @@
 
                 </nav>
         </div>
-        <div class="container-fluid" style="overflow-y: scroll; height:100vh;width:100%; /* Disable horizontal scroll */">
+        <div class="container-fluid contenido">
             <div class="container-fluid">
                 <nav class="navbar navbar-default shift">
-                    <div class="container-fluid" style="padding-left: 0px;">
+                    <div class="container-fluid sinleft">
                         <div id="div_menu_coll">
                             <form class="navbar-form navbar-left" id="frm_leer" >
                                 <div class="form-group">
@@ -212,50 +209,50 @@
                                 </div>
                                 <button type="button" class="btn btn-default" id="co_leer"><span
                                         class="glyphicon glyphicon-sunglasses"></span> Leer</button>
-                                <button type="button" class="btn btn-default" id="co_pdf_con_cli" style="display: none;"><span class="glyphicon glyphicon-list-alt"></span> PDF</button>
+                                <button type="button" class="btn btn-default no-display" id="co_pdf_con_cli" ><span class="glyphicon glyphicon-list-alt"></span> PDF</button>
                                 <button type="button" class="btn btn-default" id="co_buscar"><span
                                         class="glyphicon glyphicon-search"></span> Búsqueda</button>
                             </form>
                             <!-- Este formulario de frm_busq tambien sera usado para la ventana de deuda, ya que esta no requiere el boton de PDF -->
-                            <form class="navbar-form navbar-left" style="display: none;" id="frm_busq">
+                            <form class="navbar-form navbar-left no-display" id="frm_busq">
                                 <button type="button" class="btn btn-default" id="co_volver_bus_1"><span
                                         class="glyphicon glyphicon-home"></span> Inicio</button>
                             </form>
-                            <form class="navbar-form navbar-left" style="display: none;" id="frm_volver">
+                            <form class="navbar-form navbar-left no-display" id="frm_volver">
                                 <button type="button" class="btn btn-default" id="co_volver_bus_2"><span
                                         class="glyphicon glyphicon-home"></span> Inicio</button>
                             </form>
-                            <form class="navbar-form navbar-left" style="display: none;" id="frm_volver_pdf_med">
+                            <form class="navbar-form navbar-left no-display"  id="frm_volver_pdf_med">
                                 <button type="button" class="btn btn-default" id="co_volver_bus_8"><span
                                         class="glyphicon glyphicon-home"></span> Inicio</button>
                                 <button type="button" class="btn btn-default" id="co_pdf_print_med" rel=""><span
                                         class="glyphicon glyphicon-list-alt"></span> PDF</button>
                             </form>
-                            <form class="navbar-form navbar-left" style="display: none;" id="frm_volver_pdf">
+                            <form class="navbar-form navbar-left no-display"  id="frm_volver_pdf">
                                 <button type="button" class="btn btn-default" id="co_volver_bus_7"><span
                                         class="glyphicon glyphicon-home"></span> Inicio</button>
                                 <button type="button" class="btn btn-default" id="co_pdf_print" rel=""><span
                                         class="glyphicon glyphicon-list-alt"></span> PDF</button>
                             </form>
-                            <form class="navbar-form navbar-left" style="display: none;" id="frm_informacion_factura">
+                            <form class="navbar-form navbar-left no-display"  id="frm_informacion_factura">
                                 <button type="button" class="btn btn-default" id="co_volver_bus_4" data-scroll-to="#tab_fac"
                                     data-scroll-focus="#tab_fac"><span class="glyphicon glyphicon-home"></span> Inicio</button>
                                 <button type="button" class="btn btn-default" id="co_pdf_factura"><span
                                         class="glyphicon glyphicon-save"></span> Genera Duplicado</button>
                             </form>
-                            <form class="navbar-form navbar-left" style="display: none;" id="frm_informacion_ajustes">
+                            <form class="navbar-form navbar-left no-display" id="frm_informacion_ajustes">
                                 <button type="button" class="btn btn-default" id="co_volver_bus_5" data-scroll-to="#tab_aju"
                                     data-scroll-focus="#tab_aju"><span class="glyphicon glyphicon-home"></span> Inicio</button>
                                 <button type="button" class="btn btn-default" id="co_pdf_ajustes"><span
                                         class="glyphicon glyphicon-list-alt"></span> PDF</button>
                             </form>
-                            <form class="navbar-form navbar-left" style="display: none;" id="frm_informacion_consumo">
+                            <form class="navbar-form navbar-left no-display"  id="frm_informacion_consumo">
                                 <button type="button" class="btn btn-default" id="co_volver_bus_6" data-scroll-to="#tab_con"
                                     data-scroll-focus="#tab_con"><span class="glyphicon glyphicon-home"></span> Inicio</button>
                             </form>
-                            <form class="navbar-form navbar-left" style="display: none;" id="frm_convenios_pago_detalle">
-                                <button type="button" class="btn-left btn btn-default" id="co_pdf_conv"
-                                    style="width:90px;"><span class="glyphicon glyphicon-list-alt"></span> PDF</button>
+                            <form class="navbar-form navbar-left no-display"  id="frm_convenios_pago_detalle">
+                                <button type="button" class="btn-left btn btn-default boton-pdf" id="co_pdf_conv">
+                                    <span class="glyphicon glyphicon-list-alt"></span> PDF</button>
                                 <button type="button" class="btn btn-default" id="co_volver_convenios"><span
                                         class="glyphicon glyphicon-chevron-left"></span> Historial de Convenios</button>
                                 <button type="button" class="btn btn-default" id="co_volver_bus_3"><span
@@ -268,7 +265,7 @@
                     <!--/.container-fluid -->
                 </nav>
                 <!-- DIV PRINCIPAL -->
-                <div id="div_prin"  style="margin-top:10px;">
+                <div id="div_prin"  class="margintop-diez">
                     <form id="frm_con_cli_pdf" name="frm_con_cli_pdf" method="post" action="" target="_blank">
                         <div id="noti_proceso_fact"></div>
                         <div id="noti_cli_convenio"></div>
@@ -356,7 +353,7 @@
                                     <div class="input-group-btn">
                                         <button type="button" class="btn btn-default resize" id="btn_deuda_idaan">?</button>
                                     </div>
-                                    <input type="text" class="form-control " style="text-align:right;color: #a94442;font-family:sans-serif;font-size:16px;font-weight:bold;" id="tx_de_idaan" name="tx_de_idaan"
+                                    <input type="text" class="form-control deuda-idaan" id="tx_de_idaan" name="tx_de_idaan"
                                         readonly>
                                 </div><!-- /input-group -->
         
@@ -365,7 +362,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="tx_de_aseo">Deuda Aseo</label>
-                                    <input type="text" class="form-control " style="text-align:right;color: #a94442;font-size:16px;font-weight:bold;" id="tx_de_aseo" name="tx_de_aseo"
+                                    <input type="text" class="form-control deuda-idaan" id="tx_de_aseo" name="tx_de_aseo"
                                         readonly>
                                 </div>
                             </div>
@@ -373,7 +370,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="tx_de_total">Deuda Total</label>
-                                    <input type="text" class="form-control " style="text-align:right;color: #a94442;font-size:16px;font-weight:bold;" id="tx_de_total" name="tx_de_total"
+                                    <input type="text" class="form-control deuda-idaan" id="tx_de_total" name="tx_de_total"
                                         readonly>
                                 </div>
                             </div>
@@ -381,7 +378,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="tx_de_conve">En Convenio</label>
-                                    <input type="text" class="form-control " style="text-align:right;color: #a94442;font-size:16px;font-weight:bold;" id="tx_de_conve" name="tx_de_conve"
+                                    <input type="text" class="form-control deuda-idaan" id="tx_de_conve" name="tx_de_conve"
                                         readonly>
                                 </div>
                             </div>
@@ -674,7 +671,7 @@
                         </div>	
                     </form>
                     </br>
-                    <div id="grid1" style="margin-top:8px;"></div>
+                    <div id="grid1" class="margintop-diez"></div>
         
                     <div class="well well-sm">Información Histórica</div>
                     <div class="row">
@@ -717,82 +714,82 @@
                 </div> <!-- FIN DEL DIV PRINCIPAL-->
                 <div id="div_ventanas_auxiliares">
                     <!-- DIV BUSQUEDA DE CLIENTE-->
-                    <div class="container" id="div_busq" style="display: none;"></div>
+                    <div class="container no-display" id="div_busq"></div>
             
                     <!-- DIV DATOS ABASTECIMIENTO-->
-                    <div id="div_abastece" class="container" style="display: none;"></div>
+                    <div id="div_abastece" class="container no-display"></div>
             
                     <!-- DIV DATOS SUMINISTRO-->
-                    <div id="div_ubicacion" class="container" style="display: none;"></div>
+                    <div id="div_ubicacion" class="container no-display" ></div>
             
                     <!-- DIV DATOS PROPIETARIO-->
-                    <div id="div_propietario" class="texto" style="display: none;"></div>
+                    <div id="div_propietario" class="texto no-display" ></div>
             
                     <!-- DIV DATOS FACTURACION CONTINGENTE-->
-                    <div id="div_fact_cont" class="container" style="display: none;"></div>
+                    <div id="div_fact_cont" class="container no-display" ></div>
             
                     <!-- DIV DATOS DEUDA-->
-                    <div id="div_deuda" class="container" style="display: none;"></div>
+                    <div id="div_deuda" class="container no-display" ></div>
             
                     <!-- DIV DATOS MEDIDOR-->
-                    <div id="div_medidor" class="container" style="display: none;"></div>
+                    <div id="div_medidor" class="container no-display" ></div>
             
                     <!-- DIV DATOS  HISTORICO MEDIDORES-->
-                    <div id="div_historico_medidores" class="container" style="display: none;"></div>
+                    <div id="div_historico_medidores" class="container no-display" ></div>
                     
                     <!-- DIV DATOS HISTORICO CORREO -->
-                    <div id="div_historico_correo" class="container" style="display: none;"></div>
+                    <div id="div_historico_correo" class="container no-display" ></div>
             
                     <!-- DIV DATOS  HISTORICO AUDITORIA-->
-                    <div id="div_audi_mod" class="grilla" style="display: none"></div>
+                    <div id="div_audi_mod" class="grilla no-display"></div>
             
                     <!-- DIV DATOS  HISTORICO AUDITORIA-->
-                    <div id="div_concepto_facturar" class="container" style="display: none"></div>
+                    <div id="div_concepto_facturar" class="container no-display"></div>
             
                     <!-- DIV DATOS INFORMACION CONSUMO-->
-                    <div id="div_informacion_consumo" class="container" style="display: none"></div>
+                    <div id="div_informacion_consumo" class="container no-display"></div>
             
                     <!-- DIV DATOS  HISTORICO AUDITORIA-->
-                    <div id="div_contrato_madre" class="container" style="display: none"></div>
+                    <div id="div_contrato_madre" class="container no-display"></div>
             
                     <!-- DIV DATOS  HISTORIAL DE SUBSIDIO-->
-                    <div id="div_historial_subsidio" class="container" style="display: none"></div>
+                    <div id="div_historial_subsidio" class="container no-display"></div>
             
                     <!-- DIV DATOS HISTORIAL DE MOVIMIENTOS DE ASEO-->
-                    <div id="div_historial_aseo" class="container" style="display: none"></div>
+                    <div id="div_historial_aseo" class="container no-display"></div>
             
                     <!-- DIV DATOS INFORMACION FACTURA-->
-                    <div id="div_informacion_factura" class="container" style="display: none; "></div>
+                    <div id="div_informacion_factura" class="container no-display" ></div>
             
                     <!-- DIV DATOS INFORMACION OTROS PAGOS-->
-                    <div id="div_pagos_otros" class="container" style="display: none"></div>
+                    <div id="div_pagos_otros" class="container no-display"></div>
             
                     <!-- DIV DATOS INFORMACION PAGOS X APLICAR-->
-                    <div id="div_pagos_aplicar" class="container" style="display: none"></div>
+                    <div id="div_pagos_aplicar" class="container no-display"></div>
             
                     <!-- DIV DATOS  HISTORICO PAGOS-->
-                    <div id="div_historico_pagos" class="container" style="display: none;"></div>
+                    <div id="div_historico_pagos" class="container no-display" ></div>
             
                     <!-- DIV DATOS  CONVENIOS PAGOS-->
-                    <div id="div_hist_convenio" class="container" style="display: none;"></div>
+                    <div id="div_hist_convenio" class="container no-display" ></div>
             
                     <!-- DIV CONVENIOS PAGO DETALLE-->
-                    <div id="div_convenios_pago_detalle" class="container" style="display: none;"></div>
+                    <div id="div_convenios_pago_detalle" class="container no-display" ></div>
             
                     <!-- DIV CONVENIOS PAGO DETALLE-->
-                    <div id="div_historial_eventos_terminados" class="container" style="display: none;"></div>
+                    <div id="div_historial_eventos_terminados" class="container no-display" ></div>
             
                     <!-- DIV EVENTOS-->
-                    <div id="div_eventos" class="container" style="display: none;"></div>
+                    <div id="div_eventos" class="container no-display" ></div>
             
                     <!-- DIV AJUSTES-->
-                    <div id="div_ajustes" class="container" style="display: none;"></div>
+                    <div id="div_ajustes" class="container no-display" ></div>
             
                     <!-- DIV HISTORIAL DE ATENCIONES -->
-                    <div id="div_historial_atenciones" class="container" style="display: none;"></div>
+                    <div id="div_historial_atenciones" class="container no-display" ></div>
                     
                     <!-- DIV COMPROBANTE EMITIDO -->
-                    <div id="div_comprobante_emitidos" class="container" style="display: none;"></div>
+                    <div id="div_comprobante_emitidos" class="container no-display" ></div>
                 </div>
             
             </div>
@@ -800,7 +797,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-sm" style="padding-right:20px;width: 400px;">
+        <div class="modal-dialog modal-sm modal-deuda-dos">
 
             <!-- Modal content-->
             <div class="modal-content">
@@ -808,46 +805,46 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Deuda IDAAN</h4>
                 </div>
-                <div class="modal-body" style="text-align:right">
+                <div class="modal-body alinea-izquierda">
                     <table border="0">
                         <tbody>
                             <tr>
-                                <th style="font-weight: normal;    width: 120px;padding-bottom: 10px;">Deuda Exigible
+                                <th class="deuda-format">Deuda Exigible
                                 </th>
-                                <td style="padding-bottom: 10px;" title="Deuda reciente que no forma parte del convenio más las cuotas pendientes"><input type="text" class="form-control "
-                                        style="text-align:right;" id="tx_deuda_exigible_mod" readonly></td>
+                                <td class="padding-bottom-diez" title="Deuda reciente que no forma parte del convenio más las cuotas pendientes"><input type="text" class="form-control alinea-izquierda"
+                                    id="tx_deuda_exigible_mod" readonly></td>
                             </tr>
                             <tr>
-                                <th style="font-weight: normal;    width: 140px;padding-bottom: 10px;">Deuda Convenida
+                                <th  class="deuda-convenida">Deuda Convenida
                                 </th>
-                                <td style="padding-bottom: 10px;width: 220px;" title="Deuda en Convenio de Pago"><input type="text" class="form-control "
-                                        style="text-align:right;" id="tx_deuda_convenida_mod" readonly></td>
+                                <td class="deuda-format" title="Deuda en Convenio de Pago"><input type="text" class="form-control alinea-izquierda"
+                                    id="tx_deuda_convenida_mod" readonly></td>
                             </tr>
                             <tr>
-                                <th style="font-weight: normal;    width: 120px;padding-bottom: 10px;">Total Idaan</th>
-                                <td style="padding-bottom: 10px;" title="Total de la deuda IDAAN"><input type="text" class="form-control "
-                                        style="text-align:right;" id="tx_total_idaan_mod" readonly></td>
+                                <th class="deuda-format">Total Idaan</th>
+                                <td lass="padding-bottom-diez" title="Total de la deuda IDAAN"><input type="text" class="form-control alinea-izquierda"
+                                    id="tx_total_idaan_mod" readonly></td>
                             </tr>
                             <tr>
-                                <th style="font-weight: normal;    width: 120px;padding-bottom: 10px;">Ultima Factura
+                                <th class="deuda-format">Ultima Factura
                                 </th>
-                                <td style="padding-bottom: 10px;" title="Emisión de la última factura"><input type="text" class="form-control "
-                                        style="text-align:right;" id="tx_ultima_factura_mod" readonly></td>
+                                <td class="padding-bottom-diez" title="Emisión de la última factura"><input type="text" class="form-control alinea-izquierda"
+                                    id="tx_ultima_factura_mod" readonly></td>
                             </tr>
                             <tr>
-                                <th style="font-weight: normal;    width: 120px;padding-bottom: 10px;">Vencimiento</th>
-                                <td style="padding-bottom: 10px;" title="Vencimiento de la última factura"><input type="text" class="form-control "
-                                        style="text-align:right;" id="tx_vencimiento_mod" readonly></td>
+                                <th class="deuda-format">Vencimiento</th>
+                                <td class="padding-bottom-diez" title="Vencimiento de la última factura"><input type="text" class="form-control alinea-izquierda"
+                                    id="tx_vencimiento_mod" readonly></td>
                             </tr>
                             <tr>
-                                <th style="font-weight: normal;    width: 120px;padding-bottom: 10px;">Antiguedad</th>
-                                <td style="padding-bottom: 10px;" title="Antigüedad de la deuda en meses"><input type="text" class="form-control "
-                                        style="text-align:right;" id="tx_antiguedad_mod" readonly></td>
+                                <th class="deuda-format">Antiguedad</th>
+                                <td class="padding-bottom-diez" title="Antigüedad de la deuda en meses"><input type="text" class="form-control alinea-izquierda"
+                                    id="tx_antiguedad_mod" readonly></td>
                             </tr>
 							<tr>
-                                <th style="font-weight: normal;    width: 120px;padding-bottom: 10px;">Fecha Corte</th>
-                                <td style="padding-bottom: 10px;" title="Fecha Corte"><input type="text" class="form-control "
-                                        style="text-align:right;" id="tx_fec_corte" readonly></td>
+                                <th class="deuda-format">Fecha Corte</th>
+                                <td class="padding-bottom-diez" title="Fecha Corte"><input type="text" class="form-control alinea-izquierda"
+                                    id="tx_fec_corte" readonly></td>
                             </tr>
                         </tbody>
                     </table>
@@ -867,7 +864,7 @@
                     <h4 class="modal-title">Detalle de la Amortización <small id="h_pagos"></small></h4>
                 </div>
                 <div class="modal-body">
-                    <div id="grid_informacion_pagos" style="margin-top:5px;"></div>
+                    <div id="grid_informacion_pagos" class="margin-five"></div>
                 </div>
 
             </div>
