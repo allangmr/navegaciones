@@ -104,21 +104,7 @@ $(document).ready(function() {
 	
     });
     
-    // FUNCIONES PARA EL MENU
-    (function($){
-        $(document).ready(function(){
-            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
-                event.preventDefault(); 
-                event.stopPropagation(); 
-                $(this).parent().siblings().removeClass('open');
-                $(this).parent().toggleClass('open');
-            });
-        });
-    })(jQuery);
-    
-    $('#dropdown').hover(function() {
-        $(this).AddClass('open');
-      })
+
 
 
     // SE CARGA EL HTML DE DIV DE BÚSQUEDA
